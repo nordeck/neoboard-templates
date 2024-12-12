@@ -1,6 +1,7 @@
-# neoboard-templates
-Template *.nwb files for NeoBoard. You can find our NeoBoard here: 
-Website: neoboard.io
+# NeoBoard Templates
+
+Template *.nwb files for NeoBoard. You can find our NeoBoard here:  
+Website: https://neoboard.io  
 Github: https://github.com/nordeck/matrix-neoboard
 
 This repo is for collecting and presenting templates for NeoBoard.
