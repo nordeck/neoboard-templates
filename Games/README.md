@@ -7,8 +7,14 @@
 
 ## Puzzle games (1 or more players)
 
+### One time games
+* Connect the squares: https://chrpaul.de/posts/2024-12-20-neoboard/
+
+### Generators
 * Pairs: https://chrpaul.de/posts/2024-12-07-neoboard/
-* Sudoku: https://wot-wrench.chrpaul.de/#try=https://wot.chrpaul.de/neoboard-sudoku/1
+  * https://wot-wrench.chrpaul.de/#try=https://wot.chrpaul.de/neoboard-pairs/1
+* Sudoku: https://chrpaul.de/posts/2024-12-15-neoboard/
+  * https://wot-wrench.chrpaul.de/#try=https://wot.chrpaul.de/neoboard-sudoku/1
 
 
 ### Memorise the scene

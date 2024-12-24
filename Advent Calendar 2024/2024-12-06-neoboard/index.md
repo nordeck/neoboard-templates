@@ -1,8 +1,9 @@
 ---
 layout: post
 type: advent-calendar-door
-title: "Door 6: Creating NeoBoards with TypeScript #1"
+title: "Door 6: Creating NeoBoards with TypeScript"
 date: 2024-12-06 00:00:00 +0200
+lastmod: 2024-12-24 14:30:00 +0200
 lang: en
 categories: tech
 tags: [NeoBoard Advent Calendar]
@@ -10,7 +11,7 @@ tags: [NeoBoard Advent Calendar]
 
 Today, I want you to experiment with some simple programming. Some ideas for NeoBoard templates are too complex to put together by hand. That's when I resort to TypeScript and some programming.
 
-The following code runs in Deno and Bun.
+The following code runs in NodeJS, Deno and Bun.
 
 ```ts
 const neoboard = {
