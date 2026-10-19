@@ -1,6 +1,6 @@
 # Staging: templates in preparation
 
-Boards in this folder are **not published**. Each file holds three frames:
+This folder is empty when no template is in preparation. Boards in this folder are **not published**. Each file holds three frames:
 
 1. **Template** – the actual template frame.
 2. **Method description** (blue-grey title) – facilitation guide. Stays in the template permanently and is also copied into the Markdown body.
