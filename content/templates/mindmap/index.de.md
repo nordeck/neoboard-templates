@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Mindmap"
 description: "Freie Mindmap: Von einem zentralen Begriff aus sammeln und ordnen Sie Ideen gemeinsam in Ästen."
@@ -23,7 +23,7 @@ duration: { min: 20, max: 45 }
 groupSize: { min: 1, max: 12 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 # publish decision (metadata grid): ja
 ---

@@ -72,5 +72,6 @@ Pull requests that touch `content/` or `website/` are built and validated by Git
 
 ## License
 
-[AGPL-3.0-or-later](LICENSE) for templates, content and code, unless stated otherwise.
+- **Templates and content** (`content/`: boards, descriptions, preview images): [CC0 1.0](content/LICENSE) – public domain, free to use, change and share without conditions. Exception: `year-calendar` stays under AGPL-3.0-or-later until its author agrees to CC0; the `license` field of each template is authoritative.
+- **Code** (`website/`, scripts, workflows, Claude plugin): [AGPL-3.0-or-later](LICENSE).
 Third-party assets: the chess pieces in `content/templates/chess/` are CC0 by Ajay Karat | Devil's Work.shop.

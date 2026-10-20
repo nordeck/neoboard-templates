@@ -9,7 +9,9 @@ import { z } from 'astro/zod';
 const CONTENT_ROOT = '../content';
 
 export const LOCALES = ['en', 'de'] as const;
-export const DEFAULT_LICENSE = 'AGPL-3.0-or-later';
+// Templates are public domain (CC0). AGPL only for single templates whose authors have not agreed yet.
+export const LICENSES = ['CC0-1.0', 'AGPL-3.0-or-later'] as const;
+export const DEFAULT_LICENSE = 'CC0-1.0';
 
 const range = z
   .object({ min: z.number().int().positive(), max: z.number().int().positive() })
@@ -36,7 +38,7 @@ const templates = defineCollection({
   schema: ({ image }) =>
     z
       .object({
-        schemaVersion: z.literal(1),
+        schemaVersion: z.literal(2),
         lang: z.enum(LOCALES),
         title: z.string().min(3).max(80),
         description: z.string().min(20).max(200),
@@ -56,7 +58,7 @@ const templates = defineCollection({
         duration: range.optional(), // minutes
         groupSize: range.optional(), // participants
         authors: z.array(z.object({ name: z.string(), url: z.url().optional() })).min(1),
-        license: z.string().default(DEFAULT_LICENSE), // SPDX identifier
+        license: z.enum(LICENSES).default(DEFAULT_LICENSE), // SPDX identifier
         published: z.coerce.date(),
         updated: z.coerce.date().optional(),
         draft: z.boolean().default(false),

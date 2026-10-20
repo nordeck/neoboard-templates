@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "Retro Activity: Gossip Magazine"
 description: "Pretend to be a gossip magazine and write provocative headlines about your last sprint."
@@ -23,7 +23,7 @@ duration: { min: 15, max: 30 }
 groupSize: { min: 3, max: 12 }
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-14
 ---
 

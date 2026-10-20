@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Jahreskalender"
 description: "Ein ganzes Jahr auf einem Rahmen für die Jahresplanung. Fertige Kalender 2026–2040 und ein Generator für weitere Jahre."
@@ -50,6 +50,7 @@ links:
 authors:
   - name: "Normannio"
 license: AGPL-3.0-or-later
+# license note: stays AGPL until the author (Normannio) agrees to CC0
 published: 2024-09-11
 ---
 

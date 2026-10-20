@@ -13,7 +13,10 @@ const root = path.dirname(fileURLToPath(import.meta.url));
 const CONTENT = path.resolve(root, '../../content');
 const SRC = path.join(CONTENT, 'templates');
 const CATEGORIES = Object.keys(parse(await readFile(path.join(CONTENT, 'categories.yaml'), 'utf8')));
-const LICENSE = 'AGPL-3.0-or-later';
+// Keep in sync with LICENSES in src/content.config.ts.
+const LICENSES = ['CC0-1.0', 'AGPL-3.0-or-later'];
+const DEFAULT_LICENSE = 'CC0-1.0';
+const SCHEMA_VERSION = 2;
 const BOARD_VERSION = 'net.nordeck.whiteboard@v2';
 const SIZES = { master: [1920, 1080], tile: [1280, 720] };
 const NEUTRAL = ['category', 'tags', 'duration', 'groupSize', 'authors', 'license', 'published', 'draft'];
@@ -50,7 +53,8 @@ for (const slug of await readdir(SRC)) {
     if (fm.lang !== lang) err(where, `lang "${fm.lang}" does not match file name "${lang}"`);
     // Astro only logs unknown references and still exits 0, so enforce it here.
     if (!CATEGORIES.includes(fm.category)) err(where, `unknown category "${fm.category}" (see content/categories.yaml)`);
-    if ((fm.license ?? LICENSE) !== LICENSE) err(where, `license must be ${LICENSE}`);
+    if (fm.schemaVersion !== SCHEMA_VERSION) err(where, `schemaVersion must be ${SCHEMA_VERSION}`);
+    if (!LICENSES.includes(fm.license ?? DEFAULT_LICENSE)) err(where, `license must be one of ${LICENSES.join(', ')}`);
     if (!fm.preview && !fm.draft) err(where, 'preview is required unless draft: true');
     const images = [
       ...(fm.preview ? [[fm.preview.src, 'master'], ...(fm.preview.tile ? [[fm.preview.tile, 'tile']] : [])] : []),

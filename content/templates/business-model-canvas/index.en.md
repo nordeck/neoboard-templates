@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "Business Model Canvas"
 description: "Business Model Canvas with nine building blocks plus environmental costs and societal benefits."
@@ -19,7 +19,7 @@ duration: { min: 60, max: 120 }
 groupSize: { min: 2, max: 8 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 # publish decision (metadata grid): ja
 ---

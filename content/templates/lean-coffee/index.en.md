@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "Lean Coffee"
 description: "Agenda-free meeting format: participants collect topics, vote and discuss them in short timeboxes."
@@ -19,7 +19,7 @@ duration: { min: 45, max: 90 }
 groupSize: { min: 4, max: 12 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 # publish decision (metadata grid): ja, als englische Datei von „lean-coffee"
 # note (metadata grid): Gleiche Methode wie T14 (deutsch).

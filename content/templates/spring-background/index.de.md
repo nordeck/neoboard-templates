@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Frühlings-Hintergrund"
 description: "Ein fröhlicher Frühlings-Hintergrund, um Folien und Ziele für die neue Saison vorzubereiten."
@@ -21,7 +21,7 @@ links:
     type: source
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-16
 ---
 

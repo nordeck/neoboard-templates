@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "Spring Background"
 description: "A cheerful spring background to prepare slides and goals for the new season."
@@ -21,7 +21,7 @@ links:
     type: source
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-16
 ---
 

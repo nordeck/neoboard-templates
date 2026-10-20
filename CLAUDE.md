@@ -12,7 +12,8 @@ Fallback: `https://nordeck.github.io/neoboard-templates/` built from this repo.
 - Boards: only `net.nordeck.whiteboard@v2`, exactly one slide, at least one frame. Never hand-edit `.nwb`; generate with a script and validate.
 - Schema changes must update `content.config.ts`, `scripts/validate-content.mjs` and the docs together, and bump `schemaVersion`.
 - Previews: master 1920×1080 PNG, optional tile 1280×720 PNG, light mode, no NeoBoard UI. Derived sizes are generated at build time, never committed.
-- License: AGPL-3.0-or-later. New source files start with:
+- Licences: content (`content/`) is **CC0-1.0** (`license: CC0-1.0`, the default); `year-calendar` keeps AGPL-3.0-or-later until its author agrees. New templates are CC0 – only accept third-party material whose author agrees to CC0, and describe third-party methods in your own words.
+- Code (`website/`, scripts, workflows) is AGPL-3.0-or-later. New source files start with:
   `// Copyright <year> Nordeck IT + Consulting GmbH` and `// SPDX-License-Identifier: AGPL-3.0-or-later`.
 - Code comments, commit messages and docs in English. German UI strings use correct umlauts (ä, ö, ü, ß).
 - All internal links use `import.meta.env.BASE_URL`.

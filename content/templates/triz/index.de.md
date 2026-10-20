@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "TRIZ: Vom Scheitern lernen"
 description: "In drei Schritten zum Neustart: maximal scheitern, ehrlich prüfen, was davon schon passiert, und gezielt damit aufhören."
@@ -23,7 +23,7 @@ duration: { min: 25, max: 40 }
 groupSize: { min: 3, max: 20 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 ---
 

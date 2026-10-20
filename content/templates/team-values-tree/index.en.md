@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "Team Values Tree"
 description: "Grow your team values together: add leaves with the values you want to nurture."
@@ -23,7 +23,7 @@ duration: { min: 20, max: 40 }
 groupSize: { min: 3, max: 15 }
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-22
 ---
 

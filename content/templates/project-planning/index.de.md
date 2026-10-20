@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Projekt- und Zeitplanung – Beispiel"
 description: "Ausgefülltes Beispiel einer Projektplanung mit Themenspeicher, Zeitachse, Entwürfen und Testphasen."
@@ -17,7 +17,7 @@ files:
     label: "Ausgefülltes Beispiel"
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 # publish decision (metadata grid): optional, als Beispiel
 ---

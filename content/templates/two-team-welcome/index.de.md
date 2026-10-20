@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Willkommen: Erwartungen zweier Teams"
 description: "Begrüßung für zwei Teams: Jede Seite hält ihre Erwartungen fest, gemeinsame Diskussionsthemen stehen in der Mitte."
@@ -19,7 +19,7 @@ duration: { min: 15, max: 20 }
 groupSize: { min: 4, max: 20 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 # publish decision (metadata grid): ja
 # note (metadata grid): Teamnamen „Team A" und „Team B" als Platzhalter belassen oder anpassen.

@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "Retrospective: Continue, Stop, Invent, Act"
 description: "Four-field retrospective: what to keep, what to stop, what to invent and which actions to take."
@@ -19,7 +19,7 @@ duration: { min: 45, max: 90 }
 groupSize: { min: 3, max: 12 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 featured: true
 # publish decision (metadata grid): ja, als englische Datei der Retro
