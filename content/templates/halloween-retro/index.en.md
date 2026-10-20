@@ -2,16 +2,16 @@
 schemaVersion: 1
 lang: en
 title: "Halloween Retro"
-description: "A spooky retrospective: chocolate bars into the good pumpkin, rotten tomatoes into the rotten one, ideas onto the broom and actions into the cauldron."
+description: "A spooky retrospective in four screens: rotten tomatoes for the grumpy pumpkin, sweet chocolate bars for the happy one, ideas flying off the witch’s broom and to-dos brewed in the cauldron."
 category: agile
 tags: [retrospective, seasonal, fun]
 features:
-  - "Keep, stop, try and act"
-  - "Card stacks with Halloween symbols"
-  - "Leads to actions with owners"
+  - "Four screens, one per retro phase"
+  - "Card stacks: rotten tomatoes, chocolate bars, idea flashes, to do hexes"
+  - "Ends with to-dos: what, who, until when, with whom"
 preview:
   src: ./preview.en.png
-  alt: "Halloween retro board with a good pumpkin, a rotten pumpkin, a witch’s broom and a cauldron"
+  alt: "Four Halloween retro screens: a grumpy pumpkin with rotten tomatoes, a happy pumpkin with chocolate bars, a witch’s broom with idea flashes and a bubbling cauldron with to-do notes"
 files:
   - src: ./halloween-retro.en.nwb
     label: "Template"
@@ -23,35 +23,33 @@ license: AGPL-3.0-or-later
 published: 2026-10-20
 ---
 
-## 🚀 Halloween Retro: How it works in 5 steps
+## 🚀 Halloween Retro: How it works in 4 phases
 
-**🎯 Purpose:** A spooky retrospective: what was sweet, what is rotten, which ideas should take off, and what do we brew next?
+**🎯 Purpose:** Look back on a sprint or project with a wink. Each phase has its own screen, so the group moves from what should stop to what works, to new ideas and finally to concrete to-dos.
 
-### 1. Set the stage (5 min)
+### 1. Stop doing (10 min)
 
-- **Action:** Write the period at the top. Quick round: which Halloween character are you today?
-- **Rule:** Open, respectful, no blame.
+- **Action:** Everyone copies a rotten tomato from the stack, writes down what should stop and throws it at the grumpy pumpkin.
+- **Rule:** One thought per tomato. Name behaviour and habits, not people.
 
-### 2. Collect (10 min, silent)
+### 2. Proceed doing (10 min)
 
-- **Action:** Everyone copies cards from the stacks: chocolate bars 🍫 into the good pumpkin, rotten tomatoes 🍅 into the rotten pumpkin, ideas 💡 onto the witch’s broom.
-- **Rule:** One thought per card.
+- **Action:** Sweet chocolate bars go to the happy pumpkin: what worked well and should continue?
+- **Tip:** Thank individual people here, too.
 
-### 3. Present and cluster (15 min)
+### 3. Ideas (10 min)
 
-- **Action:** Each person briefly presents their cards. Group similar cards.
+- **Action:** Write new ideas on the idea flashes and let them fly off the witch’s broom.
+- **Rule:** Collect first, judge later. Bold ideas are welcome.
 
-### 4. Prioritise (5 min)
+### 4. To do's (15 min)
 
-- **Action:** Dot-vote the tomatoes and ideas, e.g. 3 dots each.
-
-### 5. Brew (15 min)
-
-- **Action:** For the top topics, put recipe cards 📜 into the cauldron: what, who, by when?
-- **Goal:** 1–3 actions that are actually done before the next retro.
+- **Action:** Pick the most important tomatoes and ideas, e.g. by dot voting. Turn each one into a to do hex in the cauldron: what, who, until when, with whom?
+- **Goal:** 1–3 to-dos that are actually done before the next retro.
 
 ## 🛠️ Your role as facilitator
 
-- **Spook master:** Keep it fun without losing the serious topics.
+- **Guide:** Use the presentation mode to walk through the four screens; each frame is one phase.
+- **Spook master:** Keep it playful without letting serious topics get lost.
 - **Timekeeper:** Save enough time for the cauldron.
-- **Follow-up:** Start the next retro by looking into the cauldron.
+- **Follow-up:** Start the next retro with a look at last time's to do hexes.
