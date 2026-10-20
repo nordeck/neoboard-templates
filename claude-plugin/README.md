@@ -1,6 +1,6 @@
 # Claude plugin: neoboard-templates
 
-Claude Code plugin with the skill **create-neoboard-template**: it guides Claude through creating a NeoBoard template in this repository (board definition, metadata, method description), checking it, capturing previews on demo.neoboard.io and publishing it in the gallery on neoboard.io.
+Claude Code plugin with the skill **create-neoboard-template**: it guides Claude through creating a NeoBoard template in this repository (board definition, metadata, method description), checking it, capturing previews on demo.neoboard.io and publishing it in the gallery on neoboard.io. Templates are published under CC0 1.0; the plugin itself is AGPL-3.0-or-later like the rest of the code.
 
 ## Install
 

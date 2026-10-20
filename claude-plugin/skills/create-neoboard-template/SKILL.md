@@ -34,12 +34,21 @@ Ask only for what you cannot sensibly propose yourself. Propose defaults and let
 | Title, description | Per language. Title 3–80 characters, description 20–200. |
 | Category | One ID from `content/categories.yaml` (agile, brainstorming, workshop, planning, strategy, team-building, games, backgrounds, getting-started). |
 | Duration, group size | Ranges in minutes / people, same in all languages. |
-| Authors | Default "Nordeck IT + Consulting GmbH". `published`: today. |
+| Authors | Default "Nordeck IT + Consulting GmbH". `published`: today. Every author must agree to CC0 (see below). |
 | Source and licence | If the method or texts come from elsewhere, see "Licensing" below before writing anything. |
 
 ### Licensing
 
-Everything in the repository is published under **AGPL-3.0-or-later**. Methods and ideas themselves are free to use, but copied texts, graphics or boards from other sources are not automatically compatible (CC BY-SA, CC BY-NC etc. are not). So: describe third-party methods **in your own words**, never copy their wording; add attribution in the method text ("Based on … by …, licence …. Own description.") and a `links` entry of `type: source`. Check the source's current licence on its website instead of trusting a statement like "it's CC". Tell the person when a licence question needs a human decision. No real personal data on boards (names, dates, notes); fictional placeholders are fine.
+Templates are published under **CC0 1.0** (public domain, `license: CC0-1.0`, the default): anyone may use, change and share them without conditions. The website code stays AGPL-3.0-or-later, which is why board definitions (code) carry an AGPL header while the generated boards and texts are CC0.
+
+CC0 means giving up all rights, so it needs the consent of **everyone who contributed** to the board or its texts:
+
+- Boards and texts by Nordeck or by people who agreed to CC0: fine.
+- Someone else's board, graphics or text: only with their explicit consent to CC0; note it in the pull request. Without consent it does not go into the repository. (The only exception is `year-calendar`, which stays AGPL until its author agrees – do not add new AGPL templates.)
+- Third-party methods (e.g. Liberating Structures, CC BY-SA): the method itself is free to use, their wording is not. Describe the method **in your own words**, never copy text or graphics, and add attribution in the method text ("Based on … by …. Own description.") plus a `links` entry of `type: source`. Check the source's current licence on its website rather than trusting a statement like "it's CC".
+- Images inside a board must be CC0-compatible too (own work, or explicitly CC0/public domain).
+
+Tell the person when a licence question needs a human decision. No real personal data on boards (names, dates, notes); fictional placeholders are fine.
 
 ## Stage 2 – Generate the board
 

@@ -6,7 +6,7 @@ One file per language in `content/templates/<slug>/`. The generator creates it w
 
 ```yaml
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "TRIZ: Vom Scheitern lernen"
 description: "In drei Schritten zum Neustart: …"
@@ -29,7 +29,7 @@ duration: { min: 25, max: 40 }
 groupSize: { min: 3, max: 20 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 draft: true
 # draft reason: no preview yet
@@ -59,6 +59,7 @@ published: 2026-10-20
 
 | Field | Rule |
 |---|---|
+| `schemaVersion` | `2` (the validator rejects other values). |
 | `lang` | Must match the file name. |
 | `title` | 3–80 characters. |
 | `description` | 20–200 characters; shown on the card (two lines) and as SEO description. |
@@ -73,7 +74,7 @@ published: 2026-10-20
 | `links[]` | `{ label, url, type }`, type `generator`, `source`, `docs` or `video`. A template needs at least one file or a generator link. |
 | `duration`, `groupSize` | `{ min, max }`, min ≤ max. |
 | `authors` | `[{ name, url? }]`. |
-| `license` | Only `AGPL-3.0-or-later`. |
+| `license` | `CC0-1.0` (default, required for new templates). `AGPL-3.0-or-later` exists only for `year-calendar`, whose author has not agreed to CC0 yet. |
 | `published` | `YYYY-MM-DD`; `updated` optional for later content changes. |
 | `draft` | `true` hides the template in production. |
 | `featured` | `true` shows it in "Empfohlen" (first three by date). Only when the person asks. |
