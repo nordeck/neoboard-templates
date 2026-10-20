@@ -1,0 +1,80 @@
+---
+// Copyright 2026 Nordeck IT + Consulting GmbH
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// Gallery card. The data-* attributes feed the client-side filter (scripts/gallery.ts).
+import Icon from './Icon.astro';
+import TemplatePreview from './TemplatePreview.astro';
+import { formatRange, t } from '../lib/i18n';
+import { routeHref } from '../lib/routes';
+import type { Category, Lang, TemplateItem } from '../lib/templates';
+
+interface Props {
+  item: TemplateItem;
+  category: Category;
+  lang: Lang;
+  headingLevel?: 'h2' | 'h3';
+}
+
+const { item, category, lang, headingLevel = 'h3' } = Astro.props;
+const s = t(lang);
+const d = item.entry.data;
+const categoryLabel = category.data.label[lang];
+const duration = formatRange(d.duration, s.min);
+const groupSize = formatRange(d.groupSize, s.people);
+const langNote = item.isFallback ? s.onlyIn[d.lang] : null;
+const Heading = headingLevel;
+---
+
+<a
+  class="nb-tcard"
+  href={routeHref(lang, { page: 'detail', slug: item.slug })}
+  data-card
+  data-category={category.id}
+  data-title={d.title}
+  data-published={d.published.toISOString().slice(0, 10)}
+  data-search={`${d.title} ${d.description} ${categoryLabel}`.toLowerCase()}
+>
+  <div class="pv">
+    <TemplatePreview
+      src={d.preview?.tile ?? d.preview?.src}
+      alt={d.preview?.alt}
+      icon={category.data.icon}
+      label={s.previewPending}
+      iconSize={30}
+      widths={[480, 960]}
+      sizes="(min-width: 1240px) 380px, (min-width: 700px) 45vw, 92vw"
+    />
+  </div>
+  <div class="bd" lang={item.isFallback ? d.lang : undefined}>
+    <span class="cat" lang={lang}>{category.data.icon && <Icon name={category.data.icon} size={14} />}{categoryLabel}</span>
+    <Heading>{d.title}</Heading>
+    <p>{d.description}</p>
+    {
+      (duration || groupSize || langNote) && (
+        <div class="meta" lang={lang}>
+          {duration && (
+            <span>
+              <Icon name="Clock" size={15} />
+              <span class="visually-hidden">{s.duration}:</span>
+              {duration}
+            </span>
+          )}
+          {groupSize && (
+            <span>
+              <Icon name="Users" size={15} />
+              <span class="visually-hidden">{s.groupSize}:</span>
+              {groupSize}
+            </span>
+          )}
+          {langNote && (
+            <span class="nb-lang-note">
+              <Icon name="Languages" size={13} />
+              {langNote}
+            </span>
+          )}
+        </div>
+      )
+    }
+  </div>
+</a>

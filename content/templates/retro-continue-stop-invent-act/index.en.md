@@ -21,6 +21,7 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
+featured: true
 # publish decision (metadata grid): ja, als englische Datei der Retro
 # note (metadata grid): Gleiche Methode wie T13 (deutsch, mit Leitfragen) und Beispiel T24.
 ---

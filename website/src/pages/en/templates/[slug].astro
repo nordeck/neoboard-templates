@@ -1,0 +1,15 @@
+---
+// Copyright 2026 Nordeck IT + Consulting GmbH
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import type { GetStaticPaths } from 'astro';
+import DetailView from '../../../features/templates/views/DetailView.astro';
+import { getTemplates } from '../../../features/templates/lib/templates';
+
+export const getStaticPaths = (async () =>
+  (await getTemplates('en')).map((item) => ({ params: { slug: item.slug }, props: { item } }))) satisfies GetStaticPaths;
+
+const { item } = Astro.props;
+---
+
+<DetailView lang="en" item={item} />

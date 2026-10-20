@@ -1,0 +1,26 @@
+---
+// Copyright 2026 Nordeck IT + Consulting GmbH
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// Root index (required with locale prefixes): picks the gallery language from the browser, English by default.
+import { routeHref } from '../features/templates/lib/routes';
+
+const de = routeHref('de', { page: 'gallery' });
+const en = routeHref('en', { page: 'gallery' });
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>NeoBoard templates</title>
+    <meta name="robots" content="noindex" />
+    <script is:inline define:vars={{ de, en }}>
+      location.replace((navigator.languages || [navigator.language]).some((l) => /^de\b/i.test(l)) ? de : en);
+    </script>
+    <noscript><meta http-equiv="refresh" content={`0; url=${en}`} /></noscript>
+  </head>
+  <body>
+    <p><a href={de}>NeoBoard-Vorlagen</a> · <a href={en}>NeoBoard templates</a></p>
+  </body>
+</html>

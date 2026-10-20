@@ -21,6 +21,7 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
+featured: true
 # publish decision (metadata grid): ja, als deutsche Datei von „lean-coffee"
 # note (metadata grid): Methodenbeschreibung übernommen aus dem Textfeld neben dem Original-Frame (unverändert).
 ---

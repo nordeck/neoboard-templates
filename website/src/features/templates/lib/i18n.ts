@@ -1,0 +1,186 @@
+// Copyright 2026 Nordeck IT + Consulting GmbH
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// All UI strings of the template gallery (from docs/design/.../ui_kits/templates/i18n.js).
+import type { Lang } from './templates';
+
+type Step = { title: string; description: string };
+
+const de = {
+  htmlLang: 'de',
+  kicker: 'Vorlagen',
+  title: 'NeoBoard-Vorlagen',
+  lead: 'Vorlage herunterladen und in NeoBoard importieren.',
+  featured: 'Empfohlen',
+  all: 'Alle',
+  search: 'Vorlagen durchsuchen',
+  sortLabel: 'Sortierung',
+  sortNew: 'Neu',
+  sortAz: 'A–Z',
+  categoryFilter: 'Nach Kategorie filtern',
+  count: (n: number) => (n === 1 ? '1 Vorlage' : `${n} Vorlagen`),
+  emptyTitle: 'Keine Vorlagen gefunden',
+  emptyBody: 'Passen Sie die Suche an oder wählen Sie eine andere Kategorie.',
+  reset: 'Filter zurücksetzen',
+  min: 'Min.',
+  people: 'Personen',
+  durationShort: 'Dauer',
+  onlyIn: { en: 'Nur auf Englisch', de: 'Nur auf Deutsch' } as Record<Lang, string>,
+  onlyInLong: { en: 'Diese Vorlage gibt es nur auf Englisch.', de: 'Diese Vorlage gibt es nur auf Deutsch.' } as Record<Lang, string>,
+  previewPending: 'Vorschau folgt',
+  frame: (i: number, n: number) => `Rahmen ${i} von ${n}`,
+  frames: 'Rahmen',
+  duration: 'Dauer',
+  groupSize: 'Gruppengröße',
+  authors: 'Autor:innen',
+  license: 'Lizenz',
+  published: 'Veröffentlicht',
+  updated: 'Aktualisiert',
+  glance: 'Auf einen Blick',
+  methodKicker: 'Methode',
+  method: 'Methodenbeschreibung',
+  breadcrumb: 'Brotkrümelnavigation',
+  importKicker: 'Import',
+  importTitle: 'In drei Schritten zum Board',
+  steps: [
+    { title: 'Herunterladen', description: 'Laden Sie die .nwb-Datei der Vorlage auf Ihren Rechner.' },
+    { title: 'Importieren', description: 'Öffnen Sie ein Board in NeoBoard, wählen Sie „Importieren“ und bestätigen Sie den Dialog „Inhalt importieren“.' },
+    { title: 'Loslegen', description: 'Passen Sie die Vorlage an und arbeiten Sie gemeinsam daran – in Echtzeit oder asynchron.' },
+  ] as Step[],
+  relatedKicker: (c: string) => `Mehr aus ${c}`,
+  related: 'Verwandte Vorlagen',
+  back: 'Alle Vorlagen',
+  catKicker: 'Kategorie',
+  catEmpty: 'In dieser Kategorie gibt es noch keine Vorlagen.',
+  submitCtaTitle: 'Eigene Vorlage teilen?',
+  submitCtaLead: 'Reichen Sie Ihr Board ein, damit andere es nutzen können.',
+  submitCta: 'Vorlage einreichen',
+  submitTitle: 'Vorlage einreichen',
+  submitIntro: 'Sie haben ein Board, das anderen helfen könnte? Reichen Sie es als Vorlage ein. Wir prüfen es und veröffentlichen es in der Galerie.',
+  submitSteps: [
+    { title: 'Board vorbereiten', description: 'Ein Rahmen pro Seite, möglichst 1920 × 1080, ohne persönliche Daten.' },
+    { title: 'Beschreibung ergänzen', description: 'Titel, Kurzbeschreibung, Kategorie und eine Methodenbeschreibung, die erklärt, wie man mit der Vorlage arbeitet.' },
+    { title: 'Einreichen', description: 'Als Pull Request auf GitHub oder per E-Mail mit der .nwb-Datei im Anhang.' },
+  ] as Step[],
+  submitLicense: 'Eingereichte Vorlagen werden unter der Lizenz AGPL-3.0-or-later veröffentlicht.',
+  submitGithub: 'Auf GitHub einreichen',
+  submitMail: 'Per E-Mail senden',
+  nfKicker: 'Fehler 404',
+  nfTitle: 'Seite nicht gefunden',
+  nfBody: 'Diese Vorlage gibt es nicht oder nicht mehr.',
+  nfCta: 'Zur Vorlagen-Übersicht',
+  download: {
+    kicker: 'Download',
+    one: 'Vorlage herunterladen',
+    get: 'Herunterladen',
+    choose: 'Auswahl',
+    selectYear: 'Jahr wählen',
+    generator: 'Diese Vorlage wird mit einem Generator erstellt.',
+    file: 'NeoBoard-Datei',
+    newTab: '(öffnet in neuem Tab)',
+  },
+  skip: 'Zum Inhalt springen',
+  home: 'NeoBoard – Startseite',
+  langSwitch: 'Sprachauswahl',
+  footer: { developedBy: 'Entwickelt von', legalNotice: 'Impressum', contact: 'Kontakt', privacy: 'Datenschutzerklärung' },
+};
+
+export type Strings = typeof de;
+
+const en: Strings = {
+  htmlLang: 'en',
+  kicker: 'Templates',
+  title: 'NeoBoard templates',
+  lead: 'Download a template and import it into NeoBoard.',
+  featured: 'Featured',
+  all: 'All',
+  search: 'Search templates',
+  sortLabel: 'Sort order',
+  sortNew: 'Newest',
+  sortAz: 'A–Z',
+  categoryFilter: 'Filter by category',
+  count: (n: number) => (n === 1 ? '1 template' : `${n} templates`),
+  emptyTitle: 'No templates found',
+  emptyBody: 'Try a different search or choose another category.',
+  reset: 'Reset filters',
+  min: 'min',
+  people: 'people',
+  durationShort: 'Duration',
+  onlyIn: { en: 'English only', de: 'German only' },
+  onlyInLong: { en: 'This template is only available in English.', de: 'This template is only available in German.' },
+  previewPending: 'Preview pending',
+  frame: (i: number, n: number) => `Frame ${i} of ${n}`,
+  frames: 'Frames',
+  duration: 'Duration',
+  groupSize: 'Group size',
+  authors: 'Authors',
+  license: 'Licence',
+  published: 'Published',
+  updated: 'Updated',
+  glance: 'At a glance',
+  methodKicker: 'Method',
+  method: 'Method description',
+  breadcrumb: 'Breadcrumb',
+  importKicker: 'Import',
+  importTitle: 'Three steps to your board',
+  steps: [
+    { title: 'Download', description: "Save the template's .nwb file to your computer." },
+    { title: 'Import', description: 'Open a board in NeoBoard, choose "Import" and confirm the "Import content" dialog.' },
+    { title: 'Get started', description: 'Adapt the template and work on it together – in real time or asynchronously.' },
+  ],
+  relatedKicker: (c: string) => `More in ${c}`,
+  related: 'Related templates',
+  back: 'All templates',
+  catKicker: 'Category',
+  catEmpty: 'There are no templates in this category yet.',
+  submitCtaTitle: 'Want to share your own template?',
+  submitCtaLead: 'Submit your board so others can use it.',
+  submitCta: 'Submit a template',
+  submitTitle: 'Submit a template',
+  submitIntro: 'Do you have a board that could help others? Submit it as a template. We review it and publish it in the gallery.',
+  submitSteps: [
+    { title: 'Prepare the board', description: 'One frame per page, ideally 1920 × 1080, without personal data.' },
+    { title: 'Add a description', description: 'Title, short description, category and a method description that explains how to work with the template.' },
+    { title: 'Submit', description: 'As a pull request on GitHub or by email with the .nwb file attached.' },
+  ],
+  submitLicense: 'Submitted templates are published under the AGPL-3.0-or-later licence.',
+  submitGithub: 'Submit on GitHub',
+  submitMail: 'Send by email',
+  nfKicker: 'Error 404',
+  nfTitle: 'Page not found',
+  nfBody: 'This template does not exist or is no longer available.',
+  nfCta: 'Back to all templates',
+  download: {
+    kicker: 'Download',
+    one: 'Download template',
+    get: 'Download',
+    choose: 'Choose',
+    selectYear: 'Choose year',
+    generator: 'This template is created with a generator.',
+    file: 'NeoBoard file',
+    newTab: '(opens in a new tab)',
+  },
+  skip: 'Skip to content',
+  home: 'NeoBoard – Home',
+  langSwitch: 'Language selection',
+  footer: { developedBy: 'Developed by', legalNotice: 'Legal notice', contact: 'Contact', privacy: 'Privacy policy' },
+};
+
+export const STRINGS: Record<Lang, Strings> = { de, en };
+export const t = (lang: Lang) => STRINGS[lang];
+
+/** "45–90 Min." / "4 people"; null when no range is given. */
+export function formatRange(r: { min: number; max: number } | undefined, unit: string) {
+  if (!r) return null;
+  return `${r.min === r.max ? r.min : `${r.min}–${r.max}`} ${unit}`;
+}
+
+/** "21. Dezember 2024" / "21 December 2024" */
+export function formatDate(d: Date, lang: Lang) {
+  return new Intl.DateTimeFormat(lang === 'de' ? 'de-DE' : 'en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(d);
+}

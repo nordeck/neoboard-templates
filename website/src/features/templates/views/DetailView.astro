@@ -1,0 +1,208 @@
+---
+// Copyright 2026 Nordeck IT + Consulting GmbH
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// Template detail page (/de/vorlagen/<slug>/).
+import { getImage } from 'astro:assets';
+import { render } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import DownloadPanel from '../components/DownloadPanel.astro';
+import Icon from '../components/Icon.astro';
+import ImportSteps from '../components/ImportSteps.astro';
+import MetaList from '../components/MetaList.astro';
+import SubmitCta from '../components/SubmitCta.astro';
+import TemplateCard from '../components/TemplateCard.astro';
+import TemplatePreview from '../components/TemplatePreview.astro';
+import { formatDate, formatRange, t } from '../lib/i18n';
+import { boardHref, routeHref } from '../lib/routes';
+import { countFrames, fileName, getCategories, getTemplates, type Lang, type TemplateItem } from '../lib/templates';
+
+interface Props {
+  lang: Lang;
+  item: TemplateItem;
+}
+
+const { lang, item } = Astro.props;
+const s = t(lang);
+const { slug, entry, isFallback } = item;
+const d = entry.data;
+const contentLang = isFallback ? d.lang : undefined;
+
+const categories = await getCategories();
+const categoryById = new Map(categories.map((c) => [c.id, c]));
+const category = categoryById.get(d.category.id)!;
+const categoryLabel = category.data.label[lang];
+const categoryHref = routeHref(lang, { page: 'category', id: category.id });
+const related = (await getTemplates(lang))
+  .filter((i) => i.slug !== slug && i.entry.data.category.id === category.id)
+  .slice(0, 3);
+
+const files = d.files.map((f) => ({ label: f.label, name: fileName(f.src), href: boardHref(slug, fileName(f.src)) }));
+const frames = d.files.length ? countFrames(slug, d.files[0].src) : 0;
+
+// Main preview plus optional gallery images; thumbnails switch between them.
+const views = [
+  ...(d.preview ? [{ src: d.preview.src, alt: d.preview.alt }] : []),
+  ...d.gallery.map((g) => ({ src: g.src, alt: g.alt })),
+];
+
+const meta = [
+  { label: s.duration, value: formatRange(d.duration, s.min) },
+  { label: s.groupSize, value: formatRange(d.groupSize, s.people) },
+  { label: s.frames, value: frames > 1 ? String(frames) : null },
+  { label: s.authors, value: d.authors.map((a) => a.name).join(', ') },
+  { label: s.license, value: d.license },
+  { label: s.published, value: formatDate(d.published, lang) },
+  { label: s.updated, value: d.updated ? formatDate(d.updated, lang) : null },
+];
+
+const { Content } = await render(entry);
+const hasBody = Boolean(entry.body?.trim());
+
+// Open Graph image: 1200x630 centre crop of the master (Teil C.2).
+const og = d.preview
+  ? await getImage({ src: d.preview.src, width: 1200, height: 630, fit: 'cover', position: 'center', format: 'png' })
+  : undefined;
+
+const alternates = {
+  de: routeHref('de', { page: 'detail', slug }),
+  en: routeHref('en', { page: 'detail', slug }),
+};
+---
+
+<BaseLayout
+  lang={lang}
+  title={`${d.title} – ${s.title}`}
+  description={d.description}
+  alternates={alternates}
+  ogImage={og && d.preview ? { src: og.src, alt: d.preview.alt, width: 1200, height: 630 } : undefined}
+>
+  <div class="wrap">
+    <nav class="tg-crumbs" aria-label={s.breadcrumb}>
+      <ol>
+        <li><a href={routeHref(lang, { page: 'gallery' })}>{s.kicker}</a></li>
+        <li><a href={categoryHref}>{categoryLabel}</a></li>
+      </ol>
+    </nav>
+
+    <div class="tg-head">
+      <div data-frames>
+        <div class="tg-stage">
+          {
+            views.length > 0 ? (
+              views.map((v, i) => (
+                <div data-frame-view hidden={i > 0}>
+                  <TemplatePreview
+                    src={v.src}
+                    alt={v.alt}
+                    label={s.previewPending}
+                    widths={[1280, 1920]}
+                    sizes="(min-width: 1240px) 680px, (min-width: 961px) 55vw, 92vw"
+                    loading={i === 0 ? 'eager' : 'lazy'}
+                  />
+                </div>
+              ))
+            ) : (
+              <TemplatePreview icon={category.data.icon} label={s.previewPending} iconSize={48} widths={[]} sizes="" />
+            )
+          }
+        </div>
+        {
+          views.length > 1 && (
+            <>
+              <span class="tg-frame-label" aria-live="polite" data-frame-label data-template={s.frame(0, views.length)}>
+                {s.frame(1, views.length)}
+              </span>
+              <div class="tg-thumbs">
+                {views.map((v, i) => (
+                  <button type="button" aria-pressed={i === 0 ? 'true' : 'false'} aria-label={s.frame(i + 1, views.length)} data-frame-thumb={i}>
+                    <TemplatePreview src={v.src} alt="" label={String(i + 1)} iconSize={16} widths={[480]} sizes="160px" />
+                  </button>
+                ))}
+              </div>
+            </>
+          )
+        }
+      </div>
+
+      <div class="tg-info">
+        <div>
+          <a class="nb-kicker cat-link" href={categoryHref}>
+            {category.data.icon && <Icon name={category.data.icon} size={14} />}
+            {categoryLabel}
+          </a>
+          <h1 lang={contentLang}>{d.title}</h1>
+        </div>
+        <p class="desc" lang={contentLang}>{d.description}</p>
+        {isFallback && <div class="nb-notice nb-notice-legal">{s.onlyInLong[d.lang]}</div>}
+        <DownloadPanel lang={lang} files={files} links={d.links} />
+        <MetaList items={meta} />
+      </div>
+    </div>
+
+    <section class="tg-method" aria-labelledby="tg-method-title">
+      <div class="side">
+        <span class="nb-kicker">{s.methodKicker}</span>
+        <h2 class="nb-title" id="tg-method-title">{hasBody ? s.method : s.glance}</h2>
+      </div>
+      <div class="tg-glance" lang={contentLang}>
+        {hasBody && <h3 lang={lang}>{s.glance}</h3>}
+        <ul>
+          {d.features.map((f) => <li>{f}</li>)}
+        </ul>
+        {
+          hasBody && (
+            <div class="tg-prose">
+              <Content />
+            </div>
+          )
+        }
+      </div>
+    </section>
+  </div>
+
+  <section class="tg-import" aria-labelledby="tg-import-title">
+    <div class="wrap">
+      <span class="nb-kicker on-dark">{s.importKicker}</span>
+      <h2 class="nb-title" id="tg-import-title">{s.importTitle}</h2>
+      <ImportSteps steps={s.steps} />
+    </div>
+  </section>
+
+  {
+    related.length > 0 && (
+      <section class="wrap tg-related" aria-labelledby="tg-related-title">
+        <span class="nb-kicker">{s.relatedKicker(categoryLabel)}</span>
+        <h2 class="nb-title" id="tg-related-title">
+          {s.related}
+        </h2>
+        <div class="tg-grid">
+          {related.map((r) => (
+            <TemplateCard item={r} category={categoryById.get(r.entry.data.category.id)!} lang={lang} />
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <SubmitCta lang={lang} />
+</BaseLayout>
+
+<script>
+  // Frame thumbnails switch the main preview.
+  const root = document.querySelector<HTMLElement>('[data-frames]');
+  const thumbs = [...(root?.querySelectorAll<HTMLButtonElement>('[data-frame-thumb]') ?? [])];
+  const views = [...(root?.querySelectorAll<HTMLElement>('[data-frame-view]') ?? [])];
+  const label = root?.querySelector<HTMLElement>('[data-frame-label]');
+  for (const thumb of thumbs) {
+    thumb.addEventListener('click', () => {
+      const index = Number(thumb.dataset.frameThumb);
+      views.forEach((v, i) => (v.hidden = i !== index));
+      thumbs.forEach((b, i) => b.setAttribute('aria-pressed', String(i === index)));
+      if (label?.dataset.template) {
+        // Template is "Frame 0 of N": replace the first number with the 1-based index.
+        label.textContent = label.dataset.template.replace(/\d+/, String(index + 1));
+      }
+    });
+  }
+</script>

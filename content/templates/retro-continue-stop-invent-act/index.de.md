@@ -23,6 +23,7 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
+featured: true
 # publish decision (metadata grid): ja, als deutsche Datei der Retro
 # note (metadata grid): Gleiche Methode wie T05 (englisch) und Beispiel T24. ACT-Karten gehen weiter an T15.
 ---

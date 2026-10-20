@@ -1,0 +1,15 @@
+---
+// Copyright 2026 Nordeck IT + Consulting GmbH
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import type { GetStaticPaths } from 'astro';
+import GalleryView from '../../../../features/templates/views/GalleryView.astro';
+import { getCategories } from '../../../../features/templates/lib/templates';
+
+export const getStaticPaths = (async () =>
+  (await getCategories()).map((category) => ({ params: { id: category.id }, props: { category } }))) satisfies GetStaticPaths;
+
+const { category } = Astro.props;
+---
+
+<GalleryView lang="en" category={category} />

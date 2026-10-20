@@ -1,0 +1,25 @@
+/* Dark theme — NOT in the neoboard.io source (the site is light-only).
+   Added for the template gallery brief (neoboard-templates-konzept.md, Teil G: "hell und dunkel").
+   Derived from the brand darks; apply with <html data-theme="dark">. */
+[data-theme="dark"]{
+--surface-page:#231215;
+--surface-card:#321b20;
+--surface-soft:#3a2227;
+--surface-tray:#3a2227;
+--surface-input:#2a161a;
+--text-body:#fcf9f5;
+--text-heading:#fcf9f5;
+--text-muted:rgba(252,249,245,0.7);
+--text-secondary:rgba(252,249,245,0.82);
+--text-accent:#f2895a;
+--text-kicker:#f2895a;
+--link:#f2895a;
+--link-hover:#fcf9f5;
+--border-subtle:rgba(255,255,255,0.08);
+--border-default:rgba(255,255,255,0.12);
+--border-strong:rgba(255,255,255,0.22);
+--border-input:rgba(255,255,255,0.25);
+--preview-border:rgba(255,255,255,0.18);
+--chip-active-bg:#fcf9f5;
+--chip-active-text:#321b20;
+}

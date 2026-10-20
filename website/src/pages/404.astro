@@ -1,0 +1,38 @@
+---
+// Copyright 2026 Nordeck IT + Consulting GmbH
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// GitHub Pages serves this for every unknown path. It renders German by default and
+// switches to English for paths under /en/ (one static file serves both languages).
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { t } from '../features/templates/lib/i18n';
+import { routeHref } from '../features/templates/lib/routes';
+import { LOCALES } from '../features/templates/lib/templates';
+
+const alternates = { de: routeHref('de', { page: 'gallery' }), en: routeHref('en', { page: 'gallery' }) };
+---
+
+<BaseLayout lang="de" title={`${t('de').nfTitle} – ${t('de').title}`} description={t('de').nfBody} alternates={alternates}>
+  {
+    LOCALES.map((lang) => {
+      const s = t(lang);
+      return (
+        <div class="tg-404" lang={lang} data-404={lang} hidden={lang !== 'de'}>
+          <span class="nb-kicker">{s.nfKicker}</span>
+          <h1>{s.nfTitle}</h1>
+          <p>{s.nfBody}</p>
+          <a class="nb-btn nb-btn-primary" href={routeHref(lang, { page: 'gallery' })}>
+            {s.nfCta}
+          </a>
+        </div>
+      );
+    })
+  }
+</BaseLayout>
+
+<script>
+  if (/\/en\//.test(location.pathname)) {
+    document.documentElement.lang = 'en';
+    for (const el of document.querySelectorAll<HTMLElement>('[data-404]')) el.hidden = el.dataset['404'] !== 'en';
+  }
+</script>

@@ -1,0 +1,36 @@
+:root{
+--font-display:"Titillium Web",sans-serif;
+--font-body:"Roboto","Segoe UI",Arial,sans-serif;
+--font-mono:"Roboto Mono",monospace;
+--fw-regular:400;/* @kind font */--fw-semibold:600;/* @kind font */--fw-bold:700;/* @kind font */
+--lh-body:1.55;/* @kind font */--lh-legal:1.75;/* @kind font */
+/* Display scale (headings: Titillium Web 700) */
+--fs-hero:64px;--lh-hero:1.03;/* @kind font */--ls-hero:-0.028em;
+--fs-hero-mobile:44px;
+--fs-demo:48px;--lh-demo:1.06;/* @kind font */--ls-demo:-0.024em;
+--fs-title:44px;--lh-title:1.1;/* @kind font */--ls-title:-0.022em;
+--fs-title-mobile:34px;
+--fs-specs-title:40px;
+--fs-showcase-title:38px;
+--fs-page-hero:clamp(28px,3.5vw,38px);/* @kind font */
+--fs-h3-acc:21px;
+--fs-h3:20px;
+--fs-h4:19px;
+--fs-nav:17px;
+/* Body scale (Roboto) */
+--fs-hero-sub:20px;
+--fs-lead-lg:19px;
+--fs-lead:18px;
+--fs-lead-sm:17px;
+--fs-body:16px;
+--fs-card:15.5px;
+--fs-footer:14.5px;
+--fs-small:14px;
+--fs-label:14px;
+--fs-chip:13px;
+--fs-note:12.5px;
+/* Mono labels (Roboto Mono, uppercase) */
+--fs-mono:12px;--ls-mono:0.1em;
+--fs-mono-pill:12.5px;--ls-mono-pill:0.06em;
+--fs-mono-dt:11.5px;--ls-mono-dt:0.08em;
+}

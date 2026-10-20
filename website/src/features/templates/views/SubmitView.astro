@@ -1,0 +1,41 @@
+---
+// Copyright 2026 Nordeck IT + Consulting GmbH
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// "Submit a template" page (/de/vorlagen/einreichen/).
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import ImportSteps from '../components/ImportSteps.astro';
+import { t } from '../lib/i18n';
+import { external, routeHref } from '../lib/routes';
+import type { Lang } from '../lib/templates';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const s = t(lang);
+const alternates = { de: routeHref('de', { page: 'submit' }), en: routeHref('en', { page: 'submit' }) };
+---
+
+<BaseLayout lang={lang} title={`${s.submitTitle} – ${s.title}`} description={s.submitIntro} alternates={alternates}>
+  <div class="tg-page-hero">
+    <div class="wrap"><h1>{s.submitTitle}</h1></div>
+  </div>
+  <div class="tg-narrow">
+    <p class="lead">{s.submitIntro}</p>
+    <ImportSteps steps={s.submitSteps} />
+    <div class="nb-notice nb-notice-legal">{s.submitLicense}</div>
+    <div class="actions">
+      <a class="nb-btn nb-btn-primary" href={external.repository} target="_blank" rel="noopener noreferrer">
+        {s.submitGithub}
+        <span class="visually-hidden">{s.download.newTab}</span>
+      </a>
+      <a class="mail" href={external.mail}>
+        <Icon name="Mail" size={18} />
+        {s.submitMail}
+      </a>
+    </div>
+  </div>
+</BaseLayout>

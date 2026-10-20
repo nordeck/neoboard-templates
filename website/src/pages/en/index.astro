@@ -1,0 +1,9 @@
+---
+// Copyright 2026 Nordeck IT + Consulting GmbH
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// /en/ has no own page in Phase 1; send visitors to the gallery.
+import { routeHref } from '../../features/templates/lib/routes';
+
+return Astro.redirect(routeHref('en', { page: 'gallery' }));
+---

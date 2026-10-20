@@ -1,0 +1,31 @@
+---
+// Copyright 2026 Nordeck IT + Consulting GmbH
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// neoboard.io subpage header: logo + DE/EN switch (links to the same page in the other language).
+import { t } from '../lib/i18n';
+import { assetHref, external } from '../lib/routes';
+import type { Lang } from '../lib/templates';
+import { THEME } from '../config';
+
+interface Props {
+  lang: Lang;
+  alternates: Record<Lang, string>;
+}
+
+const { lang, alternates } = Astro.props;
+const s = t(lang);
+const logo = THEME === 'dark' ? 'assets/neoboard-logo-white.png' : 'assets/neoboard-logo.png';
+---
+
+<header class="nb-site-header">
+  <div class="wrap">
+    <a class="brand" href={external.home[lang]} aria-label={s.home}>
+      <img src={assetHref(logo)} alt="NeoBoard" width="130" height="30" />
+    </a>
+    <nav class="nb-lang" aria-label={s.langSwitch}>
+      <a href={alternates.de} hreflang="de" lang="de" aria-current={lang === 'de' ? 'true' : undefined}>DE</a>
+      <a href={alternates.en} hreflang="en" lang="en" aria-current={lang === 'en' ? 'true' : undefined}>EN</a>
+    </nav>
+  </div>
+</header>
