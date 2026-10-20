@@ -21,6 +21,7 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: CC0-1.0
 published: 2026-10-20
+featured: true
 # publish decision (metadata grid): ja, als englische Datei von „lean-coffee"
 # note (metadata grid): Gleiche Methode wie T14 (deutsch).
 ---
