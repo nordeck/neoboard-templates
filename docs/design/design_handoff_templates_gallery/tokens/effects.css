@@ -1,0 +1,14 @@
+:root{
+--shadow-shot:drop-shadow(0 34px 60px rgba(10,2,3,0.5));/* @kind shadow */
+--shadow-play:0 8px 24px rgba(10,2,3,0.35);
+--shadow-close:0 4px 14px rgba(0,0,0,0.3);
+--gradient-hero-tint:linear-gradient(105deg,#3d060cf2 0%,#4a0a10d9 45%,#7a0f1a8c 100%);/* @kind color */
+--gradient-video-protect:linear-gradient(to top,rgba(10,2,3,0.55) 0%,rgba(10,2,3,0) 35%);/* @kind color */
+--ease:ease;/* @kind other */
+--dur-fast:0.2s;/* @kind other */
+--dur-fade:0.45s;/* @kind other */
+--dur-fade-sm:0.4s;/* @kind other */
+--dur-dialog:0.25s;/* @kind other */
+--slider-interval:6000ms;/* @kind other */
+}
+@keyframes nbfade{from{opacity:0}to{opacity:1}}

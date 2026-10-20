@@ -1,0 +1,9 @@
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--dark);font-family:var(--font-body);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:var(--red);text-decoration:none}
+a:hover{color:var(--orange)}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;margin:0}
+.wrap{max-width:1240px;margin:0 auto;padding-left:32px;padding-right:32px}
+.mono{font-family:var(--font-mono);font-size:12px;letter-spacing:0.1em}

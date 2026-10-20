@@ -1,0 +1,183 @@
+/* NeoBoard template gallery — design tokens for website/src/styles/tokens.css
+   Generated from the NeoBoard design system (tokens/*.css). Fonts are NOT included:
+   self-host Titillium Web, Roboto, Roboto Mono via @fontsource (privacy rule). */
+
+/* ---- colors.css ---- */
+:root{
+/* Base palette (src/styles/global.css) */
+--dark:#321b20;
+--red:#aa1922;
+--orange:#e95d11;
+--orange-light:#f2895a;
+--cream:#fcf9f5;
+--hero-bg:#4a0a10;
+--grey:#6b5f5c;
+--grey-dark:#4c3e41;
+--grey-light:#f6f4f2;
+--white:#ffffff;
+/* One-off literals used in the source */
+--pill-text:#fbd9cc;           /* hero pill text */
+--anchor-nav-text:#4c4c4c;     /* anchor nav links */
+--hero-tint-start:#3d060cf2;
+--hero-tint-mid:#4a0a10d9;
+--hero-tint-end:#7a0f1a8c;
+--lightbox-backdrop:rgba(20,8,10,0.95);
+/* Hairlines (dark on light) */
+--line-dark-08:rgba(50,27,32,0.08);
+--line-dark-10:rgba(50,27,32,0.1);
+--line-dark-12:rgba(50,27,32,0.12);
+--line-dark-20:rgba(50,27,32,0.2);
+--line-dark-25:rgba(50,27,32,0.25);
+/* Hairlines (light on dark) */
+--line-light-12:rgba(255,255,255,0.12);
+--line-light-16:rgba(255,255,255,0.16);
+--line-light-28:rgba(255,255,255,0.28);
+--line-light-30:rgba(255,255,255,0.3);
+--line-light-35:rgba(255,255,255,0.35);
+/* Text on dark */
+--on-dark-85:rgba(255,255,255,0.85);
+--on-dark-82:rgba(255,255,255,0.82);
+--on-dark-78:rgba(255,255,255,0.78);
+--on-dark-72:rgba(255,255,255,0.72);
+--on-dark-68:rgba(255,255,255,0.68);
+--on-dark-62:rgba(255,255,255,0.62);
+
+/* Semantic aliases */
+--text-body:var(--dark);
+--text-muted:var(--grey);
+--text-secondary:var(--grey-dark);
+--text-heading:var(--dark);
+--text-accent:var(--red);
+--text-on-dark:var(--white);
+--text-on-dark-muted:var(--on-dark-72);
+--text-kicker:var(--red);
+--text-kicker-on-dark:var(--orange-light);
+--link:var(--red);
+--link-hover:var(--orange);
+--surface-page:var(--white);
+--surface-soft:var(--cream);
+--surface-muted:var(--grey-light);
+--surface-dark:var(--dark);
+--surface-hero:var(--hero-bg);
+--surface-cta:var(--red);
+--surface-card:var(--white);
+--action-primary:var(--orange);
+--action-primary-text:var(--white);
+--accent:var(--orange);
+--accent-soft:var(--orange-light);
+--focus-ring:var(--orange);
+--border-subtle:var(--line-dark-08);
+--border-default:var(--line-dark-12);
+--border-input:var(--line-dark-25);
+--border-strong:var(--line-dark-20);
+--surface-input:var(--white);
+--preview-border:var(--line-dark-10);
+--chip-active-bg:var(--dark);
+--chip-active-text:var(--white);
+--surface-tray:var(--grey-light);
+}
+
+/* ---- theme-dark.css ---- */
+/* Dark theme — NOT in the neoboard.io source (the site is light-only).
+   Added for the template gallery brief (neoboard-templates-konzept.md, Teil G: "hell und dunkel").
+   Derived from the brand darks; apply with <html data-theme="dark">. */
+[data-theme="dark"]{
+--surface-page:#231215;
+--surface-card:#321b20;
+--surface-soft:#3a2227;
+--surface-tray:#3a2227;
+--surface-input:#2a161a;
+--text-body:#fcf9f5;
+--text-heading:#fcf9f5;
+--text-muted:rgba(252,249,245,0.7);
+--text-secondary:rgba(252,249,245,0.82);
+--text-accent:#f2895a;
+--text-kicker:#f2895a;
+--link:#f2895a;
+--link-hover:#fcf9f5;
+--border-subtle:rgba(255,255,255,0.08);
+--border-default:rgba(255,255,255,0.12);
+--border-strong:rgba(255,255,255,0.22);
+--border-input:rgba(255,255,255,0.25);
+--preview-border:rgba(255,255,255,0.18);
+--chip-active-bg:#fcf9f5;
+--chip-active-text:#321b20;
+}
+
+/* ---- typography.css ---- */
+:root{
+--font-display:"Titillium Web",sans-serif;
+--font-body:"Roboto","Segoe UI",Arial,sans-serif;
+--font-mono:"Roboto Mono",monospace;
+--fw-regular:400;--fw-semibold:600;--fw-bold:700;
+--lh-body:1.55;--lh-legal:1.75;
+/* Display scale (headings: Titillium Web 700) */
+--fs-hero:64px;--lh-hero:1.03;--ls-hero:-0.028em;
+--fs-hero-mobile:44px;
+--fs-demo:48px;--lh-demo:1.06;--ls-demo:-0.024em;
+--fs-title:44px;--lh-title:1.1;--ls-title:-0.022em;
+--fs-title-mobile:34px;
+--fs-specs-title:40px;
+--fs-showcase-title:38px;
+--fs-page-hero:clamp(28px,3.5vw,38px);
+--fs-h3-acc:21px;
+--fs-h3:20px;
+--fs-h4:19px;
+--fs-nav:17px;
+/* Body scale (Roboto) */
+--fs-hero-sub:20px;
+--fs-lead-lg:19px;
+--fs-lead:18px;
+--fs-lead-sm:17px;
+--fs-body:16px;
+--fs-card:15.5px;
+--fs-footer:14.5px;
+--fs-small:14px;
+--fs-label:14px;
+--fs-chip:13px;
+--fs-note:12.5px;
+/* Mono labels (Roboto Mono, uppercase) */
+--fs-mono:12px;--ls-mono:0.1em;
+--fs-mono-pill:12.5px;--ls-mono-pill:0.06em;
+--fs-mono-dt:11.5px;--ls-mono-dt:0.08em;
+}
+
+/* ---- spacing.css ---- */
+:root{
+--wrap-max:1240px;
+--wrap-pad:32px;
+--breakpoint-stack:960px;
+--section-pad:96px;
+--section-pad-dark:92px;
+--section-pad-cta:84px;
+--grid-gap-lg:64px;
+--grid-gap-md:56px;
+--intro-gap:52px;
+--space-2:2px;--space-4:4px;--space-6:6px;--space-8:8px;--space-9:9px;--space-12:12px;--space-14:14px;--space-16:16px;--space-18:18px;--space-20:20px;--space-22:22px;--space-24:24px;--space-28:28px;--space-30:30px;--space-32:32px;--space-40:40px;--space-44:44px;--space-48:48px;--space-56:56px;--space-64:64px;
+--radius-input:8px;
+--radius-btn:9px;
+--radius-tab:7px;
+--radius-sm:10px;
+--radius-md:12px;
+--radius-lg:14px;
+--radius-xl:16px;
+--radius-pill:999px;
+--radius-round:50%;
+}
+
+/* ---- effects.css ---- */
+:root{
+--shadow-shot:drop-shadow(0 34px 60px rgba(10,2,3,0.5));
+--shadow-play:0 8px 24px rgba(10,2,3,0.35);
+--shadow-close:0 4px 14px rgba(0,0,0,0.3);
+--gradient-hero-tint:linear-gradient(105deg,#3d060cf2 0%,#4a0a10d9 45%,#7a0f1a8c 100%);
+--gradient-video-protect:linear-gradient(to top,rgba(10,2,3,0.55) 0%,rgba(10,2,3,0) 35%);
+--ease:ease;
+--dur-fast:0.2s;
+--dur-fade:0.45s;
+--dur-fade-sm:0.4s;
+--dur-dialog:0.25s;
+--slider-interval:6000ms;
+}
+@keyframes nbfade{from{opacity:0}to{opacity:1}}
+

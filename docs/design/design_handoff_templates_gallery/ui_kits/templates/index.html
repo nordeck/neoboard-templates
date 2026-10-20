@@ -1,0 +1,77 @@
+<!-- @dsCard group="Templates gallery" viewport="1280x900" name="Template gallery" subtitle="Galerie, Detail, Kategorie, Einreichen, 404 · DE/EN · hell/dunkel" -->
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NeoBoard-Vorlagen</title>
+<link rel="icon" href="../../assets/logos/favicon.svg">
+<link rel="stylesheet" href="../../styles.css"><link rel="stylesheet" href="templates.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="data.js"></script><script src="i18n.js"></script>
+</head><body><div id="root"></div>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="Shared.jsx"></script>
+<script type="text/babel" src="Gallery.jsx"></script>
+<script type="text/babel" src="Detail.jsx"></script>
+<script type="text/babel" src="OtherPages.jsx"></script>
+<script type="text/babel">
+const { SiteHeader, SiteFooter } = window.NeoBoardDesignSystem_65bada;
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "theme": "dark"
+}/*EDITMODE-END*/;
+const JUMPS = [
+  { value: "", label: "—" },
+  { value: "gallery", label: "Galerie" },
+  { value: "empty", label: "Galerie: leeres Ergebnis" },
+  { value: "detail:retro-4-step", label: "Detail: mehrere Rahmen + Methode" },
+  { value: "detail:year-calendar", label: "Detail: 15 Dateien (Auswahl)" },
+  { value: "detail:team-sudoku", label: "Detail: nur Generator" },
+  { value: "detail:ocean-background", label: "Detail: zwei Varianten" },
+  { value: "detail:business-model-canvas", label: "Detail: nur Englisch (Fallback)" },
+  { value: "detail:retro-continue-stop-invent-act", label: "Detail: langer Titel" },
+  { value: "category:games", label: "Kategorie: Spiele" },
+  { value: "category:getting-started", label: "Kategorie: leer" },
+  { value: "submit", label: "Vorlage einreichen" },
+  { value: "404", label: "404" },
+];
+function App() {
+  const [tw, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  const [route, setRoute] = React.useState(() => parseRoute(location.hash));
+  const [filter, setFilter] = React.useState({ q: "", cat: null, sort: 0 });
+  const { lang, page, arg } = route;
+  const t = window.NB_I18N[lang];
+  React.useEffect(() => { const h = () => { setRoute(parseRoute(location.hash)); window.scrollTo(0, 0); }; window.addEventListener("hashchange", h); return () => window.removeEventListener("hashchange", h); }, []);
+  React.useEffect(() => { document.documentElement.lang = lang; document.documentElement.dataset.theme = tw.theme; }, [lang, tw.theme]);
+  const go = (href) => (e) => { if (e) e.preventDefault(); if (location.hash === href) return; location.hash = href; };
+  const setLang = (l) => { location.hash = routePath(l, page, arg); };
+  const jump = (v) => {
+    if (!v) return;
+    const [p, a] = v.split(":");
+    if (p === "empty") { setFilter({ q: "Zeitreise", cat: null, sort: 0 }); location.hash = routePath(lang, "gallery"); return; }
+    if (p === "gallery") setFilter({ q: "", cat: null, sort: 0 });
+    location.hash = routePath(lang, p, a);
+  };
+  const footer = <SiteFooter logoSrc="../../assets/logos/neoboard-logo-white.png" developedBy={t.footer.developedBy}
+    links={[{ label: t.footer.legalNotice, href: "#" }, { label: t.footer.contact, href: "#" }, { label: t.footer.privacy, href: "#" }, { label: "LinkedIn", href: "https://www.linkedin.com/company/nordeckitconsulting" }]} />;
+  return (
+    <React.Fragment>
+      <SiteHeader logoSrc={tw.theme === "dark" ? "../../assets/logos/neoboard-logo-white.png" : "../../assets/logos/neoboard-logo.png"} homeHref={routePath(lang, "gallery")} lang={lang} onLangChange={setLang} />
+      {page === "gallery" && <GalleryPage lang={lang} t={t} go={go} filter={filter} setFilter={setFilter} />}
+      {page === "category" && <GalleryPage key={arg} lang={lang} t={t} go={go} filter={{ ...filter, cat: null }} setFilter={setFilter} lockedCat={arg} />}
+      {page === "detail" && <DetailPage lang={lang} t={t} slug={arg} go={go} />}
+      {page === "submit" && <SubmitPage lang={lang} t={t} />}
+      {page === "404" && <NotFoundPage lang={lang} t={t} go={go} />}
+      <div style={{ height: page === "404" ? 96 : 0 }}></div>
+      {footer}
+      <TweaksPanel>
+        <TweakSection label="Darstellung" />
+        <TweakRadio label="Modus" value={tw.theme} options={[{ value: "light", label: "Hell" }, { value: "dark", label: "Dunkel" }]} onChange={(v) => setTweak("theme", v)} />
+        <TweakSection label="Zustände" />
+        <TweakSelect label="Springen zu" value="" options={JUMPS} onChange={jump} />
+      </TweaksPanel>
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script></body></html>

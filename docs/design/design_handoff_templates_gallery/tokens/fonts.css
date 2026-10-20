@@ -1,0 +1,12 @@
+/* NeoBoard webfonts — the exact @fontsource builds neoboard.io self-hosts (Titillium Web, Roboto, Roboto Mono).
+   Served here from the Fontsource CDN for prototyping. Production sites must self-host (no third-party requests). */
+@font-face{font-family:"Titillium Web";font-style:normal;font-weight:400;font-display:swap;src:url("https://cdn.jsdelivr.net/fontsource/fonts/titillium-web@latest/latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Titillium Web";font-style:normal;font-weight:600;font-display:swap;src:url("https://cdn.jsdelivr.net/fontsource/fonts/titillium-web@latest/latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Titillium Web";font-style:normal;font-weight:700;font-display:swap;src:url("https://cdn.jsdelivr.net/fontsource/fonts/titillium-web@latest/latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Titillium Web";font-style:italic;font-weight:700;font-display:swap;src:url("https://cdn.jsdelivr.net/fontsource/fonts/titillium-web@latest/latin-700-italic.woff2") format("woff2")}
+@font-face{font-family:"Roboto";font-style:normal;font-weight:400;font-display:swap;src:url("https://cdn.jsdelivr.net/fontsource/fonts/roboto@latest/latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Roboto";font-style:italic;font-weight:400;font-display:swap;src:url("https://cdn.jsdelivr.net/fontsource/fonts/roboto@latest/latin-400-italic.woff2") format("woff2")}
+@font-face{font-family:"Roboto";font-style:normal;font-weight:500;font-display:swap;src:url("https://cdn.jsdelivr.net/fontsource/fonts/roboto@latest/latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:"Roboto";font-style:normal;font-weight:700;font-display:swap;src:url("https://cdn.jsdelivr.net/fontsource/fonts/roboto@latest/latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Roboto Mono";font-style:normal;font-weight:400;font-display:swap;src:url("https://cdn.jsdelivr.net/fontsource/fonts/roboto-mono@latest/latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Roboto Mono";font-style:normal;font-weight:500;font-display:swap;src:url("https://cdn.jsdelivr.net/fontsource/fonts/roboto-mono@latest/latin-500-normal.woff2") format("woff2")}
