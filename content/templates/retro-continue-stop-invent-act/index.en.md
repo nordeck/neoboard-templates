@@ -9,9 +9,9 @@ features:
   - "Four quadrants: Continue, Stop, Invent, Act"
   - "Colour-coded card stacks per quadrant"
   - "Leads directly to concrete actions"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.en.png
-#   alt: "Retrospective board with the four quadrants Continue, Stop, Invent and Act"
+preview:
+  src: ./preview.en.png
+  alt: "Retrospective board with the four quadrants Continue, Stop, Invent and Act"
 files:
   - src: ./retro-continue-stop-invent-act.en.nwb
     label: "Template"
@@ -21,8 +21,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 # publish decision (metadata grid): ja, als englische Datei der Retro
 # note (metadata grid): Gleiche Methode wie T13 (deutsch, mit Leitfragen) und Beispiel T24.
 ---

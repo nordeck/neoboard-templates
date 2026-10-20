@@ -9,9 +9,9 @@ features:
   - "Vier Arbeitsorte mit Symbolen"
   - "Unterscheidung synchron und asynchron"
   - "Grundlage für Team-Vereinbarungen"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.de.png
-#   alt: "Board mit Symbolen für Büro, unterwegs, remote und Unterricht sowie den Zeilen synchron und asynchron"
+preview:
+  src: ./preview.de.png
+  alt: "Board mit Symbolen für Büro, unterwegs, remote und Unterricht sowie den Zeilen synchron und asynchron"
 files:
   - src: ./work-modes.de.nwb
     label: "Vorlage"
@@ -22,7 +22,7 @@ authors:
 license: AGPL-3.0-or-later
 published: 2026-10-20
 draft: true
-# draft reason: no preview yet
+# draft reason: publication decision pending (optional)
 # publish decision (metadata grid): optional – als Vorlage „Arbeitsorte & -modi" nutzbar
 # note (metadata grid): Ursprünglich Showcase. Als Vorlage nutzbar, wenn Karten ergänzt werden.
 ---

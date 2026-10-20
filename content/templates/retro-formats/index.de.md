@@ -9,6 +9,9 @@ features:
   - "Mehrere bewährte Retro-Formate"
   - "Ballon: Was macht uns schnell oder langsam?"
   - "Start / Stop / Continue"
+preview:
+  src: ./preview.de.png
+  alt: "Retro-Format „Der Ballon“ mit den Fragen, was das Team schnell und was es langsam macht"
 files:
   - src: ./retro-formats.de.nwb
     label: "Vorlage"
@@ -18,7 +21,6 @@ authors:
   - name: "Christian Paul"
 license: AGPL-3.0-or-later
 published: 2024-10-02
-draft: true
 ---
 
 Die folgenden Rahmen zeigen bewährte Retro-Formate. Wählt eines aus und löscht die übrigen Rahmen.

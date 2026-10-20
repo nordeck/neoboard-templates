@@ -9,9 +9,9 @@ features:
   - "Vier Felder mit Leitfragen"
   - "Farbige Kartenstapel je Feld"
   - "Führt direkt zu Maßnahmen mit Verantwortlichen"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.de.png
-#   alt: "Retrospektiven-Board mit den Feldern Beibehalten, Beenden, Erfinden und Umsetzen samt Leitfragen"
+preview:
+  src: ./preview.de.png
+  alt: "Retrospektiven-Board mit den Feldern Beibehalten, Beenden, Erfinden und Umsetzen samt Leitfragen"
 files:
   - src: ./retro-continue-stop-invent-act.de.nwb
     label: "Vorlage"
@@ -23,8 +23,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 # publish decision (metadata grid): ja, als deutsche Datei der Retro
 # note (metadata grid): Gleiche Methode wie T05 (englisch) und Beispiel T24. ACT-Karten gehen weiter an T15.
 ---

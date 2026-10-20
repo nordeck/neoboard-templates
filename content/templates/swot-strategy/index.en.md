@@ -9,9 +9,9 @@ features:
   - "Matrix of company factors and environment"
   - "Four strategy fields: Develop, Protect, Regain, Avoid"
   - "Builds on the SWOT analysis"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.en.png
-#   alt: "Matrix with strengths and weaknesses against chances and risks, with four strategy fields"
+preview:
+  src: ./preview.en.png
+  alt: "Matrix with strengths and weaknesses against chances and risks, with four strategy fields"
 files:
   - src: ./swot-strategy.en.nwb
     label: "Template"
@@ -21,8 +21,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 # publish decision (metadata grid): ja
 ---
 

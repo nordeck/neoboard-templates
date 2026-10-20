@@ -8,9 +8,9 @@ tags: [presentation, showcase]
 features:
   - "Zeigt die Präsentationsansicht"
   - "Beispielfolie mit Prioritäten"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.de.png
-#   alt: "Bildschirmfoto einer Folienleiste und eine Folie mit strategischen Prioritäten 2027"
+preview:
+  src: ./preview.de.png
+  alt: "Bildschirmfoto einer Folienleiste und eine Folie mit strategischen Prioritäten 2027"
 files:
   - src: ./meetings-presentations-showcase.de.nwb
     label: "Vorlage"

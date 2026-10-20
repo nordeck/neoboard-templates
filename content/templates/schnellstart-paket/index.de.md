@@ -8,9 +8,9 @@ tags: [quickstart, overview]
 features:
   - "Einleitungstext"
   - "Inhaltsverzeichnis der Rahmen"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.de.png
-#   alt: "Deckblatt mit Einleitungstext und einer Liste der zehn Vorlagen im Paket"
+preview:
+  src: ./preview.de.png
+  alt: "Deckblatt mit Einleitungstext und einer Liste der zehn Vorlagen im Paket"
 files:
   - src: ./schnellstart-paket-deckblatt.de.nwb
     label: "Deckblatt"

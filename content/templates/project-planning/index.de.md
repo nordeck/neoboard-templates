@@ -9,9 +9,9 @@ features:
   - "Themenspeicher für offene Punkte"
   - "Zeitachse mit Entwürfen, Feedbackrunden und Tests"
   - "Namenskarten für Zuständigkeiten"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.de.png
-#   alt: "Projektplanung mit einer Spalte für Issues und einer Zeitachse mit Entwürfen und Testphasen"
+preview:
+  src: ./preview.de.png
+  alt: "Projektplanung mit einer Spalte für Issues und einer Zeitachse mit Entwürfen und Testphasen"
 files:
   - src: ./project-planning-beispiel.de.nwb
     label: "Ausgefülltes Beispiel"
@@ -20,7 +20,7 @@ authors:
 license: AGPL-3.0-or-later
 published: 2026-10-20
 draft: true
-# draft reason: no preview yet
+# draft reason: publication decision pending (optional)
 # publish decision (metadata grid): optional, als Beispiel
 # note (metadata grid): Zwei übereinanderliegende Titel („Planning and Process Tracking" verdeckt unter „Projekt- und Zeitplanung"); der englische sollte entfernt werden.
 ---

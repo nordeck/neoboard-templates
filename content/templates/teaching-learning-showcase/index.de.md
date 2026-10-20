@@ -8,9 +8,9 @@ tags: [education, showcase]
 features:
   - "Zeigt ein Unterrichtsboard"
   - "Inspiration für Lehrkräfte"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.de.png
-#   alt: "Bildschirmfoto eines Unterrichtsboards mit mehreren Rahmen und Fotos"
+preview:
+  src: ./preview.de.png
+  alt: "Bildschirmfoto eines Unterrichtsboards mit mehreren Rahmen und Fotos"
 files:
   - src: ./teaching-learning-showcase.de.nwb
     label: "Vorlage"

@@ -9,9 +9,9 @@ features:
   - "Four quadrants with bilingual labels (EN/DE)"
   - "Colour-coded card stacks per quadrant"
   - "Basis for the SWOT strategy board"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.en.png
-#   alt: "SWOT board with four quadrants and coloured card stacks in each corner"
+preview:
+  src: ./preview.en.png
+  alt: "SWOT board with four quadrants and coloured card stacks in each corner"
 files:
   - src: ./swot-analysis.en.nwb
     label: "Template"
@@ -21,8 +21,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 # publish decision (metadata grid): ja
 # note (metadata grid): Beschriftung zweisprachig (Strengths / Stärken …).
 ---

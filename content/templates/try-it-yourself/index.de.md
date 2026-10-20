@@ -8,9 +8,9 @@ tags: [sandbox, onboarding]
 features:
   - "Leerer Rahmen zum Ausprobieren"
   - "Ideal für das erste Kennenlernen"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.de.png
-#   alt: "Leerer Rahmen mit der Haftnotiz Probieren Sie selbst"
+preview:
+  src: ./preview.de.png
+  alt: "Leerer Rahmen mit der Haftnotiz Probieren Sie selbst"
 files:
   - src: ./try-it-yourself.de.nwb
     label: "Vorlage"

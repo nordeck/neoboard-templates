@@ -9,9 +9,9 @@ features:
   - "Drei Themenwolken: Produktivität, Stimmung, Ergebnisse"
   - "Sechs Wettersymbole zum Kopieren"
   - "Visuelles Feedback in wenigen Minuten"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.de.png
-#   alt: "Check-out-Board mit drei Wolken und einer Reihe Wettersymbole von Sonne bis Gewitter"
+preview:
+  src: ./preview.de.png
+  alt: "Check-out-Board mit drei Wolken und einer Reihe Wettersymbole von Sonne bis Gewitter"
 files:
   - src: ./check-out-weather.de.nwb
     label: "Vorlage"
@@ -22,7 +22,7 @@ authors:
 license: AGPL-3.0-or-later
 published: 2026-10-20
 draft: true
-# draft reason: no preview yet
+# draft reason: cleanup pending – Fragetext korrigieren
 # publish decision (metadata grid): ja, nach Korrektur des Fragetexts
 # note (metadata grid): Tippfehler im Fragetext: „mir dieser Konferenz" → „mit dieser Veranstaltung" (neutraler).
 ---

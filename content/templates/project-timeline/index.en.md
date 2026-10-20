@@ -9,9 +9,9 @@ features:
   - "Milestones A–F on a time axis"
   - "Phases for maintenance and end of life"
   - "Text field for project description"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.en.png
-#   alt: "Project timeline with milestones A to F, maintenance and end of life"
+preview:
+  src: ./preview.en.png
+  alt: "Project timeline with milestones A to F, maintenance and end of life"
 files:
   - src: ./project-timeline.en.nwb
     label: "Template"
@@ -22,7 +22,7 @@ authors:
 license: AGPL-3.0-or-later
 published: 2026-10-20
 draft: true
-# draft reason: no preview yet
+# draft reason: cleanup pending – Lorem ipsum ersetzen
 # publish decision (metadata grid): ja, nach Ersetzen der Lorem-ipsum-Texte
 # note (metadata grid): Enthält Lorem-ipsum-Platzhalter – vor Veröffentlichung ersetzen.
 ---
