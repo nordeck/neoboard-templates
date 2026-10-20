@@ -57,7 +57,7 @@ neoboard.io builds this gallery as part of its own deployment and serves it at `
 |---|---|---|
 | `GALLERY_SITE` | `https://nordeck.github.io` | `https://neoboard.io` |
 | `GALLERY_BASE` | `/neoboard-templates` | `/` |
-| `GALLERY_THEME` | `dark` | `light` |
+| `GALLERY_THEME` | `dark` | `dark` |
 
 From `website/dist/`, the host copies only `de/vorlagen/`, `en/templates/`, `boards/`, `_astro/` and `templates-assets/`. The root `index.html`, `de/`/`en/` redirects and `404.html` are for the standalone site only.
 

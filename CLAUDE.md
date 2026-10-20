@@ -22,7 +22,7 @@ Fallback: `https://nordeck.github.io/neoboard-templates/` built from this repo.
 ## Website structure
 - Gallery code is encapsulated in `website/src/features/templates/` (components, views, lib, styles, scripts) so it can move to neoboard.io in Phase 2; `src/pages/` only holds thin route files.
 - Dark theme is the default (`THEME` in `features/templates/config.ts`); previews always stay light.
-- neoboard.io embeds the gallery: it builds `website/` with `GALLERY_SITE`, `GALLERY_BASE=/`, `GALLERY_THEME=light` and copies `de/vorlagen/`, `en/templates/`, `boards/`, `_astro/`, `templates-assets/` into its own `dist/`. Keep all gallery files under these paths; static assets go to `public/templates-assets/` (never `public/assets/`, which belongs to neoboard.io).
+- neoboard.io embeds the gallery: it builds `website/` with `GALLERY_SITE`, `GALLERY_BASE=/`, `GALLERY_THEME=dark` and copies `de/vorlagen/`, `en/templates/`, `boards/`, `_astro/`, `templates-assets/` into its own `dist/`. Keep all gallery files under these paths; static assets go to `public/templates-assets/` (never `public/assets/`, which belongs to neoboard.io).
 - Icons: Lucide, inlined at build time from `lucide-static`; category icons are Lucide names in `content/categories.yaml`.
 - Script-built templates: one definition per template in `website/scripts/boards/<slug>.mjs` (shared helpers and palette in `lib.mjs`). Change the definition and regenerate; never edit those `.nwb` files directly. Output is deterministic.
 - Design reference: `docs/design/design_handoff_templates_gallery/` (not shipped).
