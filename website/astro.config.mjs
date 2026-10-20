@@ -15,6 +15,9 @@ export default defineConfig({
   site,
   base,
   trailingSlash: 'always',
+  // Optimized images are cached here between builds. Kept outside node_modules
+  // because `npm ci` deletes that folder; CI restores it with actions/cache.
+  cacheDir: './.cache/astro',
   i18n: {
     locales: ['en', 'de'],
     defaultLocale: 'en',
