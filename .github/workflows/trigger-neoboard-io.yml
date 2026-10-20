@@ -1,0 +1,78 @@
+# Copyright 2026 Nordeck IT + Consulting GmbH
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# neoboard.io builds this gallery from `main` in its own deploy workflow, which
+# otherwise only runs hourly. Start it right after a merge so the gallery on
+# neoboard.io is up to date within minutes.
+#
+# Needs the secret NEOBOARD_IO_DEPLOY_TOKEN: a fine-grained personal access
+# token (or GitHub App token) with "Actions: Read and write" on
+# nordeck/neoboard.io. Without it the job only logs a notice.
+
+name: Trigger neoboard.io deploy
+
+on:
+  push:
+    branches: [main]
+    paths: ['content/**', 'website/**', '.github/workflows/trigger-neoboard-io.yml']
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: trigger-neoboard-io
+  cancel-in-progress: false
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ secrets.NEOBOARD_IO_DEPLOY_TOKEN }}
+      TARGET_REPO: nordeck/neoboard.io
+      TARGET_WORKFLOW: deploy.yml
+    steps:
+      - name: Dispatch neoboard.io deploy
+        id: dispatch
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::notice::Secret NEOBOARD_IO_DEPLOY_TOKEN is not set; skipping. neoboard.io picks up the change with its hourly deploy."
+            echo "Skipped: secret \`NEOBOARD_IO_DEPLOY_TOKEN\` is not set. neoboard.io picks up the change with its hourly deploy." >> "$GITHUB_STEP_SUMMARY"
+            echo "dispatched=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          since=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          gh workflow run "$TARGET_WORKFLOW" -R "$TARGET_REPO" --ref main
+          echo "dispatched=true" >> "$GITHUB_OUTPUT"
+          echo "since=$since" >> "$GITHUB_OUTPUT"
+
+      - name: Wait for neoboard.io deploy
+        if: steps.dispatch.outputs.dispatched == 'true'
+        env:
+          SINCE: ${{ steps.dispatch.outputs.since }}
+        run: |
+          # The dispatch API does not return the run, so look for the newest
+          # workflow_dispatch run created after the dispatch.
+          run_id=""
+          for _ in $(seq 1 12); do
+            sleep 5
+            run_id=$(gh run list -R "$TARGET_REPO" --workflow "$TARGET_WORKFLOW" \
+              --event workflow_dispatch --limit 5 --json databaseId,createdAt \
+              --jq "[.[] | select(.createdAt >= \"$SINCE\")] | last | .databaseId // empty")
+            [ -n "$run_id" ] && break
+          done
+          if [ -z "$run_id" ]; then
+            echo "::warning::Deploy was dispatched, but its run did not show up within a minute."
+            echo "Dispatched \`$TARGET_WORKFLOW\` in $TARGET_REPO; run not found yet." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          url="https://github.com/$TARGET_REPO/actions/runs/$run_id"
+          echo "neoboard.io deploy: $url"
+          status=0
+          gh run watch "$run_id" -R "$TARGET_REPO" --exit-status --interval 10 > /dev/null || status=$?
+          if [ "$status" -eq 0 ]; then
+            echo "neoboard.io deployed: [run $run_id]($url)" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "neoboard.io deploy failed: [run $run_id]($url)" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          exit "$status"
