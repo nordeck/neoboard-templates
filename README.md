@@ -40,6 +40,18 @@ Normalize a captured frame to a 1920×1080 preview master (optional 1280×720 ti
 npm run normalize-preview -- screenshot.png ../content/templates/<slug>/preview.de.png
 ```
 
+### Embedding in neoboard.io
+
+neoboard.io builds this gallery as part of its own deployment and serves it at `/de/vorlagen/` and `/en/templates/`. Build settings come from environment variables:
+
+| Variable | Default (GitHub Pages) | neoboard.io |
+|---|---|---|
+| `GALLERY_SITE` | `https://nordeck.github.io` | `https://neoboard.io` |
+| `GALLERY_BASE` | `/neoboard-templates` | `/` |
+| `GALLERY_THEME` | `dark` | `light` |
+
+From `website/dist/`, the host copies only `de/vorlagen/`, `en/templates/`, `boards/`, `_astro/` and `templates-assets/`. The root `index.html`, `de/`/`en/` redirects and `404.html` are for the standalone site only.
+
 Pull requests that touch `content/` or `website/` are built and validated by GitHub Actions; `main` is deployed to GitHub Pages.
 
 ## Contributing a template
