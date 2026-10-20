@@ -1,0 +1,2 @@
+# NeoBoard boards are JSON; keep line endings stable and show them as JSON on GitHub
+*.nwb text eol=lf linguist-language=JSON

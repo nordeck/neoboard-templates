@@ -1,0 +1,64 @@
+# Central category registry. The key is the category ID used in template frontmatter.
+agile:
+  label: { en: Agile, de: Agile }
+  description:
+    en: Retrospectives, check-ins and other agile formats.
+    de: Retrospektiven, Check-ins und andere agile Formate.
+  icon: "🔄"
+  order: 10
+brainstorming:
+  label: { en: Brainstorming, de: Brainstorming }
+  description:
+    en: Collect, cluster and evaluate ideas together.
+    de: Ideen gemeinsam sammeln, clustern und bewerten.
+  icon: "💡"
+  order: 20
+workshop:
+  label: { en: Workshops & Facilitation, de: Workshops & Moderation }
+  description:
+    en: Building blocks for well-run meetings and workshops.
+    de: Bausteine für gut moderierte Meetings und Workshops.
+  icon: "🧭"
+  order: 30
+planning:
+  label: { en: Planning & Calendars, de: Planung & Kalender }
+  description:
+    en: Timelines, responsibilities and calendars.
+    de: Zeitachsen, Verantwortlichkeiten und Kalender.
+  icon: "📅"
+  order: 40
+strategy:
+  label: { en: Strategy & Analysis, de: Strategie & Analyse }
+  description:
+    en: Business models, SWOT and strategic planning.
+    de: Geschäftsmodelle, SWOT und strategische Planung.
+  icon: "🧩"
+  order: 45
+team-building:
+  label: { en: Team Building, de: Teambuilding }
+  description:
+    en: Get to know each other and strengthen team culture.
+    de: Sich kennenlernen und die Teamkultur stärken.
+  icon: "🤝"
+  order: 50
+games:
+  label: { en: Games & Puzzles, de: Spiele & Rätsel }
+  description:
+    en: Board games, puzzles and memory games for teams.
+    de: Brettspiele, Rätsel und Gedächtnisspiele für Teams.
+  icon: "🎲"
+  order: 60
+backgrounds:
+  label: { en: Backgrounds, de: Hintergründe }
+  description:
+    en: Seasonal backgrounds for presentations and meetups.
+    de: Saisonale Hintergründe für Präsentationen und Treffen.
+  icon: "🖼️"
+  order: 70
+getting-started:
+  label: { en: Getting Started, de: Erste Schritte }
+  description:
+    en: First steps and practice boards.
+    de: Erste Schritte und Übungsflächen.
+  icon: "🚀"
+  order: 80
