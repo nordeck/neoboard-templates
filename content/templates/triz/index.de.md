@@ -9,9 +9,9 @@ features:
   - "Drei Spalten mit Leitfragen"
   - "Feld für das gemeinsame Ziel"
   - "Haftnotizen je Spalte zum Kopieren"
-# preview: pending screenshot
-#   src: ./preview.de.png
-#   alt: "TRIZ-Board mit Zielfeld und drei Spalten Maximal scheitern, Ehrlich prüfen und Stoppen"
+preview:
+  src: ./preview.de.png
+  alt: "TRIZ-Board mit Zielfeld und drei Spalten Maximal scheitern, Ehrlich prüfen und Stoppen"
 files:
   - src: ./triz.de.nwb
     label: "Vorlage"
@@ -25,8 +25,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 ---
 
 ## 🚀 TRIZ: Der Ablauf in 3 Schritten

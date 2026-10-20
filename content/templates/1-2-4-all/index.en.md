@@ -9,9 +9,9 @@ features:
   - "Four stages with time boxes"
   - "Work areas for eight people, four pairs and two groups"
   - "Results area for the whole group"
-# preview: pending screenshot
-#   src: ./preview.en.png
-#   alt: "Board with a question and four columns alone, pairs, foursomes and all, each with its own work areas"
+preview:
+  src: ./preview.en.png
+  alt: "Board with a question and four columns alone, pairs, foursomes and all, each with its own work areas"
 files:
   - src: ./1-2-4-all.en.nwb
     label: "Template"
@@ -25,8 +25,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 ---
 
 ## 🚀 1-2-4-All: How it works in 4 steps

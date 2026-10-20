@@ -9,9 +9,9 @@ features:
   - "Four quadrants from sunny to stormy"
   - "Prepared dots to drag"
   - "Done in a few minutes"
-# preview: pending screenshot
-#   src: ./preview.en.png
-#   alt: "Check-in board with four quadrants sunny, cloudy, rainy and stormy and a row of dots"
+preview:
+  src: ./preview.en.png
+  alt: "Check-in board with four quadrants sunny, cloudy, rainy and stormy and a row of dots"
 files:
   - src: ./check-in-weather-quadrants.en.nwb
     label: "Template"
@@ -21,8 +21,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 ---
 
 ## 🚀 Weather report check-in: How it works in 3 steps

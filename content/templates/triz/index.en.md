@@ -9,9 +9,9 @@ features:
   - "Three columns with guiding questions"
   - "Box for the shared goal"
   - "Sticky notes per column to copy"
-# preview: pending screenshot
-#   src: ./preview.en.png
-#   alt: "TRIZ board with a goal box and three columns fail completely, check honestly and stop it"
+preview:
+  src: ./preview.en.png
+  alt: "TRIZ board with a goal box and three columns fail completely, check honestly and stop it"
 files:
   - src: ./triz.en.nwb
     label: "Template"
@@ -25,8 +25,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 ---
 
 ## 🚀 TRIZ: How it works in 3 steps
