@@ -25,6 +25,7 @@ authors:
   - name: "Christian Paul"
 license: AGPL-3.0-or-later
 published: 2024-12-05
+featured: true
 ---
 
 Unsere Zeit und Ressourcen als Team sind begrenzt, und nicht alle wissen, welche Entwicklung schwer und teuer ist.
