@@ -9,9 +9,9 @@ features:
   - "Keep, stop, try and act"
   - "Card stacks with Halloween symbols"
   - "Leads to actions with owners"
-# preview: pending screenshot
-#   src: ./preview.en.png
-#   alt: "Halloween retro board with a good pumpkin, a rotten pumpkin, a witch’s broom and a cauldron"
+preview:
+  src: ./preview.en.png
+  alt: "Halloween retro board with a good pumpkin, a rotten pumpkin, a witch’s broom and a cauldron"
 files:
   - src: ./halloween-retro.en.nwb
     label: "Template"
@@ -21,8 +21,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 ---
 
 ## 🚀 Halloween Retro: How it works in 5 steps

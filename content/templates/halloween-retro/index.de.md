@@ -9,9 +9,9 @@ features:
   - "Beibehalten, aufhören, ausprobieren und umsetzen"
   - "Kartenstapel mit Halloween-Symbolen"
   - "Führt zu Maßnahmen mit Verantwortlichen"
-# preview: pending screenshot
-#   src: ./preview.de.png
-#   alt: "Halloween-Retro-Board mit gutem Kürbis, faulem Kürbis, Hexenbesen und Hexenkessel"
+preview:
+  src: ./preview.de.png
+  alt: "Halloween-Retro-Board mit gutem Kürbis, faulem Kürbis, Hexenbesen und Hexenkessel"
 files:
   - src: ./halloween-retro.de.nwb
     label: "Vorlage"
@@ -21,8 +21,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 ---
 
 ## 🚀 Halloween-Retro: Der Ablauf in 5 Schritten
