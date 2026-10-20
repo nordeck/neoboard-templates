@@ -9,9 +9,9 @@ features:
   - "All nine classic building blocks"
   - "Extra fields: environmental costs and societal benefits"
   - "One-page overview of a business model"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.en.png
-#   alt: "Business Model Canvas with nine fields plus environmental costs and societal benefits"
+preview:
+  src: ./preview.en.png
+  alt: "Business Model Canvas with nine fields plus environmental costs and societal benefits"
 files:
   - src: ./business-model-canvas.en.nwb
     label: "Template"
@@ -21,8 +21,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 # publish decision (metadata grid): ja
 ---
 

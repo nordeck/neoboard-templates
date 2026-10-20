@@ -9,9 +9,9 @@ features:
   - "Zwei Teamseiten mit eigenem Kartenstapel"
   - "Leitfrage zu den Erwartungen"
   - "Mittelfeld für gemeinsame Themen"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.de.png
-#   alt: "Begrüßungsboard mit zwei Stühlen für Team A und Team B und einer Leitfrage in der Mitte"
+preview:
+  src: ./preview.de.png
+  alt: "Begrüßungsboard mit zwei Stühlen für Team A und Team B und einer Leitfrage in der Mitte"
 files:
   - src: ./two-team-welcome.de.nwb
     label: "Vorlage"
@@ -21,8 +21,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 # publish decision (metadata grid): ja
 # note (metadata grid): Teamnamen „Team A" und „Team B" als Platzhalter belassen oder anpassen.
 ---

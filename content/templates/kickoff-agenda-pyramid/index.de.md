@@ -9,9 +9,9 @@ features:
   - "Vorbereitete Agenda mit acht Punkten"
   - "Zielpyramide: Basics bis Sahnehäubchen"
   - "Hinweispfeil für Wichtiges"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.de.png
-#   alt: "Board mit Agenda-Liste links und einer Pyramide von Basics bis Sahnehäubchen rechts"
+preview:
+  src: ./preview.de.png
+  alt: "Board mit Agenda-Liste links und einer Pyramide von Basics bis Sahnehäubchen rechts"
 files:
   - src: ./kickoff-agenda-pyramid.de.nwb
     label: "Vorlage"
@@ -22,7 +22,7 @@ authors:
 license: AGPL-3.0-or-later
 published: 2026-10-20
 draft: true
-# draft reason: no preview yet
+# draft reason: cleanup pending – persönliche Notizen entfernen
 # publish decision (metadata grid): ja, nach Entfernen der persönlichen Notizen
 # note (metadata grid): Persönliche Inhalte entfernen: Haftnotiz „Mit Max abstimmen!", Datum „24.03.", Freihandlinie. Titel „Teams A und B" neutralisieren.
 ---

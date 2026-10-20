@@ -9,9 +9,9 @@ features:
   - "Monatsachse über sieben Monate"
   - "Namensschilder für Verantwortliche"
   - "Beispielkarten zeigen die Nutzung"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.de.png
-#   alt: "Zeitachse von August bis Februar mit Aufgabenkarten und Namensschildern"
+preview:
+  src: ./preview.de.png
+  alt: "Zeitachse von August bis Februar mit Aufgabenkarten und Namensschildern"
 files:
   - src: ./responsibilities-timeline.de.nwb
     label: "Vorlage"
@@ -22,7 +22,7 @@ authors:
 license: AGPL-3.0-or-later
 published: 2026-10-20
 draft: true
-# draft reason: no preview yet
+# draft reason: cleanup pending – Monate aktualisieren
 # publish decision (metadata grid): ja, nach Anpassen der Monate
 # note (metadata grid): Monate Aug 2026 – Feb 2027 sind fest beschriftet und veralten. Beispielnamen (Heinrich Hausmeister, Louise Lehrkraft) bewusst als Muster?
 ---

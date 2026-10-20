@@ -9,9 +9,9 @@ features:
   - "Vier farbige Felder"
   - "Kurz, klar und für jedes Projekt nutzbar"
   - "Schafft die Grundlage zum Priorisieren"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.de.png
-#   alt: "Board mit den vier Feldern weiter so, lieber lassen, neu beginnen oder ändern und Risiken"
+preview:
+  src: ./preview.de.png
+  alt: "Board mit den vier Feldern weiter so, lieber lassen, neu beginnen oder ändern und Risiken"
 files:
   - src: ./where-do-we-stand.de.nwb
     label: "Vorlage"
@@ -21,8 +21,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 # publish decision (metadata grid): ja
 # note (metadata grid): Ähnlich zur Retrospektive, aber mit Risiko-Feld statt Erfinden/Umsetzen.
 ---

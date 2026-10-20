@@ -9,9 +9,9 @@ features:
   - "Pyramide mit drei Zeithorizonten"
   - "Breite Basis für Sofortmaßnahmen"
   - "Trennt Machbares von Visionen"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.de.png
-#   alt: "Pyramide mit drei Ebenen: Sofort unten, im nächsten Jahr in der Mitte, ein Träumchen oben"
+preview:
+  src: ./preview.de.png
+  alt: "Pyramide mit drei Ebenen: Sofort unten, im nächsten Jahr in der Mitte, ein Träumchen oben"
 files:
   - src: ./priority-pyramid.de.nwb
     label: "Vorlage"
@@ -21,8 +21,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 # publish decision (metadata grid): ja
 ---
 

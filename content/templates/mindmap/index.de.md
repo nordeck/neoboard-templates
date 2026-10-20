@@ -9,9 +9,9 @@ features:
   - "Zentrales Startfeld für Begriff oder Frage"
   - "Vorbereitete Haftnotiz-Stapel in vier Farben"
   - "Frei erweiterbar in alle Richtungen"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.de.png
-#   alt: "Leere Mindmap mit zentralem Startfeld und farbigen Haftnotiz-Stapeln in den Ecken"
+preview:
+  src: ./preview.de.png
+  alt: "Leere Mindmap mit zentralem Startfeld und farbigen Haftnotiz-Stapeln in den Ecken"
 files:
   - src: ./mindmap.de.nwb
     label: "Vorlage"
@@ -25,8 +25,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 # publish decision (metadata grid): ja
 ---
 

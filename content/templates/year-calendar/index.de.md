@@ -9,6 +9,9 @@ features:
   - "Ganzes Jahr auf einem Rahmen"
   - "Fertige Kalender 2026–2040"
   - "Generator für beliebige Jahre und Sprachen"
+preview:
+  src: ./preview.de.png
+  alt: "Jahreskalender 2026 mit zwölf Monatsblöcken und markierten Wochenenden"
 files:
   - src: ./year-calendar-2026.de.nwb
     label: "Kalender 2026"
@@ -48,7 +51,6 @@ authors:
   - name: "Normannio"
 license: AGPL-3.0-or-later
 published: 2024-09-11
-draft: true
 ---
 
 Kalender für ein ganzes Jahr. Wählen Sie das passende Jahr oder erzeugen Sie mit dem Generator einen Kalender für ein beliebiges Jahr und eine beliebige Sprache.

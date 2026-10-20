@@ -9,9 +9,9 @@ features:
   - "Spalten für Sammlung, Auswahl, Diskussion und Erledigt"
   - "Bereich für Aufgaben"
   - "Vorbereiteter Themenkarten-Stapel"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.de.png
-#   alt: "Lean-Coffee-Board mit den Spalten Themensammlung, Auswahl, Diskussion und Erledigt"
+preview:
+  src: ./preview.de.png
+  alt: "Lean-Coffee-Board mit den Spalten Themensammlung, Auswahl, Diskussion und Erledigt"
 files:
   - src: ./lean-coffee.de.nwb
     label: "Vorlage"
@@ -21,8 +21,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 # publish decision (metadata grid): ja, als deutsche Datei von „lean-coffee"
 # note (metadata grid): Methodenbeschreibung übernommen aus dem Textfeld neben dem Original-Frame (unverändert).
 ---

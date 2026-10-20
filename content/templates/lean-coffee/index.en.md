@@ -9,9 +9,9 @@ features:
   - "Columns for collecting, selecting, discussing and closing topics"
   - "Area for action items"
   - "Topic card stack ready to use"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.en.png
-#   alt: "Lean Coffee board with columns Topic Collection, Topic Selection, Topic Discussion and Done Topics"
+preview:
+  src: ./preview.en.png
+  alt: "Lean Coffee board with columns Topic Collection, Topic Selection, Topic Discussion and Done Topics"
 files:
   - src: ./lean-coffee.en.nwb
     label: "Template"
@@ -21,8 +21,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 # publish decision (metadata grid): ja, als englische Datei von „lean-coffee"
 # note (metadata grid): Gleiche Methode wie T14 (deutsch).
 ---

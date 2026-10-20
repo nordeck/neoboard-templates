@@ -9,9 +9,9 @@ features:
   - "Time axis with labelled points"
   - "Cards above and below the axis"
   - "Works for history, planning and reviews"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.en.png
-#   alt: "Horizontal timeline from 1900 to 1940 with coloured cards above and below the axis"
+preview:
+  src: ./preview.en.png
+  alt: "Horizontal timeline from 1900 to 1940 with coloured cards above and below the axis"
 files:
   - src: ./timeline.en.nwb
     label: "Template"
@@ -21,8 +21,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 # publish decision (metadata grid): ja
 # note (metadata grid): Beispieljahre 1900–1940 ggf. neutralisieren.
 ---

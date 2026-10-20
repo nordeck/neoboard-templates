@@ -9,9 +9,9 @@ features:
   - "Drei Aussagen mit fünfstufiger Skala"
   - "Vorbereitete Klebepunkte"
   - "In wenigen Minuten erledigt"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.de.png
-#   alt: "Check-in-Board mit drei Aussagen und je einer Skala von gar nicht bis sehr"
+preview:
+  src: ./preview.de.png
+  alt: "Check-in-Board mit drei Aussagen und je einer Skala von gar nicht bis sehr"
 files:
   - src: ./check-in-scales.de.nwb
     label: "Vorlage"
@@ -21,8 +21,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 # publish decision (metadata grid): ja
 # note (metadata grid): Aussagen lassen sich frei austauschen.
 ---

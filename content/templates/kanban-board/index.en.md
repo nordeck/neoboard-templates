@@ -9,9 +9,9 @@ features:
   - "Three columns: To do, In Progress, Done"
   - "Colour-coded card rows for work types"
   - "Ready for daily stand-ups"
-# preview: pending screenshot (see concept doc, part C)
-#   src: ./preview.en.png
-#   alt: "Kanban board with the columns To do, In Progress and Done and coloured cards"
+preview:
+  src: ./preview.en.png
+  alt: "Kanban board with the columns To do, In Progress and Done and coloured cards"
 files:
   - src: ./kanban-board.en.nwb
     label: "Template"
@@ -21,8 +21,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 # publish decision (metadata grid): ja
 # note (metadata grid): Deutsche Variante möglich (Zu erledigen / In Arbeit / Erledigt).
 ---
