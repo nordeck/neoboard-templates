@@ -49,5 +49,6 @@ export const external = {
   linkedin: 'https://www.linkedin.com/company/nordeckitconsulting',
   company: 'https://nordeck.net',
   repository: 'https://github.com/nordeck/neoboard-templates',
+  mailAddress: 'info@nordeck.net',
   mail: 'mailto:info@nordeck.net',
 } as const;

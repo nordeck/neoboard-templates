@@ -26,7 +26,10 @@ const alternates = { de: routeHref('de', { page: 'submit' }), en: routeHref('en'
   <div class="tg-narrow">
     <p class="lead">{s.submitIntro}</p>
     <ImportSteps steps={s.submitSteps} />
-    <div class="nb-notice nb-notice-legal">{s.submitLicense}</div>
+    <div class="nb-notice nb-notice-legal">
+      <p>{s.submitLicense}</p>
+      <p>{s.submitConsent}</p>
+    </div>
     <div class="actions">
       <a class="nb-btn nb-btn-primary" href={external.repository} target="_blank" rel="noopener noreferrer">
         {s.submitGithub}
@@ -34,7 +37,7 @@ const alternates = { de: routeHref('de', { page: 'submit' }), en: routeHref('en'
       </a>
       <a class="mail" href={external.mail}>
         <Icon name="Mail" size={18} />
-        {s.submitMail}
+        {s.submitMail}: {external.mailAddress}
       </a>
     </div>
   </div>
