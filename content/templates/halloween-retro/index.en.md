@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "Halloween Retro"
 description: "A spooky retrospective in four screens: rotten tomatoes for the grumpy pumpkin, sweet chocolate bars for the happy one, ideas flying off the witch’s broom and to-dos brewed in the cauldron."
@@ -19,7 +19,7 @@ duration: { min: 45, max: 60 }
 groupSize: { min: 3, max: 12 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 ---
 
