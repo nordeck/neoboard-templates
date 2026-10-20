@@ -21,10 +21,7 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: cleanup pending – Fragetext korrigieren
 # publish decision (metadata grid): ja, nach Korrektur des Fragetexts
-# note (metadata grid): Tippfehler im Fragetext: „mir dieser Konferenz" → „mit dieser Veranstaltung" (neutraler).
 ---
 
 ## 🚀 Check-out: Der Ablauf in 3 Schritten

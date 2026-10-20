@@ -21,10 +21,7 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: cleanup pending – persönliche Notizen entfernen
 # publish decision (metadata grid): ja, nach Entfernen der persönlichen Notizen
-# note (metadata grid): Persönliche Inhalte entfernen: Haftnotiz „Mit Max abstimmen!", Datum „24.03.", Freihandlinie. Titel „Teams A und B" neutralisieren.
 ---
 
 ## 🚀 Kick-off: Der Ablauf in 3 Schritten

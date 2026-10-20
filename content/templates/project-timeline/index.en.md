@@ -21,10 +21,7 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: cleanup pending – Lorem ipsum ersetzen
 # publish decision (metadata grid): ja, nach Ersetzen der Lorem-ipsum-Texte
-# note (metadata grid): Enthält Lorem-ipsum-Platzhalter – vor Veröffentlichung ersetzen.
 ---
 
 ## 🚀 Project Timeline: How it works in 4 steps

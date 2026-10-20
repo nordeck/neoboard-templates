@@ -21,8 +21,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: publication decision pending (optional)
 # publish decision (metadata grid): optional – als Vorlage „Arbeitsorte & -modi" nutzbar
 # note (metadata grid): Ursprünglich Showcase. Als Vorlage nutzbar, wenn Karten ergänzt werden.
 ---
