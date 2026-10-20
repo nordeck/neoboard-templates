@@ -64,6 +64,8 @@ From `website/dist/`, the host copies only `de/vorlagen/`, `en/templates/`, `boa
 
 Pull requests that touch `content/` or `website/` are built and validated by GitHub Actions; `main` is deployed to GitHub Pages.
 
+neoboard.io deploys hourly from `main`. In addition, every push to `main` that touches `content/` or `website/` starts its deploy right away (`.github/workflows/trigger-neoboard-io.yml`), so changes are live there within minutes. This needs the repository secret `NEOBOARD_IO_DEPLOY_TOKEN`: a fine-grained token with *Actions: Read and write* on `nordeck/neoboard.io`. Without it the workflow skips and only the hourly deploy applies; `gh workflow run deploy.yml -R nordeck/neoboard.io` still publishes immediately.
+
 ## Contributing a template
 
 1. Create `content/templates/<your-slug>/` (kebab-case).

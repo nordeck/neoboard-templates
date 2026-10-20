@@ -103,7 +103,7 @@ Merging publishes, and nobody else reviews it – so merge only after the person
 
 After the merge:
 - GitHub Pages deploys within ~3 minutes: `https://nordeck.github.io/neoboard-templates/de/vorlagen/<slug>/`
-- neoboard.io picks it up with its next hourly deploy. To publish immediately: `gh workflow run deploy.yml -R nordeck/neoboard.io`, then `gh run watch`.
+- neoboard.io deploys within a few minutes: the merge starts its deploy (workflow `Trigger neoboard.io deploy`, its summary links the run). If that run was skipped (no token) or failed, run `gh workflow run deploy.yml -R nordeck/neoboard.io`, then `gh run watch`; otherwise the hourly deploy picks it up.
 - Verify with `curl -s -o /dev/null -w '%{http_code}' https://neoboard.io/de/vorlagen/<slug>/` (200), and the board download under `/boards/<slug>/<slug>.<lang>.nwb`.
 
 Finally remove the worktree (`git worktree remove ../neoboard-templates-<slug>`) and tell the person the live links.
