@@ -1,6 +1,6 @@
 ---
 name: create-neoboard-template
-description: Create a new NeoBoard whiteboard template (.nwb board, German/English metadata, method description, preview images) in the nordeck/neoboard-templates repository and publish it in the template gallery on neoboard.io (/de/vorlagen/, /en/templates/). Use this skill whenever someone wants to add, build, design or publish a NeoBoard template or "Vorlage" – a retro, check-in, workshop board, game, background, canvas or any method board – even if they only say "mach daraus eine Vorlage", "put this on the template page", "neue Vorlage für die Galerie", or name a method (e.g. Lean Coffee, TRIZ, Halloween retro) to turn into a board. Also use it to change an existing generated template, to re-capture its previews, or to take a draft template live.
+description: Create a new NeoBoard whiteboard template (.nwb board, German/English metadata, method description, preview images) in the nordeck/neoboard-templates repository and publish it in the template gallery on neoboard.io (/de/vorlagen/, /en/templates/). Use this skill whenever someone wants to add, build, design or publish a NeoBoard template or "Vorlage" – a retro, check-in, workshop board, game, background, canvas or any method board – even if they only say "mach daraus eine Vorlage", "put this on the template page", "neue Vorlage für die Galerie", or name a method (e.g. Lean Coffee, TRIZ, Halloween retro) to turn into a board, or share a link to a board they built by hand in NeoBoard that should become a template. Also use it to change an existing generated template, to re-capture its previews, or to take a draft template live.
 ---
 
 # Create and publish a NeoBoard template
@@ -18,7 +18,10 @@ Talk to the person in their language (usually German, with correct umlauts). Rep
 ## How the pieces fit together
 
 - **Repository** `nordeck/neoboard-templates` (public). Content in `content/templates/<slug>/`, website code in `website/`. Its `CLAUDE.md` holds the hard rules; read it at the start of every session, it wins over this skill if they disagree.
-- **Boards are generated, never hand-edited.** Each generated template has a definition `website/scripts/boards/<slug>.mjs` built on `lib.mjs` (palette, house style, validation, deterministic IDs). `npm run generate:boards -- <slug>` writes the `.nwb` files; `npm run validate` fails if a committed board differs from its definition. This is why layout fixes always go into the definition.
+- **Two ways to a board.** Ask early which one applies:
+  - **Generated** (default, stage 2): a script definition builds the board in the house style. Best for structured boards made of shapes, text and sticky notes.
+  - **Hand-built** (stage 2b): someone has already designed the board in NeoBoard, often with their own images, fonts and several frames. It is exported from NeoBoard and taken over as it is; do not rebuild it as a definition, that would lose the design.
+- **Generated boards are never hand-edited.** Each generated template has a definition `website/scripts/boards/<slug>.mjs` built on `lib.mjs` (palette, house style, validation, deterministic IDs). `npm run generate:boards -- <slug>` writes the `.nwb` files; `npm run validate` fails if a committed board differs from its definition. This is why layout fixes always go into the definition. Hand-built boards are changed in NeoBoard and exported again, never by editing the JSON by hand.
 - **Gallery**: Astro site in `website/`, published twice from `main`: GitHub Pages (`nordeck.github.io/neoboard-templates`, on every merge) and neoboard.io (`/de/vorlagen/`, built into neoboard.io's hourly deploy). Templates with `draft: true` are only visible in the dev server.
 - A template without a preview image must stay a draft (the schema enforces it).
 
@@ -72,9 +75,27 @@ Then:
 
 Several frames per template are allowed when the method has distinct phases that people present one after another; one frame is better when the overview *is* the method (most retros and canvases).
 
+## Stage 2b – Take over a hand-built board
+
+Use this instead of stage 2 when the board was designed by hand in NeoBoard (the person sends a board link). Work in a worktree as above. Details, selectors and pitfalls are in `references/hand-built-boards.md`; the short version:
+
+1. **Look at the board** in the browser: frames (count, size, order), images, texts. Check the texts for typos and real personal data. Fix typos **in the board** (with the person's OK) before exporting and capturing; otherwise the template and its previews keep them.
+2. **Licensing**: everything on the board, including images and fonts used as graphics, must be releasable under CC0. Ask who made the images; note the answer in the pull request.
+3. **Export** via settings → „Exportieren…“ → „NeoBoard-Datei (.nwb)“ → „Herunterladen“. This downloads a file, so ask the person first. Copy the download into its own scratch folder and check it: `net.nordeck.whiteboard@v2`, exactly one slide, at least one frame, images embedded under `whiteboard.files` (makes the file hundreds of KB to MB).
+4. **Add it** as `content/templates/<slug>/<slug>.<lang>.nwb`. There is no definition, so `generate:boards` does not touch it and `--md` does not create `index.<lang>.md`: write it by hand from `references/frontmatter.md`.
+5. **Method frame**: every template carries the method description in the board as well, in a „Methodenbeschreibung“ / „Facilitation guide“ frame. A hand-built board usually has none. Write the method as JSON once and add the frame and the identical Markdown body in one step:
+   ```bash
+   node <skill-dir>/scripts/add_method_frame.mjs <repo-root> <exported.nwb> <method.json> \
+     ../content/templates/<slug>/<slug>.<lang>.nwb --md ../content/templates/<slug>/index.<lang>.md
+   ```
+   The frame goes right of the rightmost frame, so it is the last frame in presentation mode. Keep the method JSON next to the export (not in `content/`) so a later re-export can get the same frame again.
+6. One language is fine for hand-built boards. A second language means a second board in NeoBoard with translated texts, exported the same way.
+
+Continue with stage 3 (skip the sketch, the board has already been rendered in NeoBoard) and stage 4.
+
 ## Stage 3 – Check and open a draft pull request
 
-1. **Sketch**: render each board and look at it before anyone imports it:
+1. **Sketch** (generated boards): render each board and look at it before anyone imports it:
    ```bash
    python3 <skill-dir>/scripts/render_sketch.py ../content/templates/<slug>/<slug>.de.nwb /tmp/<slug>.de.svg
    ```
@@ -89,6 +110,10 @@ Previews are what people see in the gallery, so they come from the real NeoBoard
 
 This needs a connected browser (Claude in Chrome) and a person logged in to demo.neoboard.io; never log in yourself. If no browser is available in this session, write the person a prompt for a session that has one, based on the same reference file (it includes a prompt skeleton).
 
+- **Several template frames** (phases): by default the first frame is the preview. When the phases *are* the point, ask whether the preview should show all of them: capture every template frame (not the method frame) and combine them with `scripts/compose_frames.mjs` into one 1920×1080 grid, or keep the first frame as preview and add the others as `gallery` images. See `references/capture-previews.md`.
+- **Large boards** (embedded images, > ~50 KB) are too big for the base64 import. Push the branch and fetch the file by **commit SHA**, then compare its SHA-256 with the local file before importing (see the reference).
+- **Layout check of the final file**: after adding the method frame (stage 2b) or changing a definition, import the exact committed file into a fresh board once and check frame count, images and that the method text fits.
+
 Then, in the worktree:
 
 ```bash
@@ -96,6 +121,8 @@ npm run normalize-preview -- <screenshot> ../content/templates/<slug>/preview.<l
 ```
 
 In each `index.<lang>.md`: replace the commented preview block with a real one (same `src` and `alt`), remove `draft: true` and the `# draft reason` line. `npm run build` must pass; `git status` should show only the PNGs and Markdown files. Commit and push to the same pull request.
+
+**Before every push to an existing pull request**, check that it is still open: `gh pr view <n> --json state -q .state`. The person may merge it at any time. Commits pushed to the branch of a merged pull request never reach `main`. If it is `MERGED`, start a new branch from `origin/main`, cherry-pick or redo the change there and open a new pull request that refers to the old one.
 
 ## Stage 5 – Merge and verify
 
@@ -110,7 +137,9 @@ Finally remove the worktree (`git worktree remove ../neoboard-templates-<slug>`)
 
 ## Changing an existing template
 
-Same stages, shorter: edit the definition, `npm run generate:boards -- <slug>`, check, and – because the board changed visibly – re-capture the previews (stage 4) in the same pull request, otherwise the gallery shows the old board. Never edit `.nwb` files of generated templates directly; the validation would reject them. Older templates without a definition (migrated boards) are changed with a small one-off script that edits the JSON by element ID, keeps every other element byte-identical and is checked by `npm run validate`.
+Same stages, shorter: edit the definition, `npm run generate:boards -- <slug>`, check, and – because the board changed visibly – re-capture the previews (stage 4) in the same pull request, otherwise the gallery shows the old board. Never edit `.nwb` files of generated templates directly; the validation would reject them. Older templates without a definition (migrated boards) are changed with a small one-off script that edits the JSON by element ID, keeps every other element byte-identical and is checked by `npm run validate`. Hand-built templates (stage 2b) are changed in their NeoBoard board, exported again, get their method frame again from the saved method JSON, and their previews re-captured.
+
+**Featured** („Empfohlen“, first three by date): set or remove `featured: true` in **every** language file of a template. The validator does not compare this field across languages, so a flag in only one file makes the two galleries differ. Check the result in the built site (`website/dist/de/vorlagen/index.html`, `website/dist/en/templates/index.html`).
 
 ## Things that went wrong before
 
@@ -119,3 +148,8 @@ Same stages, shorter: edit the definition, `npm run generate:boards -- <slug>`, 
 - Board previews that still showed fixed typos and personal notes went live because the board was fixed but the previews were not re-captured.
 - White text on light palette colours (Light Green, Orange, Yellow level 4) is unreadable; use `textOn(family)`.
 - Pull requests in neoboard.io and neoboard-templates can depend on each other; say which one has to be merged first.
+- A pull request was merged while follow-up commits were still being pushed to its branch; they never reached `main` and needed a second pull request. Check the state before pushing.
+- `raw.githubusercontent.com/<org>/<repo>/<branch>/…` served the previous version of a file for minutes after a push. Fetch by commit SHA and compare hashes.
+- `featured: true` was set in only one language file, so the English gallery showed one template fewer.
+- A hand-built board kept a typo („Whith whom?“) until someone read the screenshots closely. Read every text on the board before exporting.
+- A stray symlink `website/node_modules 2` (not covered by `.gitignore`) appeared in a worktree. Look at `git status` for such entries and remove them instead of committing them.

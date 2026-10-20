@@ -1,6 +1,6 @@
 # index.<lang>.md – frontmatter reference
 
-One file per language in `content/templates/<slug>/`. The generator creates it with `--md`; afterwards it is edited by hand (preview block, draft flag, wording). Schema: `website/src/content.config.ts`; extra checks: `website/scripts/validate-content.mjs`.
+One file per language in `content/templates/<slug>/`. The generator creates it with `--md`; afterwards it is edited by hand (preview block, draft flag, wording). For hand-built boards (no definition) write it by hand from the draft below; `scripts/add_method_frame.mjs --md` then fills in the body. Schema: `website/src/content.config.ts`; extra checks: `website/scripts/validate-content.mjs`.
 
 ## Draft (as generated)
 
@@ -55,6 +55,17 @@ published: 2026-10-20
 ---
 ```
 
+## Gallery images (optional)
+
+Further frames or a filled-in example, shown as thumbnails on the detail page. Each image is a normalized 1920×1080 PNG next to `index.<lang>.md`:
+
+```yaml
+gallery:
+  - src: ./phase-2.en.png
+    alt: "Second phase: …"
+    caption: "Phase 2"
+```
+
 ## Field rules
 
 | Field | Rule |
@@ -77,7 +88,7 @@ published: 2026-10-20
 | `license` | `CC0-1.0` (default, required for new templates). `AGPL-3.0-or-later` exists only for `year-calendar`, whose author has not agreed to CC0 yet. |
 | `published` | `YYYY-MM-DD`; `updated` optional for later content changes. |
 | `draft` | `true` hides the template in production. |
-| `featured` | `true` shows it in "Empfohlen" (first three by date). Only when the person asks. |
+| `featured` | `true` shows it in "Empfohlen" (first three by date). Only when the person asks. Set it identically in **all** language files – the validator does not compare it across languages. |
 
 Language-neutral fields (`category`, `tags`, `duration`, `groupSize`, `authors`, `license`, `published`, `draft`) must be identical in all language files.
 
