@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Mühle"
 description: "Der Brettspiel-Klassiker Mühle für zwei Personen auf dem Whiteboard."
@@ -22,7 +22,7 @@ links:
 groupSize: { min: 2, max: 2 }
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-12
 ---
 

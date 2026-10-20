@@ -1,0 +1,6 @@
+{
+  "name": "neoboard-templates",
+  "version": "0.2.0",
+  "description": "Create NeoBoard whiteboard templates and publish them in the template gallery on neoboard.io (nordeck/neoboard-templates).",
+  "author": { "name": "Nordeck IT + Consulting GmbH" }
+}

@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Retro-Check-in: Wie fühlst du dich?"
 description: "Check-in für Retrospektiven: Alle legen ihren Namen in eines von vier Stimmungsfeldern."
@@ -23,7 +23,7 @@ duration: { min: 5, max: 10 }
 groupSize: { min: 3, max: 15 }
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-08
 ---
 

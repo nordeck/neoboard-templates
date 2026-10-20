@@ -6,7 +6,7 @@ import { defineConfig } from 'astro/config';
 
 // Defaults build the standalone gallery for GitHub Pages (Phase 1).
 // neoboard.io builds it embedded under its own domain with
-//   GALLERY_SITE=https://neoboard.io GALLERY_BASE=/ GALLERY_THEME=light
+//   GALLERY_SITE=https://neoboard.io GALLERY_BASE=/ GALLERY_THEME=dark
 // (see README, "Embedding in neoboard.io").
 const site = process.env.GALLERY_SITE || 'https://nordeck.github.io';
 const base = process.env.GALLERY_BASE || '/neoboard-templates';

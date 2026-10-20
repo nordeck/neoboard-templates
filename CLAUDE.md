@@ -12,7 +12,8 @@ Fallback: `https://nordeck.github.io/neoboard-templates/` built from this repo.
 - Boards: only `net.nordeck.whiteboard@v2`, exactly one slide, at least one frame. Never hand-edit `.nwb`; generate with a script and validate.
 - Schema changes must update `content.config.ts`, `scripts/validate-content.mjs` and the docs together, and bump `schemaVersion`.
 - Previews: master 1920×1080 PNG, optional tile 1280×720 PNG, light mode, no NeoBoard UI. Derived sizes are generated at build time, never committed.
-- License: AGPL-3.0-or-later. New source files start with:
+- Licences: content (`content/`) is **CC0-1.0** (`license: CC0-1.0`, the default); `year-calendar` keeps AGPL-3.0-or-later until its author agrees. New templates are CC0 – only accept third-party material whose author agrees to CC0, and describe third-party methods in your own words.
+- Code (`website/`, scripts, workflows) is AGPL-3.0-or-later. New source files start with:
   `// Copyright <year> Nordeck IT + Consulting GmbH` and `// SPDX-License-Identifier: AGPL-3.0-or-later`.
 - Code comments, commit messages and docs in English. German UI strings use correct umlauts (ä, ö, ü, ß).
 - All internal links use `import.meta.env.BASE_URL`.
@@ -22,9 +23,10 @@ Fallback: `https://nordeck.github.io/neoboard-templates/` built from this repo.
 ## Website structure
 - Gallery code is encapsulated in `website/src/features/templates/` (components, views, lib, styles, scripts) so it can move to neoboard.io in Phase 2; `src/pages/` only holds thin route files.
 - Dark theme is the default (`THEME` in `features/templates/config.ts`); previews always stay light.
-- neoboard.io embeds the gallery: it builds `website/` with `GALLERY_SITE`, `GALLERY_BASE=/`, `GALLERY_THEME=light` and copies `de/vorlagen/`, `en/templates/`, `boards/`, `_astro/`, `templates-assets/` into its own `dist/`. Keep all gallery files under these paths; static assets go to `public/templates-assets/` (never `public/assets/`, which belongs to neoboard.io).
+- neoboard.io embeds the gallery: it builds `website/` with `GALLERY_SITE`, `GALLERY_BASE=/`, `GALLERY_THEME=dark` and copies `de/vorlagen/`, `en/templates/`, `boards/`, `_astro/`, `templates-assets/` into its own `dist/`. Keep all gallery files under these paths; static assets go to `public/templates-assets/` (never `public/assets/`, which belongs to neoboard.io).
 - Icons: Lucide, inlined at build time from `lucide-static`; category icons are Lucide names in `content/categories.yaml`.
 - Script-built templates: one definition per template in `website/scripts/boards/<slug>.mjs` (shared helpers and palette in `lib.mjs`). Change the definition and regenerate; never edit those `.nwb` files directly. Output is deterministic.
+- Claude plugin `claude-plugin/` (skill *create-neoboard-template*): the end-to-end workflow for new templates. When scripts, frontmatter fields or the publishing flow change, update the skill in the same pull request and bump the plugin version.
 - Design reference: `docs/design/design_handoff_templates_gallery/` (not shipped).
 
 ## Commands (run in `website/`)

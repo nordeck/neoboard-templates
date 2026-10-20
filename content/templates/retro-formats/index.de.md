@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Retro-Formate: Beispiele"
 description: "Bewährte Retro-Formate zum direkten Einsatz, darunter der Ballon (Was macht uns schnell, was langsam?) und Start / Stop / Continue."
@@ -19,7 +19,7 @@ duration: { min: 45, max: 90 }
 groupSize: { min: 3, max: 12 }
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-10-02
 ---
 

@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "1-2-4-Alle"
 description: "Von der stillen Einzelarbeit über Paare und Vierergruppen zur ganzen Gruppe, mit eigenen Arbeitsbereichen je Stufe."
@@ -23,7 +23,7 @@ duration: { min: 12, max: 20 }
 groupSize: { min: 4, max: 16 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 ---
 

@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "Winter Background"
 description: "A snowy winter background celebrating winter sports, snowmen and snow-covered landscapes."
@@ -21,7 +21,7 @@ links:
     type: source
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-18
 ---
 

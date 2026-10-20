@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Lern dein Team kennen"
 description: "Zwei Rahmen mit je drei verdeckten Fragen: einer zum Privatleben, einer zum Arbeitsleben."
@@ -23,7 +23,7 @@ duration: { min: 15, max: 30 }
 groupSize: { min: 3, max: 15 }
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-19
 ---
 

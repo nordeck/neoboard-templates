@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Kick-off: Agenda & Zielpyramide"
 description: "Agenda für ein Kooperationstreffen und Zielpyramide von den Basics bis zum Sahnehäubchen."
@@ -19,7 +19,7 @@ duration: { min: 10, max: 15 }
 groupSize: { min: 4, max: 20 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 # publish decision (metadata grid): ja, nach Entfernen der persönlichen Notizen
 ---

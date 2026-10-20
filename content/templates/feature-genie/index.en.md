@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "Feature Genie"
 description: "A genie grants three wishes: which features and bug fixes would your team pick if cost did not matter?"
@@ -23,7 +23,7 @@ duration: { min: 20, max: 40 }
 groupSize: { min: 3, max: 12 }
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-05
 featured: true
 ---

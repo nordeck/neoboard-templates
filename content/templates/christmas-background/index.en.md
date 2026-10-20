@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "Christmas Background"
 description: "A festive background for presentations, company meetups and other occasions in the Christmas season."
@@ -21,7 +21,7 @@ links:
     type: source
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-02
 ---
 

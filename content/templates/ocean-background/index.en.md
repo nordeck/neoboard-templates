@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "Ocean Background"
 description: "A summery ocean background that raises the visual appeal of your presentation or company meetup."
@@ -27,7 +27,7 @@ links:
     type: source
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-13
 ---
 

@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Lean Coffee"
 description: "Meeting ohne feste Agenda: Teilnehmende sammeln Themen, priorisieren per Punkten und diskutieren im Timebox-Takt."
@@ -19,7 +19,7 @@ duration: { min: 45, max: 90 }
 groupSize: { min: 4, max: 12 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 featured: true
 # publish decision (metadata grid): ja, als deutsche Datei von „lean-coffee"

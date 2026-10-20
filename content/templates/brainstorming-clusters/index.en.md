@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "Brainstorming: Idea Clusters"
 description: "Open space with six coloured clusters and prepared sticky notes: collect, sort and prioritise ideas."
@@ -19,7 +19,7 @@ duration: { min: 30, max: 60 }
 groupSize: { min: 3, max: 15 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 ---
 

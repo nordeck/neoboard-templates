@@ -194,7 +194,7 @@ export function indexMarkdown(slug, lang, meta, method) {
   const de = lang === 'de';
   const lines = [
     '---',
-    'schemaVersion: 1',
+    'schemaVersion: 2',
     `lang: ${lang}`,
     `title: ${q(meta.title)}`,
     `description: ${q(meta.description)}`,
@@ -215,7 +215,7 @@ export function indexMarkdown(slug, lang, meta, method) {
     `groupSize: { min: ${meta.groupSize[0]}, max: ${meta.groupSize[1]} }`,
     'authors:',
     '  - name: "Nordeck IT + Consulting GmbH"',
-    'license: AGPL-3.0-or-later',
+    'license: CC0-1.0',
     `published: ${meta.published}`,
     'draft: true',
     '# draft reason: no preview yet',

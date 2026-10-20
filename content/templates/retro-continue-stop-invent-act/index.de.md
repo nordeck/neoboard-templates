@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Retrospektive: Beibehalten, Beenden, Erfinden, Umsetzen"
 description: "Retrospektive in vier Feldern mit Leitfragen: beibehalten, beenden, querdenken und konkret umsetzen."
@@ -21,7 +21,7 @@ duration: { min: 45, max: 90 }
 groupSize: { min: 3, max: 12 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 featured: true
 # publish decision (metadata grid): ja, als deutsche Datei der Retro

@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Prioritäten-Pyramide: Sofort, nächstes Jahr, Träumchen"
 description: "Wünsche und Vorhaben nach Zeithorizont ordnen: sofort, im nächsten Jahr oder als Träumchen."
@@ -19,7 +19,7 @@ duration: { min: 20, max: 40 }
 groupSize: { min: 4, max: 16 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 # publish decision (metadata grid): ja
 ---

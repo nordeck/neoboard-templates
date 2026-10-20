@@ -18,6 +18,7 @@ All templates use the `net.nordeck.whiteboard@v2` format (infinite canvas with f
 | `staging/` | Templates in preparation, not published (see [staging/README.md](staging/README.md)) |
 | `website/` | Template gallery website (Astro), published at <https://nordeck.github.io/neoboard-templates/> |
 | `docs/design/` | Design handoff for the gallery (tokens, component references, prototype) |
+| `claude-plugin/` | Claude Code plugin with the skill *create-neoboard-template* (see [claude-plugin/README.md](claude-plugin/README.md)) |
 
 Content and website code are strictly separated: authors only touch `content/` and `staging/`.
 
@@ -57,7 +58,7 @@ neoboard.io builds this gallery as part of its own deployment and serves it at `
 |---|---|---|
 | `GALLERY_SITE` | `https://nordeck.github.io` | `https://neoboard.io` |
 | `GALLERY_BASE` | `/neoboard-templates` | `/` |
-| `GALLERY_THEME` | `dark` | `light` |
+| `GALLERY_THEME` | `dark` | `dark` |
 
 From `website/dist/`, the host copies only `de/vorlagen/`, `en/templates/`, `boards/`, `_astro/` and `templates-assets/`. The root `index.html`, `de/`/`en/` redirects and `404.html` are for the standalone site only.
 
@@ -72,5 +73,6 @@ Pull requests that touch `content/` or `website/` are built and validated by Git
 
 ## License
 
-[AGPL-3.0-or-later](LICENSE) for templates, content and code, unless stated otherwise.
+- **Templates and content** (`content/`: boards, descriptions, preview images): [CC0 1.0](content/LICENSE) – public domain, free to use, change and share without conditions. Exception: `year-calendar` stays under AGPL-3.0-or-later until its author agrees to CC0; the `license` field of each template is authoritative.
+- **Code** (`website/`, scripts, workflows, Claude plugin): [AGPL-3.0-or-later](LICENSE).
 Third-party assets: the chess pieces in `content/templates/chess/` are CC0 by Ajay Karat | Devil's Work.shop.

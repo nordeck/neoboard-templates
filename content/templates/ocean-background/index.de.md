@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Ozean-Hintergrund"
 description: "Ein sommerlicher Ozean-Hintergrund, der Präsentationen, Retrospektiven und Firmentreffen optisch aufwertet."
@@ -27,7 +27,7 @@ links:
     type: source
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-13
 ---
 

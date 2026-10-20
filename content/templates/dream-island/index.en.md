@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "Build Your Dream Island"
 description: "Let your team dream for a while: everyone decorates a shared island and learns about each other's comfort zones."
@@ -23,7 +23,7 @@ duration: { min: 15, max: 30 }
 groupSize: { min: 2, max: 12 }
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-17
 ---
 

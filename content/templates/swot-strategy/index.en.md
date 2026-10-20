@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "SWOT Strategy (TOWS Matrix)"
 description: "Turn SWOT results into strategies: develop, protect, regain and avoid."
@@ -19,7 +19,7 @@ duration: { min: 60, max: 90 }
 groupSize: { min: 2, max: 10 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 # publish decision (metadata grid): ja
 ---
