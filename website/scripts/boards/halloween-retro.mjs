@@ -42,7 +42,7 @@ export function build(lang) {
   const de = lang === 'de';
   const b = new Board(`${slug}.${lang}`);
   b.templateFrame(de ? 'Halloween-Retro' : 'Halloween Retro');
-  emoji(b, 1640, 20, 100, '🕸️');
+  emoji(b, 1640, 20, 100, '👻');
   emoji(b, 1770, 20, 100, '🦇');
   b.rect(40, 160, 1840, 70, C('Amber', 1), de ? 'Wir blicken zurück auf: …' : 'Looking back on: …', {
     textSize: 30,
