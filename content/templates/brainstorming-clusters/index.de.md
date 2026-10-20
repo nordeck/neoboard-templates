@@ -9,9 +9,9 @@ features:
   - "Sechs farbige Cluster mit Überschrift"
   - "Haftnotizen je Farbe zum Kopieren"
   - "Feld für die Leitfrage"
-# preview: pending screenshot
-#   src: ./preview.de.png
-#   alt: "Brainstorming-Board mit Leitfrage und sechs farbigen Cluster-Feldern mit Haftnotizen"
+preview:
+  src: ./preview.de.png
+  alt: "Brainstorming-Board mit Leitfrage und sechs farbigen Cluster-Feldern mit Haftnotizen"
 files:
   - src: ./brainstorming-clusters.de.nwb
     label: "Vorlage"
@@ -21,8 +21,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 ---
 
 ## 🚀 Ideen-Cluster: Der Ablauf in 4 Schritten

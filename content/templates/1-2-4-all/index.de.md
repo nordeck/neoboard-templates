@@ -9,9 +9,9 @@ features:
   - "Vier Stufen mit Zeitangabe"
   - "Arbeitsbereiche für acht Personen, vier Paare und zwei Gruppen"
   - "Ergebnisfeld für die ganze Gruppe"
-# preview: pending screenshot
-#   src: ./preview.de.png
-#   alt: "Board mit Leitfrage und vier Spalten Allein, Zu zweit, Zu viert und Alle mit jeweils eigenen Arbeitsbereichen"
+preview:
+  src: ./preview.de.png
+  alt: "Board mit Leitfrage und vier Spalten Allein, Zu zweit, Zu viert und Alle mit jeweils eigenen Arbeitsbereichen"
 files:
   - src: ./1-2-4-all.de.nwb
     label: "Vorlage"
@@ -25,8 +25,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 ---
 
 ## 🚀 1-2-4-Alle: Der Ablauf in 4 Schritten

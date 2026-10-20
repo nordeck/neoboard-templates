@@ -23,13 +23,15 @@ Fallback: `https://nordeck.github.io/neoboard-templates/` built from this repo.
 - Gallery code is encapsulated in `website/src/features/templates/` (components, views, lib, styles, scripts) so it can move to neoboard.io in Phase 2; `src/pages/` only holds thin route files.
 - Dark theme is the default (`THEME` in `features/templates/config.ts`); previews always stay light.
 - Icons: Lucide, inlined at build time from `lucide-static`; category icons are Lucide names in `content/categories.yaml`.
+- Script-built templates: one definition per template in `website/scripts/boards/<slug>.mjs` (shared helpers and palette in `lib.mjs`). Change the definition and regenerate; never edit those `.nwb` files directly. Output is deterministic.
 - Design reference: `docs/design/design_handoff_templates_gallery/` (not shipped).
 
 ## Commands (run in `website/`)
 - `npm run dev` – sync boards and start the dev server
-- `npm run validate` – content checks only
+- `npm run validate` – content checks only (includes `generate-boards --check`)
 - `npm run build` – validate, sync boards, build to `dist/`
 - `npm run preview` – serve `dist/`
+- `npm run generate:boards [-- <slug>] [-- <slug> --md]` – regenerate script-built boards from `scripts/boards/<slug>.mjs`; `--md` also creates a missing `index.<lang>.md`
 - `npm run normalize-preview -- <input> <output.png> [--tile <tile.png>] [--crop x,y,w,h]` – fit a screenshot to a preview master
 
 ## Definition of done

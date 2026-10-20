@@ -9,9 +9,9 @@ features:
   - "Six coloured clusters with headings"
   - "Sticky notes per colour to copy"
   - "Box for the guiding question"
-# preview: pending screenshot
-#   src: ./preview.en.png
-#   alt: "Brainstorming board with a guiding question and six coloured cluster areas with sticky notes"
+preview:
+  src: ./preview.en.png
+  alt: "Brainstorming board with a guiding question and six coloured cluster areas with sticky notes"
 files:
   - src: ./brainstorming-clusters.en.nwb
     label: "Template"
@@ -21,8 +21,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 ---
 
 ## 🚀 Idea clusters: How it works in 4 steps

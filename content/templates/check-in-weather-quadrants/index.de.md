@@ -9,9 +9,9 @@ features:
   - "Vier Felder von Sonne bis Gewitter"
   - "Vorbereitete Punkte zum Verschieben"
   - "In wenigen Minuten erledigt"
-# preview: pending screenshot
-#   src: ./preview.de.png
-#   alt: "Check-in-Board mit vier Feldern Sonne, Wolken, Regen und Gewitter und einer Reihe Punkte"
+preview:
+  src: ./preview.de.png
+  alt: "Check-in-Board mit vier Feldern Sonne, Wolken, Regen und Gewitter und einer Reihe Punkte"
 files:
   - src: ./check-in-weather-quadrants.de.nwb
     label: "Vorlage"
@@ -21,8 +21,6 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: no preview yet
 ---
 
 ## 🚀 Check-in Wetterlage: Der Ablauf in 3 Schritten
