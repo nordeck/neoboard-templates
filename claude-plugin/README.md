@@ -1,6 +1,6 @@
 # Claude plugin: neoboard-templates
 
-Claude Code plugin with the skill **create-neoboard-template**: it guides Claude through creating a NeoBoard template in this repository (board definition, metadata, method description), checking it, capturing previews on demo.neoboard.io and publishing it in the gallery on neoboard.io. Templates are published under CC0 1.0; the plugin itself is AGPL-3.0-or-later like the rest of the code.
+Claude Code plugin with the skill **create-neoboard-template**: it guides Claude through creating a NeoBoard template in this repository (generated from a board definition or taken over from a board built by hand in NeoBoard, metadata, method description), checking it, capturing previews on demo.neoboard.io and publishing it in the gallery on neoboard.io. Templates are published under CC0 1.0; the plugin itself is AGPL-3.0-or-later like the rest of the code.
 
 ## Install
 
@@ -19,8 +19,11 @@ claude-plugin/
 ├── .claude-plugin/plugin.json          # name, version, description
 └── skills/create-neoboard-template/
     ├── SKILL.md                         # workflow (five stages)
-    ├── references/                      # board definition API, frontmatter, preview capture
-    └── scripts/render_sketch.py         # SVG sketch of a .nwb for layout checks
+    ├── references/                      # board definition API, frontmatter, preview capture, hand-built boards
+    └── scripts/
+        ├── render_sketch.py             # SVG sketch of a .nwb for layout checks
+        ├── add_method_frame.mjs         # method frame + Markdown body for hand-built boards
+        └── compose_frames.mjs           # several frame screenshots → one 1920×1080 preview
 ```
 
 ## Updating

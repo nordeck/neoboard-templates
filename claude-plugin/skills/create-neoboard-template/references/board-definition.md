@@ -134,7 +134,6 @@ The repository contains working definitions; read the one closest to the new tem
 - `brainstorming-clusters.mjs` – grid of coloured areas with header and sticky stacks
 - `1-2-4-all.mjs` – four columns with different work-area subdivisions
 - `triz.mjs` – three columns with arrows between headers, goal box, attribution
-- `halloween-retro.mjs` – themed retro (if merged)
 
 ## 9. More than one template frame
 

@@ -25,12 +25,44 @@ Do a test run with the first board, check the screenshot with the person, then d
    input.dispatchEvent(new Event('change', { bubbles: true }));
    ```
    Confirm „Importieren“ in the dialog „Inhalt importieren“. Check the expected number of frames arrived.
-   (Alternative once the branch is pushed: `fetch` the file from `https://raw.githubusercontent.com/nordeck/neoboard-templates/<branch>/content/templates/<slug>/<file>` – CORS is allowed there.)
+   For boards over ~50 KB (embedded images) use „Large boards“ below instead.
 4. **Presentation view.** Click `aria-label="Präsentation starten"`. Presentation starts at the frame nearest the viewport centre, so click „Vorheriger Rahmen“ until it is disabled – the first frame is the template frame.
 5. **Hide the UI.** For each `[role=toolbar]` and its surrounding `.MuiStack-root`: `el.style.setProperty('visibility', 'hidden', 'important')`. Injected `<style>` elements are blocked by the content security policy. Move the mouse to an empty spot of the header so no tooltip shows.
 6. **Screenshot.** Crop to `[data-testid="element-frame-<frameId>"]`, inset 3 px (purple presentation border). Save the file locally, e.g. `/tmp/neoboard-previews/<slug>.<lang>.png`.
 7. **Check the image**: only the template frame, no toolbar, cursor, tooltip or method frame, texts complete. If NeoBoard wraps or cuts text badly, fix the definition (not the board), regenerate and re-import.
 8. At the end, look at the dashboard for leftover empty „Unbenannt“ boards (failed creations can appear late) and report them; delete nothing without asking.
+
+## Large boards
+
+Hand-built boards with embedded images are hundreds of KB to a few MB – far too much to pass as base64 through a tool call. Push the branch and let the page fetch the file from GitHub (CORS is allowed there), by **commit SHA**, not branch name: `raw.githubusercontent.com/…/<branch>/…` is cached and served the previous version for minutes after a push. Check the hash before importing:
+
+```bash
+git rev-parse HEAD                                  # <sha>
+shasum -a 256 content/templates/<slug>/<file> | cut -c1-16
+```
+
+```js
+const r = await fetch(`https://raw.githubusercontent.com/nordeck/neoboard-templates/${sha}/content/templates/${slug}/${file}`, { cache: 'no-store' });
+const buf = await r.arrayBuffer();
+const hash = [...new Uint8Array(await crypto.subtle.digest('SHA-256', buf))].map((b) => b.toString(16).padStart(2, '0')).join('').slice(0, 16);
+if (hash !== expected) throw new Error(`stale or wrong file ${hash}`);
+// then hand `new File([buf], file)` to the import input exactly as in step 3
+```
+
+Importing large boards takes longer; wait ~8 s after „Importieren“ before checking frames and images (`document.querySelectorAll('image').length`).
+
+**Re-import into an existing board**: importing replaces the board's content (the dialog warns „Deine Inhalte werden überschrieben“). This is handy for a corrected version of your own test board – check the title first so you never overwrite someone else's board.
+
+## Several template frames
+
+1. Start the presentation and go back to the first frame as in step 4.
+2. Hide the UI, crop the first frame, then click „Nächster Rahmen“ (wait ~2.5 s), move the mouse to the header again and crop the same region. Repeat for every **template** frame; stop before the method frame.
+3. Save every crop at full resolution (do not pass a `scale` below 1 to the screenshot/zoom call when saving – the saved file gets that size too).
+4. Either combine them with `scripts/compose_frames.mjs` (2–9 frames → one 1920×1080 grid) or use the first as preview and the others as `gallery` images. Ask the person which they want.
+
+## Layout check of the final file
+
+Whenever the committed file differs from what was captured (method frame added, definition changed), import that exact file (by SHA, see above) into a fresh board named `Vorlage · <Titel> (DE|EN)` and check: expected number of frames, images present, method frame last in presentation, its text fits.
 
 ## Image quality
 
