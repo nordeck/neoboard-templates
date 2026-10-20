@@ -25,7 +25,6 @@ authors:
   - name: "Christian Paul"
 license: CC0-1.0
 published: 2024-12-05
-featured: true
 ---
 
 Our time and resources as a team are limited, and the complexity and cost of development isn't always apparent to users.

@@ -21,6 +21,7 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: CC0-1.0
 published: 2026-10-20
+featured: true
 ---
 
 ## 🚀 Halloween Retro: How it works in 4 phases
