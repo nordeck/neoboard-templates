@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Wo stehen wir? Standortbestimmung"
 description: "Standortbestimmung in vier Feldern: weiter so, lieber lassen, neu beginnen und Risiken."
@@ -19,7 +19,7 @@ duration: { min: 30, max: 45 }
 groupSize: { min: 4, max: 16 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 # publish decision (metadata grid): ja
 # note (metadata grid): Ähnlich zur Retrospektive, aber mit Risiko-Feld statt Erfinden/Umsetzen.

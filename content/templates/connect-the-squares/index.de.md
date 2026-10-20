@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Verbinde die Quadrate"
 description: "Ein kleines Rätsel in drei Leveln: Verbindet gleiche Quadrate, ohne dass sich Linien kreuzen."
@@ -23,7 +23,7 @@ duration: { min: 5, max: 15 }
 groupSize: { min: 1, max: 8 }
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-20
 ---
 

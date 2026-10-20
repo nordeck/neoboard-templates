@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "Memorise the Scene"
 description: "Memory game: briefly reveal a scene of emojis and rebuild it from memory. Three levels plus a Christmas edition."
@@ -32,7 +32,7 @@ duration: { min: 10, max: 20 }
 groupSize: { min: 1, max: 6 }
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-10
 ---
 

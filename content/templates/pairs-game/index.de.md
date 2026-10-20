@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Pairs-Spiel"
 description: "Das klassische Pairs für Remote-Teams: Deckt jeweils zwei Karten auf und findet passende Symbole."
@@ -30,7 +30,7 @@ duration: { min: 10, max: 20 }
 groupSize: { min: 2, max: 12 }
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-01
 ---
 

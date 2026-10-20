@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Check-out: Stimmungswetter"
 description: "Abschluss mit Wettersymbolen: Teilnehmende bewerten Produktivität, Stimmung und Ergebnisse."
@@ -19,7 +19,7 @@ duration: { min: 5, max: 10 }
 groupSize: { min: 3, max: 30 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 # publish decision (metadata grid): ja, nach Korrektur des Fragetexts
 ---

@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Brainstorming: Ideen-Cluster"
 description: "Freifläche mit sechs farbigen Clustern und vorbereiteten Haftnotizen: Ideen sammeln, ordnen und gewichten."
@@ -19,7 +19,7 @@ duration: { min: 30, max: 60 }
 groupSize: { min: 3, max: 15 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 ---
 

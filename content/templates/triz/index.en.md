@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "TRIZ: Learn from Failure"
 description: "Three steps to a fresh start: fail completely, check honestly what already happens, and stop it deliberately."
@@ -23,7 +23,7 @@ duration: { min: 25, max: 40 }
 groupSize: { min: 3, max: 20 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 ---
 

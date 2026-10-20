@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Wünsch dir was vom Genie"
 description: "Ein Flaschengeist erfüllt drei Wünsche: Welche Funktionen und Fehlerbehebungen wählt euer Team, wenn Kosten egal wären?"
@@ -23,7 +23,7 @@ duration: { min: 20, max: 40 }
 groupSize: { min: 3, max: 12 }
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-05
 featured: true
 ---

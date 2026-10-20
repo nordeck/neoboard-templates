@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Retro-Aktivität: Klatschpresse"
 description: "Spielt Klatschpresse und fasst euren letzten Sprint in provokanten Schlagzeilen zusammen."
@@ -23,7 +23,7 @@ duration: { min: 15, max: 30 }
 groupSize: { min: 3, max: 12 }
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-14
 ---
 

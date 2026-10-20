@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "General Timeline"
 description: "Flexible timeline for events, history or plans with cards above and below the axis."
@@ -19,7 +19,7 @@ duration: { min: 20, max: 45 }
 groupSize: { min: 1, max: 15 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 # publish decision (metadata grid): ja
 # note (metadata grid): Beispieljahre 1900–1940 ggf. neutralisieren.

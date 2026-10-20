@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "Mill (Nine Men's Morris)"
 description: "The classic board game Nine Men's Morris, also known as Mill, for two players on the whiteboard."
@@ -22,7 +22,7 @@ links:
 groupSize: { min: 2, max: 2 }
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-12
 ---
 

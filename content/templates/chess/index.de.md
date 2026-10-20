@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Schach"
 description: "Schach online in NeoBoard spielen, live oder asynchron. Das Brett bleibt im Matrix-Raum gespeichert."
@@ -25,7 +25,7 @@ links:
 groupSize: { min: 2, max: 2 }
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-09
 ---
 

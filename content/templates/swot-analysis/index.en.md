@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "SWOT Analysis"
 description: "SWOT analysis: collect strengths, weaknesses, opportunities and threats in four quadrants."
@@ -19,7 +19,7 @@ duration: { min: 45, max: 90 }
 groupSize: { min: 2, max: 10 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 # publish decision (metadata grid): ja
 # note (metadata grid): Beschriftung zweisprachig (Strengths / Stärken …).

@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "Project Timeline"
 description: "Project timeline with milestones from kick-off to maintenance and end of life."
@@ -19,7 +19,7 @@ duration: { min: 30, max: 60 }
 groupSize: { min: 2, max: 10 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 # publish decision (metadata grid): ja, nach Ersetzen der Lorem-ipsum-Texte
 ---

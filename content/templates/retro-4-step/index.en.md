@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "4-Step Retrospective"
 description: "A minimal retrospective with four frames that guide your team from appreciation to concrete actions."
@@ -23,7 +23,7 @@ duration: { min: 45, max: 90 }
 groupSize: { min: 3, max: 12 }
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-21
 ---
 

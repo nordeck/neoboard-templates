@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Präg dir die Szene ein"
 description: "Gedächtnisspiel: Eine Emoji-Szene kurz aufdecken und aus dem Gedächtnis nachbauen. Drei Level plus Weihnachtsausgabe."
@@ -32,7 +32,7 @@ duration: { min: 10, max: 20 }
 groupSize: { min: 1, max: 6 }
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-10
 ---
 

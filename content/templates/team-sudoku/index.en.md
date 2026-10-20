@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "Team Sudoku"
 description: "Collaborate or race to finish the same Sudoku. The generator creates new boards with configurable difficulty."
@@ -23,7 +23,7 @@ duration: { min: 15, max: 30 }
 groupSize: { min: 1, max: 8 }
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-15
 ---
 

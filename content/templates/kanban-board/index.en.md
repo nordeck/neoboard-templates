@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "Kanban Board"
 description: "Classic Kanban board with To do, In Progress and Done to visualise work and keep the flow moving."
@@ -19,7 +19,7 @@ duration: { min: 15, max: 30 }
 groupSize: { min: 2, max: 10 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 # publish decision (metadata grid): ja
 # note (metadata grid): Deutsche Variante möglich (Zu erledigen / In Arbeit / Erledigt).

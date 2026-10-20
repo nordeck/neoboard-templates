@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: de
 title: "Zusammenarbeit unabhängig von Zeit und Ort"
 description: "Arbeitsorte und Arbeitsweisen sichtbar machen: Büro, unterwegs, remote, Unterricht – synchron oder asynchron."
@@ -19,7 +19,7 @@ duration: { min: 15, max: 30 }
 groupSize: { min: 3, max: 20 }
 authors:
   - name: "Nordeck IT + Consulting GmbH"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2026-10-20
 # publish decision (metadata grid): optional – als Vorlage „Arbeitsorte & -modi" nutzbar
 # note (metadata grid): Ursprünglich Showcase. Als Vorlage nutzbar, wenn Karten ergänzt werden.

@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "Learn About Your Team"
 description: "Two boards with three hidden questions each, one about personal life and one about life at work."
@@ -23,7 +23,7 @@ duration: { min: 15, max: 30 }
 groupSize: { min: 3, max: 15 }
 authors:
   - name: "Christian Paul"
-license: AGPL-3.0-or-later
+license: CC0-1.0
 published: 2024-12-19
 ---
 

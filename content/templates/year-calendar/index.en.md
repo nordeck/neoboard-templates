@@ -1,5 +1,5 @@
 ---
-schemaVersion: 1
+schemaVersion: 2
 lang: en
 title: "Year Calendar"
 description: "A whole year on one frame for annual planning. Generate calendars for any year and language with the generator."
@@ -19,6 +19,7 @@ links:
 authors:
   - name: "Normannio"
 license: AGPL-3.0-or-later
+# license note: stays AGPL until the author (Normannio) agrees to CC0
 published: 2024-09-11
 ---
 
