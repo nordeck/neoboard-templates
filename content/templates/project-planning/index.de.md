@@ -19,10 +19,7 @@ authors:
   - name: "Nordeck IT + Consulting GmbH"
 license: AGPL-3.0-or-later
 published: 2026-10-20
-draft: true
-# draft reason: publication decision pending (optional)
 # publish decision (metadata grid): optional, als Beispiel
-# note (metadata grid): Zwei übereinanderliegende Titel („Planning and Process Tracking" verdeckt unter „Projekt- und Zeitplanung"); der englische sollte entfernt werden.
 ---
 
 ## 💡 Beispiel: Projekt- und Zeitplanung im Einsatz
