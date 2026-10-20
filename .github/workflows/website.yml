@@ -1,0 +1,44 @@
+# Copyright 2026 Nordeck IT + Consulting GmbH
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+name: Website
+
+on:
+  push:
+    branches: [main]
+    paths: ['content/**', 'website/**', '.github/workflows/website.yml']
+  pull_request:
+    paths: ['content/**', 'website/**', '.github/workflows/website.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: website-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      # Installs dependencies, runs `npm run build` (validate + sync boards + astro build), uploads the artifact.
+      - uses: withastro/action@v6
+        with:
+          path: ./website
+          node-version: 24
+
+  deploy:
+    # Pull requests are built and validated, never deployed.
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
