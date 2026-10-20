@@ -26,6 +26,7 @@ Fallback: `https://nordeck.github.io/neoboard-templates/` built from this repo.
 - neoboard.io embeds the gallery: it builds `website/` with `GALLERY_SITE`, `GALLERY_BASE=/`, `GALLERY_THEME=dark` and copies `de/vorlagen/`, `en/templates/`, `boards/`, `_astro/`, `templates-assets/` into its own `dist/`. Keep all gallery files under these paths; static assets go to `public/templates-assets/` (never `public/assets/`, which belongs to neoboard.io).
 - Icons: Lucide, inlined at build time from `lucide-static`; category icons are Lucide names in `content/categories.yaml`.
 - Script-built templates: one definition per template in `website/scripts/boards/<slug>.mjs` (shared helpers and palette in `lib.mjs`). Change the definition and regenerate; never edit those `.nwb` files directly. Output is deterministic.
+- Claude plugin `claude-plugin/` (skill *create-neoboard-template*): the end-to-end workflow for new templates. When scripts, frontmatter fields or the publishing flow change, update the skill in the same pull request and bump the plugin version.
 - Design reference: `docs/design/design_handoff_templates_gallery/` (not shipped).
 
 ## Commands (run in `website/`)
