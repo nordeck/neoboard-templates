@@ -18,6 +18,7 @@ All templates use the `net.nordeck.whiteboard@v2` format (infinite canvas with f
 | `staging/` | Templates in preparation, not published (see [staging/README.md](staging/README.md)) |
 | `website/` | Template gallery website (Astro), published at <https://nordeck.github.io/neoboard-templates/> |
 | `docs/design/` | Design handoff for the gallery (tokens, component references, prototype) |
+| `claude-plugin/` | Claude Code plugin with the skill *create-neoboard-template* (see [claude-plugin/README.md](claude-plugin/README.md)) |
 
 Content and website code are strictly separated: authors only touch `content/` and `staging/`.
 
