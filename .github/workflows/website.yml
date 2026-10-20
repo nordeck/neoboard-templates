@@ -30,6 +30,8 @@ jobs:
         with:
           path: ./website
           node-version: 24
+          # Reuse optimized preview images from earlier runs (see cacheDir in astro.config.mjs)
+          cache-dir: .cache/astro
 
   deploy:
     # Pull requests are built and validated, never deployed.
