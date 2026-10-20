@@ -1,0 +1,81 @@
+---
+// Copyright 2026 Nordeck IT + Consulting GmbH
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// Page shell for Phase 1 (GitHub Pages). In Phase 2 the neoboard.io layout replaces it.
+// Fonts are self-hosted (bundled from @fontsource) so that no visitor data is sent to third parties.
+import '@fontsource/titillium-web/400.css';
+import '@fontsource/titillium-web/600.css';
+import '@fontsource/titillium-web/700.css';
+import '@fontsource/titillium-web/700-italic.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/400-italic.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import '@fontsource/roboto-mono/400.css';
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../features/templates/styles/templates.css';
+import SiteFooter from '../features/templates/components/SiteFooter.astro';
+import SiteHeader from '../features/templates/components/SiteHeader.astro';
+import { THEME } from '../features/templates/config';
+import { t } from '../features/templates/lib/i18n';
+import { assetHref } from '../features/templates/lib/routes';
+import type { Lang } from '../features/templates/lib/templates';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  /** Same page in both languages, used for the language switch and hreflang. */
+  alternates: Record<Lang, string>;
+  ogImage?: { src: string; alt: string; width: number; height: number };
+}
+
+const { lang, title, description, alternates, ogImage } = Astro.props;
+const s = t(lang);
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const abs = (p: string) => new URL(p, Astro.site).href;
+---
+
+<!doctype html>
+<html lang={lang} data-theme={THEME}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#e95d11" />
+    <meta name="color-scheme" content={THEME} />
+    <link rel="icon" type="image/svg+xml" href={assetHref('favicon.svg')} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="de" href={abs(alternates.de)} />
+    <link rel="alternate" hreflang="en" href={abs(alternates.en)} />
+    <link rel="alternate" hreflang="x-default" href={abs(alternates.en)} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NeoBoard" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang === 'de' ? 'de_DE' : 'en_US'} />
+    {
+      ogImage && (
+        <>
+          <meta property="og:image" content={abs(ogImage.src)} />
+          <meta property="og:image:width" content={String(ogImage.width)} />
+          <meta property="og:image:height" content={String(ogImage.height)} />
+          <meta property="og:image:alt" content={ogImage.alt} />
+          <meta name="twitter:card" content="summary_large_image" />
+        </>
+      )
+    }
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{s.skip}</a>
+    <SiteHeader lang={lang} alternates={alternates} />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <SiteFooter lang={lang} />
+  </body>
+</html>

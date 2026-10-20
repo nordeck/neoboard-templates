@@ -19,11 +19,18 @@ Fallback: `https://nordeck.github.io/neoboard-templates/` built from this repo.
 - No third-party runtime requests (fonts, scripts, analytics) without approval.
 - Use design tokens from `website/src/styles/tokens.css`; no hard-coded colours.
 
+## Website structure
+- Gallery code is encapsulated in `website/src/features/templates/` (components, views, lib, styles, scripts) so it can move to neoboard.io in Phase 2; `src/pages/` only holds thin route files.
+- Dark theme is the default (`THEME` in `features/templates/config.ts`); previews always stay light.
+- Icons: Lucide, inlined at build time from `lucide-static`; category icons are Lucide names in `content/categories.yaml`.
+- Design reference: `docs/design/design_handoff_templates_gallery/` (not shipped).
+
 ## Commands (run in `website/`)
 - `npm run dev` – sync boards and start the dev server
 - `npm run validate` – content checks only
 - `npm run build` – validate, sync boards, build to `dist/`
 - `npm run preview` – serve `dist/`
+- `npm run normalize-preview -- <input> <output.png> [--tile <tile.png>] [--crop x,y,w,h]` – fit a screenshot to a preview master
 
 ## Definition of done
 - `npm run build` passes (includes content validation).

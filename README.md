@@ -16,9 +16,31 @@ All templates use the `net.nordeck.whiteboard@v2` format (infinite canvas with f
 | `content/templates/<slug>/` | Published templates: `index.<lang>.md` (metadata and description), `.nwb` boards, PNG previews |
 | `content/categories.yaml` | Category registry with English and German labels |
 | `staging/` | Templates in preparation, not published (see [staging/README.md](staging/README.md)) |
-| `website/` | Template gallery website (Astro), added separately |
+| `website/` | Template gallery website (Astro), published at <https://nordeck.github.io/neoboard-templates/> |
+| `docs/design/` | Design handoff for the gallery (tokens, component references, prototype) |
 
 Content and website code are strictly separated: authors only touch `content/` and `staging/`.
+
+## Website
+
+The gallery is a static Astro site in `website/`. Content is read from `../content` at build time; boards are copied to `/boards/<slug>/` for download, preview images are converted to AVIF/WebP in several sizes.
+
+```bash
+cd website
+npm ci
+npm run dev        # sync boards and start the dev server (drafts are visible)
+npm run validate   # content checks only
+npm run build      # validate, sync boards, build to dist/ (drafts are hidden)
+npm run preview    # serve dist/
+```
+
+Normalize a captured frame to a 1920×1080 preview master (optional 1280×720 tile):
+
+```bash
+npm run normalize-preview -- screenshot.png ../content/templates/<slug>/preview.de.png
+```
+
+Pull requests that touch `content/` or `website/` are built and validated by GitHub Actions; `main` is deployed to GitHub Pages.
 
 ## Contributing a template
 

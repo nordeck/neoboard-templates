@@ -1,0 +1,166 @@
+---
+// Copyright 2026 Nordeck IT + Consulting GmbH
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// Gallery (/de/vorlagen/) and category page (/de/vorlagen/kategorie/<id>/, with `category` set).
+// All cards are rendered at build time; search, category filter and sort run client-side (scripts/gallery.ts).
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import SubmitCta from '../components/SubmitCta.astro';
+import TemplateCard from '../components/TemplateCard.astro';
+import { t } from '../lib/i18n';
+import { routeHref } from '../lib/routes';
+import { getCategories, getTemplates, type Category, type Lang } from '../lib/templates';
+
+interface Props {
+  lang: Lang;
+  category?: Category;
+}
+
+const { lang, category } = Astro.props;
+const s = t(lang);
+const categories = await getCategories();
+const categoryById = new Map(categories.map((c) => [c.id, c]));
+const all = await getTemplates(lang);
+const items = category ? all.filter((i) => i.entry.data.category.id === category.id) : all;
+const featured = category ? [] : all.filter((i) => i.entry.data.featured).slice(0, 3);
+const chips = categories.map((c) => ({
+  id: c.id,
+  label: c.data.label[lang],
+  icon: c.data.icon,
+  count: all.filter((i) => i.entry.data.category.id === c.id).length,
+}));
+
+const route = category ? ({ page: 'category', id: category.id } as const) : ({ page: 'gallery' } as const);
+const alternates = { de: routeHref('de', route), en: routeHref('en', route) };
+const title = category ? `${category.data.label[lang]} – ${s.title}` : s.title;
+const description = category?.data.description?.[lang] ?? s.lead;
+const galleryHref = routeHref(lang, { page: 'gallery' });
+---
+
+<BaseLayout lang={lang} title={title} description={description} alternates={alternates}>
+  <section class="tg-intro">
+    <div class="wrap">
+      {
+        category ? (
+          <>
+            <a class="back" href={galleryHref}>
+              <Icon name="ArrowLeft" size={14} />
+              {s.back}
+            </a>
+            <div class="cat-row">
+              <span class="cat-ico">{category.data.icon && <Icon name={category.data.icon} size={26} />}</span>
+              <div>
+                <span class="nb-kicker on-dark">{s.catKicker}</span>
+                <h1>{category.data.label[lang]}</h1>
+              </div>
+            </div>
+            {category.data.description && <p class="cat-lead">{category.data.description[lang]}</p>}
+          </>
+        ) : (
+          <>
+            <span class="nb-kicker on-dark">{s.kicker}</span>
+            <h1>{s.title}</h1>
+            <p>{s.lead}</p>
+          </>
+        )
+      }
+    </div>
+  </section>
+
+  {
+    featured.length > 0 && (
+      <section class="wrap tg-section" data-featured aria-labelledby="tg-featured-title">
+        <h2 class="nb-kicker" id="tg-featured-title">
+          {s.featured}
+        </h2>
+        <div class="tg-featured">
+          {featured.map((item) => (
+            <TemplateCard item={item} category={categoryById.get(item.entry.data.category.id)!} lang={lang} />
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <section
+    class="wrap tg-section"
+    data-gallery
+    data-lang={lang}
+    data-count-one={s.count(1)}
+    data-count-other={s.count(9999)}
+    aria-labelledby="tg-all-title"
+  >
+    <h2 class="visually-hidden" id="tg-all-title">{category ? category.data.label[lang] : s.back}</h2>
+    {
+      items.length > 0 && (
+        <>
+          <div class="tg-toolbar">
+            <div class="nb-search">
+              <Icon name="Search" size={18} />
+              <input type="search" placeholder={s.search} aria-label={s.search} data-search autocomplete="off" />
+            </div>
+            <div class="nb-tabs" role="group" aria-label={s.sortLabel}>
+              <button type="button" aria-pressed="true" data-sort="new">
+                {s.sortNew}
+              </button>
+              <button type="button" aria-pressed="false" data-sort="az">
+                {s.sortAz}
+              </button>
+            </div>
+          </div>
+          {!category && (
+            <div class="nb-chips" role="group" aria-label={s.categoryFilter}>
+              <button type="button" class="nb-chip" aria-pressed="true" data-chip="">
+                {s.all}
+                <span class="n">{all.length}</span>
+              </button>
+              {chips.map((c) => (
+                <button type="button" class="nb-chip" aria-pressed="false" data-chip={c.id}>
+                  {c.icon && <Icon name={c.icon} size={16} />}
+                  {c.label}
+                  <span class="n">{c.count}</span>
+                </button>
+              ))}
+            </div>
+          )}
+        </>
+      )
+    }
+    <span class="tg-count" aria-live="polite" data-count>{s.count(items.length)}</span>
+    <div class="tg-grid" data-grid>
+      {
+        items.map((item) => (
+          <TemplateCard item={item} category={categoryById.get(item.entry.data.category.id)!} lang={lang} />
+        ))
+      }
+    </div>
+    {
+      items.length === 0 ? (
+        <div class="tg-empty">
+          <Icon name="SearchX" size={36} strokeWidth={1.6} />
+          <h3>{s.emptyTitle}</h3>
+          <p>{s.catEmpty}</p>
+          <a class="nb-btn nb-btn-primary" href={galleryHref}>
+            {s.back}
+          </a>
+        </div>
+      ) : (
+        <div class="tg-empty" data-empty hidden>
+          <Icon name="SearchX" size={36} strokeWidth={1.6} />
+          <h3>{s.emptyTitle}</h3>
+          <p>{s.emptyBody}</p>
+          <button type="button" class="nb-btn nb-btn-primary" data-reset>
+            {s.reset}
+          </button>
+        </div>
+      )
+    }
+  </section>
+
+  <SubmitCta lang={lang} />
+</BaseLayout>
+
+<script>
+  import '../scripts/gallery';
+</script>

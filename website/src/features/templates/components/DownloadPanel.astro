@@ -1,0 +1,135 @@
+---
+// Copyright 2026 Nordeck IT + Consulting GmbH
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// Download block: 1 file -> button, 2–4 -> rows, >=5 -> select + button, 0 -> generator button.
+import Icon from './Icon.astro';
+import { t } from '../lib/i18n';
+import type { Lang } from '../lib/templates';
+
+interface Props {
+  lang: Lang;
+  files: { label: string; name: string; href: string }[];
+  links: { label: string; url: string; type: 'generator' | 'source' | 'docs' | 'video' }[];
+  selectThreshold?: number;
+}
+
+const { lang, files, links, selectThreshold = 5 } = Astro.props;
+const s = t(lang).download;
+const generators = links.filter((l) => l.type === 'generator');
+const others = links.filter((l) => l.type !== 'generator');
+// With files, all generators are secondary links; without files, the first one is the main button.
+const extraGenerators = files.length > 0 ? generators : generators.slice(1);
+const selectLabel = files.every((f) => /\b\d{4}\b/.test(f.label)) ? s.selectYear : s.choose;
+---
+
+<div class="nb-download" data-download>
+  <span class="nb-kicker">{s.kicker}</span>
+  {
+    files.length === 1 && (
+      <>
+        <a class="nb-btn nb-btn-primary" href={files[0].href} download={files[0].name}>
+          <Icon name="Download" size={18} />
+          {s.one}
+        </a>
+        <p class="file-note">
+          {files[0].name} · {s.file}
+        </p>
+      </>
+    )
+  }
+  {
+    files.length > 1 && files.length < selectThreshold && (
+      <div class="rows">
+        {files.map((f) => (
+          <a class="row" href={f.href} download={f.name}>
+            <span>
+              <b>{f.label}</b>
+              <code>{f.name}</code>
+            </span>
+            <span class="act">
+              <Icon name="Download" size={16} />
+              {s.get}
+            </span>
+          </a>
+        ))}
+      </div>
+    )
+  }
+  {
+    files.length >= selectThreshold && (
+      <>
+        <div class="pick">
+          <div>
+            <label for="nb-dl-pick">{selectLabel}</label>
+            <span class="select">
+              <select id="nb-dl-pick" data-download-select>
+                {files.map((f) => (
+                  <option value={f.href} data-name={f.name}>
+                    {f.label}
+                  </option>
+                ))}
+              </select>
+              <Icon name="ChevronDown" size={16} strokeWidth={2.4} />
+            </span>
+          </div>
+          <a class="nb-btn nb-btn-primary" href={files[0].href} download={files[0].name} data-download-button>
+            <Icon name="Download" size={18} />
+            {s.get}
+          </a>
+        </div>
+        <p class="file-note">
+          <span data-download-name>{files[0].name}</span> · {s.file}
+        </p>
+      </>
+    )
+  }
+  {
+    files.length === 0 && generators.length > 0 && (
+      <>
+        <p class="note">{s.generator}</p>
+        <a class="nb-btn nb-btn-primary" href={generators[0].url} target="_blank" rel="noopener noreferrer">
+          <Icon name="ExternalLink" size={18} />
+          {generators[0].label}
+          <span class="visually-hidden">{s.newTab}</span>
+        </a>
+      </>
+    )
+  }
+  {
+    extraGenerators.length + others.length > 0 && (
+      <div class="links">
+        {extraGenerators.map((l) => (
+          <a href={l.url} target="_blank" rel="noopener noreferrer">
+            <Icon name="ExternalLink" size={16} />
+            {l.label}
+            <span class="visually-hidden">{s.newTab}</span>
+          </a>
+        ))}
+        {others.map((l) => (
+          <a class="minor" href={l.url} target="_blank" rel="noopener noreferrer">
+            <Icon name={l.type === 'video' ? 'CirclePlay' : 'FileText'} size={15} />
+            {l.label}
+            <span class="visually-hidden">{s.newTab}</span>
+          </a>
+        ))}
+      </div>
+    )
+  }
+</div>
+
+<script>
+  // Keep the download button in sync with the selected file (>= 5 files).
+  for (const panel of document.querySelectorAll<HTMLElement>('[data-download]')) {
+    const select = panel.querySelector<HTMLSelectElement>('[data-download-select]');
+    const button = panel.querySelector<HTMLAnchorElement>('[data-download-button]');
+    const name = panel.querySelector<HTMLElement>('[data-download-name]');
+    if (!select || !button || !name) continue;
+    select.addEventListener('change', () => {
+      const option = select.selectedOptions[0];
+      button.href = option.value;
+      button.download = option.dataset.name ?? '';
+      name.textContent = option.dataset.name ?? '';
+    });
+  }
+</script>

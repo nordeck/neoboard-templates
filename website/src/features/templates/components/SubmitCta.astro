@@ -1,0 +1,25 @@
+---
+// Copyright 2026 Nordeck IT + Consulting GmbH
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { t } from '../lib/i18n';
+import { routeHref } from '../lib/routes';
+import type { Lang } from '../lib/templates';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const s = t(lang);
+---
+
+<section class="tg-cta">
+  <div class="wrap">
+    <div>
+      <h2>{s.submitCtaTitle}</h2>
+      <p>{s.submitCtaLead}</p>
+    </div>
+    <a class="nb-btn nb-btn-primary" href={routeHref(lang, { page: 'submit' })}>{s.submitCta}</a>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+// Copyright 2026 Nordeck IT + Consulting GmbH
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// Numbered steps on the neoboard.io dark card grid.
+interface Props {
+  steps: { title: string; description: string }[];
+}
+
+const { steps } = Astro.props;
+---
+
+<ol class="nb-cards nb-cards-dark nb-steps">
+  {
+    steps.map((s, i) => (
+      <li>
+        <span class="num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+        <h3>{s.title}</h3>
+        <p>{s.description}</p>
+      </li>
+    ))
+  }
+</ol>

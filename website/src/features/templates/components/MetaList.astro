@@ -1,0 +1,22 @@
+---
+// Copyright 2026 Nordeck IT + Consulting GmbH
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// Template metadata as a two-column description list; empty values are skipped.
+interface Props {
+  items: { label: string; value: string | null | undefined }[];
+}
+
+const items = Astro.props.items.filter((i) => i.value);
+---
+
+<dl class="nb-meta">
+  {
+    items.map((i) => (
+      <div>
+        <dt>{i.label}</dt>
+        <dd>{i.value}</dd>
+      </div>
+    ))
+  }
+</dl>

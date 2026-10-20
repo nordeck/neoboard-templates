@@ -1,0 +1,37 @@
+---
+// Copyright 2026 Nordeck IT + Consulting GmbH
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+// Lucide icon, inlined at build time from lucide-static (no runtime requests).
+import { readFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
+import path from 'node:path';
+
+interface Props {
+  /** Lucide name in PascalCase, e.g. "RefreshCw" */
+  name: string;
+  size?: number;
+  strokeWidth?: number;
+}
+
+const { name, size = 18, strokeWidth = 2 } = Astro.props;
+const dir = path.join(path.dirname(createRequire(import.meta.url).resolve('lucide-static/package.json')), 'icons');
+const kebab = name.replace(/([a-z0-9])([A-Z])/g, '$1-$2').replace(/([A-Z])([A-Z][a-z])/g, '$1-$2').toLowerCase();
+let svg: string;
+try {
+  svg = readFileSync(path.join(dir, `${kebab}.svg`), 'utf8');
+} catch {
+  throw new Error(`Unknown Lucide icon "${name}" (${kebab}.svg)`);
+}
+svg = svg
+  .replace(/<!--[\s\S]*?-->/g, '')
+  .replace(/\s+class="[^"]*"/, '')
+  .replace(/width="24"/, `width="${size}"`)
+  .replace(/height="24"/, `height="${size}"`)
+  .replace(/stroke-width="2"/, `stroke-width="${strokeWidth}"`)
+  .replace('<svg', '<svg aria-hidden="true" focusable="false"')
+  .replace(/\n\s*/g, ' ')
+  .trim();
+---
+
+<span class="nb-icon" style={`width:${size}px;height:${size}px`} set:html={svg} />
