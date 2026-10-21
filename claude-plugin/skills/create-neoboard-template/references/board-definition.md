@@ -46,7 +46,7 @@ All coordinates passed to drawing methods are **relative to the current frame** 
 | `b.label(x, y, w, h, text, size, { bold, align, color })` | Transparent text box. |
 | `b.sticky(x, y, w, h, fill, text?)` | Sticky note. Two slightly offset stickies form a "stack to copy from". |
 | `b.shape(kind, x, y, w, h, fill, text?, options?)` | Other kinds: `circle` (w = h), `ellipse`, `triangle`. |
-| `b.line(x1, y1, x2, y2, color, { arrow })` | Straight line, optional arrowhead at the end. |
+| `b.line(x1, y1, x2, y2, color, { arrow })` | Straight free line (not connected to shapes), optional arrowhead at the end. Ends go on shape borders – see "Lines and arrows between shapes". |
 | `b.frame({ x, y, width, height })` | Starts another frame at absolute canvas coordinates (see section 9). |
 | `C(family, level)` | Palette colour, level 1 (lightest) … 7 (darkest). |
 | `textOn(family)` | White or black text colour readable on `C(family, 4)`. |
@@ -69,6 +69,21 @@ x   40–1880  usable width (40 px margin left and right)
 - Column header: 80 px high, `C(family, 4)` with `textOn(family)`, 30–34 px bold. Below it an optional question/instruction label (22–24 px, about 90 px high), then the work area in `C(family, 1)` with `borderRadius: 12`.
 - Give people something to copy: sticky stacks (`C(family, 2)`, 140–150 px) or rows of dots (`shape('circle', …, 50, 50, C('Deep Orange', 4))`).
 - Leave real empty space for content – the board is used, not just looked at.
+
+### Lines and arrows between shapes
+
+- **Line ends sit on the border of a shape, never at its centre.** An arrow between two
+  column headers runs from the right edge of one (`x + cw + 6`) to the left edge of the
+  next (`x + cw + gap - 6`), at the header's vertical middle – as in `triz.mjs`.
+- `b.line` writes a *free* line: when people move a shape, the line stays where it is.
+  That is fine for decoration and for arrows between fixed areas.
+- If an arrow must stay attached when shapes are moved, it needs a real connection:
+  `connectedElementStart`/`connectedElementEnd` on the line, the line id in
+  `connectedPaths` of both shapes, and both ends on NeoBoard's anchor points (edge
+  midpoints). NeoBoard never recalculates the ends itself – a connection written from
+  centre to centre starts inside the shape forever. `lib.mjs` has no helper for this
+  yet; add one to `lib.mjs` in its own pull request, following "Connected Arrows" in
+  the `neoboard` skill.
 - Integer division matters for reproducible output: use `Math.floor` when splitting widths.
 
 ## 4. Colours
@@ -151,3 +166,6 @@ b.methodFrame(…);   // last; it stays right of the first frame
 ```
 
 Stack additional frames downwards (`y + 1170` each). Up to eight fit on the canvas.
+All frames stay on the **one slide** that `toJSON()` writes – never add a second
+slide: NeoBoard refuses `@v2` files with more than one slide ("Must have a single
+slide"), and the import dialog only says the file can't be loaded.
