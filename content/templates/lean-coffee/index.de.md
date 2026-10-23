@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Lean Coffee"
 description: "Meeting ohne feste Agenda: Teilnehmende sammeln Themen, priorisieren per Punkten und diskutieren im Timebox-Takt."

@@ -5,7 +5,7 @@ Target: subpage of neoboard.io (`/de/vorlagen/`, `/en/templates/`) built inside 
 Fallback: `https://nordeck.github.io/neoboard-templates/` built from this repo.
 
 ## Hard rules
-- `content/` holds published content only (Markdown, YAML, PNG, `.nwb`). Never add code there.
+- `content/` holds published content only (Markdown, YAML, PNG, `.nwb`, `.zip` extras). Never add code there.
 - `staging/` holds boards in preparation (with metadata grid). Never published, never treated as content.
 - `website/` holds code only. Never add template content there.
 - The only bridges between content and code are `website/src/content.config.ts` and `website/scripts/*.mjs`.

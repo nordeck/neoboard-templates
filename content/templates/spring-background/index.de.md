@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Frühlings-Hintergrund"
 description: "Ein fröhlicher Frühlings-Hintergrund, um Folien und Ziele für die neue Saison vorzubereiten."

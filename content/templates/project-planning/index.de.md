@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Projekt- und Zeitplanung – Beispiel"
 description: "Ausgefülltes Beispiel einer Projektplanung mit Themenspeicher, Zeitachse, Entwürfen und Testphasen."

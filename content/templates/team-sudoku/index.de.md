@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Team-Sudoku"
 description: "Gemeinsam oder um die Wette dasselbe Sudoku lösen. Der Generator erzeugt neue Rätsel mit wählbarem Schwierigkeitsgrad."

@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Willkommen: Erwartungen zweier Teams"
 description: "Begrüßung für zwei Teams: Jede Seite hält ihre Erwartungen fest, gemeinsame Diskussionsthemen stehen in der Mitte."

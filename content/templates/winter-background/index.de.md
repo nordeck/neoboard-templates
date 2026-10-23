@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Winter-Hintergrund"
 description: "Ein verschneiter Winter-Hintergrund mit Wintersport, Schneemännern und verzauberten Landschaften."

@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "General Timeline"
 description: "Flexible timeline for events, history or plans with cards above and below the axis."

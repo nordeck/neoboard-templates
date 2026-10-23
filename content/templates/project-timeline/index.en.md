@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Project Timeline"
 description: "Project timeline with milestones from kick-off to maintenance and end of life."

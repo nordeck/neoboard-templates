@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Zusammenarbeit unabhängig von Zeit und Ort"
 description: "Arbeitsorte und Arbeitsweisen sichtbar machen: Büro, unterwegs, remote, Unterricht – synchron oder asynchron."

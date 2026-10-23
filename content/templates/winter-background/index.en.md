@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Winter Background"
 description: "A snowy winter background celebrating winter sports, snowmen and snow-covered landscapes."

@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Feature Genie"
 description: "A genie grants three wishes: which features and bug fixes would your team pick if cost did not matter?"

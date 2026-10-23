@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Mindmap"
 description: "Freie Mindmap: Von einem zentralen Begriff aus sammeln und ordnen Sie Ideen gemeinsam in Ästen."

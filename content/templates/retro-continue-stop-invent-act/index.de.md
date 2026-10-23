@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Retrospektive: Beibehalten, Beenden, Erfinden, Umsetzen"
 description: "Retrospektive in vier Feldern mit Leitfragen: beibehalten, beenden, querdenken und konkret umsetzen."

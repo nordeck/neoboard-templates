@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Verbinde die Quadrate"
 description: "Ein kleines Rätsel in drei Leveln: Verbindet gleiche Quadrate, ohne dass sich Linien kreuzen."

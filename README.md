@@ -13,7 +13,7 @@ All templates use the `net.nordeck.whiteboard@v2` format (infinite canvas with f
 
 | Folder | Content |
 |---|---|
-| `content/templates/<slug>/` | Published templates: `index.<lang>.md` (metadata and description), `.nwb` boards, PNG previews |
+| `content/templates/<slug>/` | Published templates: `index.<lang>.md` (metadata and description), `.nwb` boards, PNG previews, optional `.zip` extras (e.g. illustrations for other whiteboard tools) |
 | `content/categories.yaml` | Category registry with English and German labels |
 | `staging/` | Templates in preparation, not published (see [staging/README.md](staging/README.md)) |
 | `website/` | Template gallery website (Astro), published at <https://nordeck.github.io/neoboard-templates/> |

@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Business Model Canvas"
 description: "Business Model Canvas with nine building blocks plus environmental costs and societal benefits."

@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Weihnachts-Hintergrund"
 description: "Ein festlicher Hintergrund für Präsentationen, Firmentreffen und andere Anlässe in der Weihnachtszeit."

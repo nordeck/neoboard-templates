@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "4-Step Retrospective"
 description: "A minimal retrospective with four frames that guide your team from appreciation to concrete actions."

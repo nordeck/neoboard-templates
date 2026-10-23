@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Präg dir die Szene ein"
 description: "Gedächtnisspiel: Eine Emoji-Szene kurz aufdecken und aus dem Gedächtnis nachbauen. Drei Level plus Weihnachtsausgabe."

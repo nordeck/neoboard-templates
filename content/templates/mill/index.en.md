@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Mill (Nine Men's Morris)"
 description: "The classic board game Nine Men's Morris, also known as Mill, for two players on the whiteboard."

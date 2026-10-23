@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Lern dein Team kennen"
 description: "Zwei Rahmen mit je drei verdeckten Fragen: einer zum Privatleben, einer zum Arbeitsleben."

@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Brainstorming: Ideen-Cluster"
 description: "Freifläche mit sechs farbigen Clustern und vorbereiteten Haftnotizen: Ideen sammeln, ordnen und gewichten."

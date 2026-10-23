@@ -38,6 +38,7 @@ const related = (await getTemplates(lang))
   .slice(0, 3);
 
 const files = d.files.map((f) => ({ label: f.label, name: fileName(f.src), href: boardHref(slug, fileName(f.src)) }));
+const extras = d.extras.map((f) => ({ label: f.label, name: fileName(f.src), href: boardHref(slug, fileName(f.src)) }));
 const frames = d.files.length ? countFrames(slug, d.files[0].src) : 0;
 
 // Main preview plus optional gallery images; thumbnails switch between them.
@@ -135,7 +136,7 @@ const alternates = {
         </div>
         <p class="desc" lang={contentLang}>{d.description}</p>
         {isFallback && <div class="nb-notice nb-notice-legal">{s.onlyInLong[d.lang]}</div>}
-        <DownloadPanel lang={lang} files={files} links={d.links} />
+        <DownloadPanel lang={lang} files={files} extras={extras} links={d.links} />
         <MetaList items={meta} />
       </div>
     </div>

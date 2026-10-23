@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "4-Schritte-Retrospektive"
 description: "Eine schlanke Retrospektive mit vier Rahmen, die euer Team von der Wertschätzung bis zu konkreten Maßnahmen führt."

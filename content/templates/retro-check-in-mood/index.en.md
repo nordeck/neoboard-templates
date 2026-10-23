@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Retro Check-in: How Are You Feeling?"
 description: "Check-in for retrospectives: everyone places their name in one of four mood boxes."

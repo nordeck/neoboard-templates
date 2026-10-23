@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "1-2-4-All"
 description: "From silent individual work via pairs and foursomes to the whole group, with work areas for each stage."

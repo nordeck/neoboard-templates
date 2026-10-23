@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "TRIZ: Learn from Failure"
 description: "Three steps to a fresh start: fail completely, check honestly what already happens, and stop it deliberately."

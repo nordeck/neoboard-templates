@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Check-in: Weather Report"
 description: "Check-in with four kinds of weather from sunny to stormy: everyone places a dot in their quadrant."

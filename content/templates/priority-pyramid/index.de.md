@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Prioritäten-Pyramide: Sofort, nächstes Jahr, Träumchen"
 description: "Wünsche und Vorhaben nach Zeithorizont ordnen: sofort, im nächsten Jahr oder als Träumchen."

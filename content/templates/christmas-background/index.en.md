@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Christmas Background"
 description: "A festive background for presentations, company meetups and other occasions in the Christmas season."

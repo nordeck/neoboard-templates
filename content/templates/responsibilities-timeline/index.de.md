@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Verantwortlichkeiten & Timeline"
 description: "Maßnahmen auf einer Monatsachse planen und jeder Aufgabe eine verantwortliche Person zuordnen."

@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Connect the Squares"
 description: "A little brain teaser in three levels: connect matching squares without crossing lines."

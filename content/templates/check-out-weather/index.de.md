@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Check-out: Stimmungswetter"
 description: "Abschluss mit Wettersymbolen: Teilnehmende bewerten Produktivität, Stimmung und Ergebnisse."

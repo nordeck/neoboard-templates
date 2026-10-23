@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Build Your Dream Island"
 description: "Let your team dream for a while: everyone decorates a shared island and learns about each other's comfort zones."

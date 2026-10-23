@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Brainstorming: Idea Clusters"
 description: "Open space with six coloured clusters and prepared sticky notes: collect, sort and prioritise ideas."

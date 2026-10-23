@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Check-in: Stimmungsskalen"
 description: "Schneller Einstieg: Teilnehmende verorten sich mit Punkten auf drei Aussagen von „gar nicht\" bis „sehr\"."

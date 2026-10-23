@@ -16,7 +16,7 @@ const CATEGORIES = Object.keys(parse(await readFile(path.join(CONTENT, 'categori
 // Keep in sync with LICENSES in src/content.config.ts.
 const LICENSES = ['CC0-1.0', 'AGPL-3.0-or-later'];
 const DEFAULT_LICENSE = 'CC0-1.0';
-const SCHEMA_VERSION = 2;
+const SCHEMA_VERSION = 3;
 const BOARD_VERSION = 'net.nordeck.whiteboard@v2';
 const SIZES = { master: [1920, 1080], tile: [1280, 720] };
 const NEUTRAL = ['category', 'tags', 'duration', 'groupSize', 'authors', 'license', 'published', 'draft'];
@@ -83,6 +83,12 @@ for (const slug of await readdir(SRC)) {
         err(where, `${name}: invalid JSON (${e.message})`);
       }
     }
+    for (const f of fm.extras ?? []) {
+      const name = f.src.replace(/^\.\//, '');
+      referenced.add(name);
+      if (!/\.zip$/.test(name)) err(where, `${name}: extras must be .zip files`);
+      else if (!files.includes(name)) err(where, `referenced file ${f.src} not found`);
+    }
   }
   // Language-neutral fields must match the primary file (English if present).
   const primary = parsed['index.en.md'] ? 'index.en.md' : Object.keys(parsed)[0];
@@ -93,7 +99,7 @@ for (const slug of await readdir(SRC)) {
     }
   }
   for (const f of files) {
-    if (/\.(nwb|png|jpe?g|webp)$/.test(f) && !referenced.has(f)) err(slug, `orphaned file ${f}`);
+    if (/\.(nwb|zip|png|jpe?g|webp)$/.test(f) && !referenced.has(f)) err(slug, `orphaned file ${f}`);
   }
 }
 

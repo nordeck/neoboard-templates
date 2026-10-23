@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Wünsch dir was vom Genie"
 description: "Ein Flaschengeist erfüllt drei Wünsche: Welche Funktionen und Fehlerbehebungen wählt euer Team, wenn Kosten egal wären?"

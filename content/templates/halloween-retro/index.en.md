@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Halloween Retro"
 description: "A spooky retrospective in four screens: rotten tomatoes for the grumpy pumpkin, sweet chocolate bars for the happy one, ideas flying off the witch’s broom and to-dos brewed in the cauldron."
@@ -15,6 +15,9 @@ preview:
 files:
   - src: ./halloween-retro.en.nwb
     label: "Template"
+extras:
+  - src: ./halloween-retro-illustrations.zip
+    label: "Illustrations for other whiteboard tools (4 PNG, ZIP)"
 duration: { min: 45, max: 60 }
 groupSize: { min: 3, max: 12 }
 authors:
