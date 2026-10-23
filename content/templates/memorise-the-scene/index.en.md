@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Memorise the Scene"
 description: "Memory game: briefly reveal a scene of emojis and rebuild it from memory. Three levels plus a Christmas edition."

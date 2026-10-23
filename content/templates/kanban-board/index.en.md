@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Kanban Board"
 description: "Classic Kanban board with To do, In Progress and Done to visualise work and keep the flow moving."

@@ -194,7 +194,7 @@ export function indexMarkdown(slug, lang, meta, method) {
   const de = lang === 'de';
   const lines = [
     '---',
-    'schemaVersion: 2',
+    'schemaVersion: 3',
     `lang: ${lang}`,
     `title: ${q(meta.title)}`,
     `description: ${q(meta.description)}`,

@@ -6,7 +6,7 @@ One file per language in `content/templates/<slug>/`. The generator creates it w
 
 ```yaml
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "TRIZ: Vom Scheitern lernen"
 description: "In drei Schritten zum Neustart: …"
@@ -70,7 +70,7 @@ gallery:
 
 | Field | Rule |
 |---|---|
-| `schemaVersion` | `2` (the validator rejects other values). |
+| `schemaVersion` | `3` (the validator rejects other values). |
 | `lang` | Must match the file name. |
 | `title` | 3–80 characters. |
 | `description` | 20–200 characters; shown on the card (two lines) and as SEO description. |
@@ -82,6 +82,7 @@ gallery:
 | `preview.tile` | Optional 1280×720 crop for the card when the full frame is unreadable at card size (calendars, timelines). |
 | `gallery[]` | Optional extra images `{ src, alt, caption? }`, 1920×1080, e.g. further frames or a filled-in example; shown as thumbnails on the detail page. |
 | `files[]` | `{ src: ./<file>.nwb, label }`. 1 file → button, 2–4 → list, ≥5 → select box. |
+| `extras[]` | Optional `{ src: ./<file>.zip, label }`, shown as extra download links below the board, e.g. the illustrations of a hand-drawn board for people who rebuild it in another whiteboard tool. ZIP only; put a short README (license, link to the template page) inside. |
 | `links[]` | `{ label, url, type }`, type `generator`, `source`, `docs` or `video`. A template needs at least one file or a generator link. |
 | `duration`, `groupSize` | `{ min, max }`, min ≤ max. |
 | `authors` | `[{ name, url? }]`. |

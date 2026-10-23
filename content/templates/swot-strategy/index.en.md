@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "SWOT Strategy (TOWS Matrix)"
 description: "Turn SWOT results into strategies: develop, protect, regain and avoid."

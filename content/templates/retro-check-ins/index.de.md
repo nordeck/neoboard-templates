@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Retro-Einstiege"
 description: "Sammlung von Einstiegen für Retrospektiven: Stimmungsbarometer, ESVP, Emoji-Skala und Schnellfragerunde."

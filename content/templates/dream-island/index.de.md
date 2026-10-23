@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Baue deine Trauminsel"
 description: "Lasst das Team träumen: Alle gestalten eine gemeinsame Insel und lernen die Komfortzonen der anderen kennen."

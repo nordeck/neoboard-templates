@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Mühle"
 description: "Der Brettspiel-Klassiker Mühle für zwei Personen auf dem Whiteboard."

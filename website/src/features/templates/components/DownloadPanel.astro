@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 // Download block: 1 file -> button, 2–4 -> rows, >=5 -> select + button, 0 -> generator button.
+// Extras (ZIP, e.g. illustrations for other tools) follow as secondary download links.
 import Icon from './Icon.astro';
 import { t } from '../lib/i18n';
 import type { Lang } from '../lib/templates';
@@ -10,11 +11,12 @@ import type { Lang } from '../lib/templates';
 interface Props {
   lang: Lang;
   files: { label: string; name: string; href: string }[];
+  extras?: { label: string; name: string; href: string }[];
   links: { label: string; url: string; type: 'generator' | 'source' | 'docs' | 'video' }[];
   selectThreshold?: number;
 }
 
-const { lang, files, links, selectThreshold = 5 } = Astro.props;
+const { lang, files, extras = [], links, selectThreshold = 5 } = Astro.props;
 const s = t(lang).download;
 const generators = links.filter((l) => l.type === 'generator');
 const others = links.filter((l) => l.type !== 'generator');
@@ -97,8 +99,14 @@ const selectLabel = files.every((f) => /\b\d{4}\b/.test(f.label)) ? s.selectYear
     )
   }
   {
-    extraGenerators.length + others.length > 0 && (
+    extras.length + extraGenerators.length + others.length > 0 && (
       <div class="links">
+        {extras.map((f) => (
+          <a href={f.href} download={f.name}>
+            <Icon name="FileArchive" size={16} />
+            {f.label}
+          </a>
+        ))}
         {extraGenerators.map((l) => (
           <a href={l.url} target="_blank" rel="noopener noreferrer">
             <Icon name="ExternalLink" size={16} />

@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Baum der Teamwerte"
 description: "Lasst eure Teamwerte gemeinsam wachsen: Ergänzt Blätter mit den Werten, die ihr pflegen wollt."

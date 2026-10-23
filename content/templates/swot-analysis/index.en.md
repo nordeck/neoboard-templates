@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "SWOT Analysis"
 description: "SWOT analysis: collect strengths, weaknesses, opportunities and threats in four quadrants."

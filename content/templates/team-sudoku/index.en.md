@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Team Sudoku"
 description: "Collaborate or race to finish the same Sudoku. The generator creates new boards with configurable difficulty."

@@ -38,7 +38,7 @@ const templates = defineCollection({
   schema: ({ image }) =>
     z
       .object({
-        schemaVersion: z.literal(2),
+        schemaVersion: z.literal(3),
         lang: z.enum(LOCALES),
         title: z.string().min(3).max(80),
         description: z.string().min(20).max(200),
@@ -52,6 +52,8 @@ const templates = defineCollection({
           .default([]),
         // Only net.nordeck.whiteboard@v2 (infinite canvas) boards are offered; the validator checks the files.
         files: z.array(z.object({ src: z.string().regex(/^\.\/[a-z0-9.-]+\.nwb$/), label: z.string() })).default([]),
+        // Extra downloads next to the board, e.g. the illustrations for other whiteboard tools (ZIP only)
+        extras: z.array(z.object({ src: z.string().regex(/^\.\/[a-z0-9.-]+\.zip$/), label: z.string() })).default([]),
         links: z
           .array(z.object({ label: z.string(), url: z.url(), type: z.enum(['generator', 'source', 'docs', 'video']) }))
           .default([]),

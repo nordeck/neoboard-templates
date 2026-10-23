@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Pairs Game"
 description: "Classic Pairs for remote teams: uncover two cards at a time and find matching symbols."

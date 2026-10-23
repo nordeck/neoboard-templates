@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Check-in: Wetterlage"
 description: "Einstieg mit vier Wetterlagen von Sonne bis Gewitter: Jede Person setzt einen Punkt in ihr Feld."

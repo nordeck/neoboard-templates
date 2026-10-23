@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Wo stehen wir? Standortbestimmung"
 description: "Standortbestimmung in vier Feldern: weiter so, lieber lassen, neu beginnen und Risiken."

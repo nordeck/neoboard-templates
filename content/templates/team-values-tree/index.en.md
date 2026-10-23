@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Team Values Tree"
 description: "Grow your team values together: add leaves with the values you want to nurture."

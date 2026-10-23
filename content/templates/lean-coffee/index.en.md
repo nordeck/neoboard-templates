@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Lean Coffee"
 description: "Agenda-free meeting format: participants collect topics, vote and discuss them in short timeboxes."

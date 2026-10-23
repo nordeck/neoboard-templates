@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "TRIZ: Vom Scheitern lernen"
 description: "In drei Schritten zum Neustart: maximal scheitern, ehrlich prüfen, was davon schon passiert, und gezielt damit aufhören."

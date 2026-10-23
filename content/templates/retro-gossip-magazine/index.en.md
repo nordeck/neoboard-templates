@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Retro Activity: Gossip Magazine"
 description: "Pretend to be a gossip magazine and write provocative headlines about your last sprint."

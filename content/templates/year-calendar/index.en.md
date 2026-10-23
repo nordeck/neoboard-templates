@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Year Calendar"
 description: "A whole year on one frame for annual planning. Generate calendars for any year and language with the generator."

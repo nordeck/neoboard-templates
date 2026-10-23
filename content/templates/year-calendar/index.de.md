@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Jahreskalender"
 description: "Ein ganzes Jahr auf einem Rahmen für die Jahresplanung. Fertige Kalender 2026–2040 und ein Generator für weitere Jahre."

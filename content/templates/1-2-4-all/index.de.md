@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "1-2-4-Alle"
 description: "Von der stillen Einzelarbeit über Paare und Vierergruppen zur ganzen Gruppe, mit eigenen Arbeitsbereichen je Stufe."

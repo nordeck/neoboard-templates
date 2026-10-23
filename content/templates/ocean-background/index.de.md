@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Ozean-Hintergrund"
 description: "Ein sommerlicher Ozean-Hintergrund, der Präsentationen, Retrospektiven und Firmentreffen optisch aufwertet."

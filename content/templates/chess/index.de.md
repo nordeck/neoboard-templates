@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Schach"
 description: "Schach online in NeoBoard spielen, live oder asynchron. Das Brett bleibt im Matrix-Raum gespeichert."

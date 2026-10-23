@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Retro-Check-in: Wie fühlst du dich?"
 description: "Check-in für Retrospektiven: Alle legen ihren Namen in eines von vier Stimmungsfeldern."

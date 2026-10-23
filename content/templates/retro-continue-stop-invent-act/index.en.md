@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Retrospective: Continue, Stop, Invent, Act"
 description: "Four-field retrospective: what to keep, what to stop, what to invent and which actions to take."

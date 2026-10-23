@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Learn About Your Team"
 description: "Two boards with three hidden questions each, one about personal life and one about life at work."

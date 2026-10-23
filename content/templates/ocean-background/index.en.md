@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Ocean Background"
 description: "A summery ocean background that raises the visual appeal of your presentation or company meetup."

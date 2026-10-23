@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Chess"
 description: "Play chess online in NeoBoard, live or asynchronously. The board is saved in the Matrix room."

@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: en
 title: "Spring Background"
 description: "A cheerful spring background to prepare slides and goals for the new season."

@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Pairs-Spiel"
 description: "Das klassische Pairs für Remote-Teams: Deckt jeweils zwei Karten auf und findet passende Symbole."

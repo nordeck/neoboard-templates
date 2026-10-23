@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Kick-off: Agenda & Zielpyramide"
 description: "Agenda für ein Kooperationstreffen und Zielpyramide von den Basics bis zum Sahnehäubchen."

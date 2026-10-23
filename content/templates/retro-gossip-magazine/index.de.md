@@ -1,5 +1,5 @@
 ---
-schemaVersion: 2
+schemaVersion: 3
 lang: de
 title: "Retro-Aktivität: Klatschpresse"
 description: "Spielt Klatschpresse und fasst euren letzten Sprint in provokanten Schlagzeilen zusammen."
